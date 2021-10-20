@@ -78,13 +78,14 @@
 
 \author[melb]{Kerry~A.~Nice\corref{cor1}}
 \ead{kerry.nice@unimelb.edu.au}
-\author[melb]{Sachith Seneviratne}
-\author[melb]{Jasper S. Wijnands}
-\author[melb]{Jason Thompson}
-\author[melb,eng]{Mark Stevenson}
+\author[melb]{et al.}
+%\author[melb]{Sachith Seneviratne}
+%\author[melb]{Jasper S. Wijnands}
+%\author[melb]{Jason Thompson}
+%\author[melb,eng]{Mark Stevenson}
 \cortext[cor1]{Principal corresponding author}
 \address[melb]{Transport, Health, and Urban Design Hub, Faculty of Architecture, Building, and Planning, University of Melbourne, Australia.}
-\address[eng]{Melbourne School of Engineering; and Melbourne School of Population and Global Health, University of Melbourne, Australia.}
+%\address[eng]{Melbourne School of Engineering; and Melbourne School of Population and Global Health, University of Melbourne, Australia.}
 
 
 
@@ -110,56 +111,112 @@ city science
 
 \section{Introduction}
 
-\section{Methods}
+Local climate zones based on clustering areas
 
-\subsection{Scenario generation}
-This study starts with Geoscape\citep{Geoscape2020} data from Public Sector Mapping Agency (PSMA) Australia. Geoscape provides 2 meter resolution land cover (road, building, grass, bare earth, etc) as well as building and tree footprints and heights (Figure \ref{fig:geoscape}). Using this dataset for Melbourne, representative ranges were found for surface covers and tree and building heights and footprints. From these, 3816 model domains were created with all iterations (by 5\% increments) of fractions of trees, grass, buildings and streets, as well as average building heights (from 0 to 49 meters) and vegetation heights (from 0 to 20 meters) (Figure \ref{fig:scenarios}).
+Micro climate zones, based on clustering based on outcomes.
 
+\section{Methods}\label{sec:methods}
+
+\subsection{Scenario generation}\label{sec:methodsgen}
+This study starts with Geoscape \citep{Geoscape2020} data from Public Sector Mapping Agency (PSMA) Australia. Geoscape provides 2 meter resolution land cover (road, building, grass, bare earth, etc) as well as building and tree footprints and heights (figure \ref{fig:geoscape}). Using this dataset for Melbourne, representative ranges were found for surface covers and tree and building heights and footprints. From these, 9814 model domains were created with all iterations (by 5\% increments) of fractions of trees, grass, buildings and streets, as well as average building heights (from 0 to 49 meters) and vegetation heights (from 0 to 20 meters in 0.5m increments) (figure \ref{fig:scenarios}). Domains were created of 100$\times$100m with 5m resolution grids.
 
 
 
 \begin{figure*}
 \centering
-%\fbox{
 \includegraphics[page=2,trim={70 345 60 360},clip,scale=0.65]{Figures/Figures.pdf}
-%}
-%\includegraphics[page=1,trim={80 240 60 240},clip,scale=0.20]{/home/kerryn/git/2020-05-EGU/Presentation/PresentationImages.pdf}
-%\includegraphics[page=2,trim={80 240 60 240},clip,scale=0.20]{/home/kerryn/git/2020-05-EGU/Presentation/PresentationImages.pdf}
-%\includegraphics[page=3,trim={80 240 60 240},clip,scale=0.20]{/home/kerryn/git/2020-05-EGU/Presentation/PresentationImages.pdf}
 \caption{\bf 2m surface cover (bare earth, roads, grass, trees, water, and buildings), building footprints and heights, and tree cover locations and heights from Geoscape for Melbourne.}
  \label{fig:geoscape}
 \end{figure*} 
 
-
-
+\begin{figure*}
+\centering
+\includegraphics[page=3,trim={55 240 60 240},clip,scale=0.65]{../Presentation/PresentationImages.pdf}
+\caption{\bf Melbourne, parameter ranges.}
+\end{figure*} 
 
 \begin{figure*}
 \centering
-%\fbox{
 \includegraphics[page=1,trim={70 380 60 390},clip,scale=0.65]{Figures/Figures.pdf}
-%}
-\caption{\bf Melbourne, create VTUF-3D scenarios for 7000 variations of parameters.}
+\caption{\bf Melbourne, creation of VTUF-3D scenarios for 9814 variations of parameters.}
  \label{fig:scenarios}
 \end{figure*} 
 
 
-\subsection{VTUF-3D}
 
+
+
+
+\subsection{VTUF-3D}\label{sec:methodsvtuf}
+VTUF-3D \citep{Nice2018a} was used as the micro-climate modelling tool for this study. VTUF-3D is a urban micro-climate surface energy balance model that incorporates vegetation physiological processes and shading effects. The model provides output of canyon averaged air temperature ($T_{can}$) as well as 5m resolution values for each surface of surface temperature ($T_{surf}$), mean radiant temperature ($T_{mrt}$), and universal thermal climate index ($UTCI$) (figure \ref{fig:vtufresults}). Each model run was forced by the observations of Preston in Melbourne from \cite{Coutts2007} over the days February 9-14, 2004. 
+
+Domain mean values at ground surface level were calculated from the results from each scenario for 4 pm of February 11th for the parameters of $T_{can}$, $T_{surf}$, $T_{mrt}$, and $UTCI$ (all in $^{\circ}$C). The current forcing conditions at that point were downward shortwave (K$\downarrow$) of 501.7$Wm^{-2}$, downward longwave (L$\downarrow$) of 365.1$Wm^{-2}$, air temperature of 25.9$^{\circ}$C, vapour pressure of 1.16 $mb$, wind at 173$^{\circ}$ of 5.4 $ms^{-1}$ and air pressure of 995.5$mb$. Energy balance parameters for net radiation ($Q^{*}$), sensible fluxes ($Q_{h}$), ground flux ($Q_{g}$), and latent heat ($Q_{e}$) were also extracted, as well as shortwave and longwave up (K$\uparrow$ and L$\uparrow$) (all in $Wm^{-2}$) and canyon wind speed ($U_{road}$) (in $ms^{-1}$).
 
 \begin{figure*}
 \centering
 \includegraphics[page=2,trim={75 240 60 240},clip,scale=0.55]{../Presentation/PresentationImages.pdf}
 \caption{\bf Melbourne, VTUF-3D results.}
- \label{fig:scenarios}
+ \label{fig:vtufresults}
 \end{figure*} 
 
+\subsection{Parameter analysis}\label{sec:methodsparam}
+% analysis
+% ProcessMCZResults.java
+% -  temperature distributions at 0m created for each completed run
+%  All surfaces at 0m for each timestep, temperatures and counts of for Tsfc, Tmrt, and UTCI.
+%  Ta is single value (canyon averaged) for each domain
+% - All runs are combined into single data file for each timestep
+%     contains temperatures and energy fluxes
+% Feature importance
+% /media/kerryn/87d9469d-56aa-4a1f-a62d-5f03d7599bbf/Data/VTUF-3D/Output/FeatureImportance/rf_all_runszslice.py
+% feature_imporantance from RandomForestClassifier was used from scikit-learn \citep{scikit-learn}
+% determine feature importance for paramaters of percentages of grass, trees, buildings, and roads, as well as average vegetation and building heights for Tair, Tsfc, Tmrt, and UTCI.
+
+
+
+
+\section{Results}\label{sec:results}
+
+%The resulting temperatures were compared to the parameters for each domain, the surface fractions and heights as well as the resulting fluxes associated with those outcomes. For $T_{can}$ (figure \ref{fig:tcanfluxes}), the greatest variations in temperatures are seen with the street fractions, the lowest temperatures seen at 50\% road area and below and slightly higher temperatures until reaching 80\%. The other fractions show an inverse (but strong) relationship
+
+% $T_{mrt}$ (figure \ref{fig:tmrtfluxes})
+%  $T_{sfc}$ (figure \ref{fig:tsfcfluxes})
+%   $UTCI$ (figure \ref{fig:utcifluxes})
 
 
 \begin{figure*}
 \centering
-\includegraphics[page=3,trim={55 240 60 240},clip,scale=0.65]{../Presentation/PresentationImages.pdf}
-\caption{\bf Melbourne, VTUF-3D results.}
+\includegraphics[page=17,trim={50 300 40 295},clip,scale=1.0]{Figures/Figures.pdf}
+\caption{\bf Canyon averaged air temperature ($T_{can}$) vs. domain surface fractions and heights and resulting fluxes at 4 pm of February 11, 2004.}
+ \label{fig:tcanfluxes}
 \end{figure*} 
+
+\begin{figure*}
+\centering
+\includegraphics[page=18,trim={50 300 40 295},clip,scale=1.0]{Figures/Figures.pdf}
+\caption{\bf Canyon averaged mean radiant temperature ($T_{mrt}$) vs. domain surface fractions and heights and resulting fluxes at 4 pm of February 11, 2004.}
+ \label{fig:tmrtfluxes}
+\end{figure*} 
+
+\begin{figure*}
+\centering
+\includegraphics[page=19,trim={50 300 40 295},clip,scale=1.0]{Figures/Figures.pdf}
+\caption{\bf Canyon averaged surface temperature ($T_{sfc}$) vs. domain surface fractions and heights and resulting fluxes at 4 pm of February 11, 2004.}
+ \label{fig:tsfcfluxes}
+\end{figure*} 
+
+\begin{figure*}
+\centering
+\includegraphics[page=16,trim={50 300 40 295},clip,scale=1.0]{Figures/Figures.pdf}
+\caption{\bf Canyon averaged universal thermal climate index ($UTCI$) vs. domain surface fractions and heights and resulting fluxes at 4 pm of February 11, 2004.}
+ \label{fig:utcifluxes}
+\end{figure*} 
+
+
+
+
+
+
 
 
 \begin{figure*}
@@ -197,6 +254,11 @@ This study starts with Geoscape\citep{Geoscape2020} data from Public Sector Mapp
 \caption{\bf T-sne clustering of T$_{can}$.}
  \label{fig:clustertsfc}
 \end{figure*} 
+
+
+
+
+
 
 \section*{References}\label{sec:ref}
 
