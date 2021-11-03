@@ -202,8 +202,14 @@ A feature importance analysis was performed using the Random Forest Classifier f
 % matplotlib used to plot hourly results for all scenarios for 4 temperature types
 %  box plots made of temperatures vs percentages (by 10 %) of surfaces (tree, grass, building, road) and ave heights (by 0.4m) of vegetation and buildings
 %  background colors of each plot were tinted by levels of feature importance.
+% then r2_boxplots.py
+% R2 calculated for each parameter over dinual cycle and plotted against the other parameters
 
 To determine the trends of the four temperature types (\gls{tcan}, \gls{tsfc}, \gls{tmrt}, and \gls{utci}), Matplotlib \citep{Hunter2007} was used to generate box plots of modelled temperature results vs surface types (tree, grass, building, road) in 10\% ranges as well as average building and vegetation heights (in 0.4m ranges). The backgrounds of each plot were tinted in green according to the parameter's calculated level of feature importance.
+
+To explore the trends associated with each surface fraction type over a diurnal cycle, the $R^{2}$ of modelled temperature vs. surface fraction percentage or average building or vegetation heights was calculated for each hour for each of the six parameters and four temperature types and plotted as a line graph. 
+
+In addition, mean temperatures were calculated for each temperature type and fraction percentages and heights using pandas \citep{reback2020pandas} describe method and groupby of 10\% increments of surface fractions or 0.4 meter average heights. Then temperature differences between increasing fractions and heights were calculated.
 
 
 
@@ -230,7 +236,7 @@ A number of scenarios were selected that represented frequent urban morphologies
 
 City-wide heat maps of \gls{tcan}, \gls{tsfc}, \gls{tmrt}, and \gls{utci} were generated from the 9814 modelled scenario results. Each model run was forced by the observations of Preston in Melbourne from \cite{Coutts2007} over the days February 9-14, 2004. The actual urban morphology parameters calculated from the Geoscape data were matched to the modelled scenario with the closest matching parameters of surface fractions and average heights for each 100$\times$100m location in Melbourne and visualized in QGIS \citep{QGIS2009}. Locations with greater than 10\% surface fraction of water were removed from the results as VTUF-3D does not currently model water bodies.
 
-These resulting heatmaps show a city-wide assessment of thermal performance due to urban form but is independent of local weather conditions (i.e. ocean breezes vs. calm inland conditions). In addition, the same modelled results were matched to locations across Sydney, Perth, Brisbane, and Adelaide to generate city-wide urban form heatmaps for each of these cities.  \gls{tsfc} heatmap results were compared to the land surface temperature maps of \cite{Devereux2017}, which were generated from multiple aggregated Landsat 8 land surface temperature imagery over 2015-2016. Results were visialised in QGIS.
+These resulting heatmaps show a city-wide assessment of thermal performance due to urban form but is independent of local weather conditions (i.e. ocean breezes vs. calm inland conditions). In addition, the same modelled results were matched to locations across Sydney, Perth, Brisbane, and Adelaide to generate city-wide urban form heatmaps for each of these cities.  \gls{tsfc} heatmap results were compared to the land surface temperature maps of \cite{Devereux2017}, which were generated from multiple aggregated Landsat 8 land surface temperature imagery over 2015-2016. Results were visialised in QGIS. TODO update, now using Landsat 8 LST maps from days with similar weather conditions and clear skies.
 
 \section{Results}\label{sec:results}
 
@@ -282,18 +288,49 @@ These resulting heatmaps show a city-wide assessment of thermal performance due 
 
 
 
+
+
 \begin{figure*}
 \centering
-\includegraphics[page=7,trim={60 250 63 266},clip,scale=0.8]{Figures/Figures2.pdf}
-\caption{\bf Distribution of \gls{tsfc} across February 12, 2004 for scenario 50\% grass, 49.99\% trees, 0.01\% road, 0\% building, average vegetation height of 4m, and average building height of 0m.}
+a)\includegraphics[page=8,trim={85 260 110 270},clip,scale=0.5]{Figures/Figures3.pdf}
+b)\includegraphics[page=9,trim={85 260 110 270},clip,scale=0.5]{Figures/Figures3.pdf}\\
+c)\includegraphics[page=10,trim={85 260 110 270},clip,scale=0.5]{Figures/Figures3.pdf}
+d)\includegraphics[page=11,trim={85 260 110 270},clip,scale=0.5]{Figures/Figures3.pdf}
+\caption{\bf $R^{2}$ of modelled temperatures of a)\gls{tcan}, b)\gls{tsfc}, c)\gls{tmrt}, and d)\gls{utci} vs. surface fraction percentages and average heights (as seen in Figure \ref{fig:box14a}) over a diurnal cycle of 12 February 2004. A positive $R^{2}$ indicates that temperatures increase as the percentage of the surface fraction increases. }
+ \label{fig:r2parameters}
+\end{figure*}
+
+
+
+\begin{figure*}
+\centering
+\includegraphics[page=12,trim={68 255 67 255},clip,scale=0.95]{Figures/Figures3.pdf}
+\caption{\bf Differences in temperatures of a) \gls{tcan}, b) \gls{tsfc}, c) \gls{tmrt}, and d) \gls{utci} as surface fractions increase by 10\% (top panes) or average heights increase by 0.8m (bottom panes) at 2pm on 12 February 2004. Positive values indicate that temperatures increase as the surface fraction or average height increases.}
+ \label{fig:diff2pm}
+\end{figure*}
+
+\begin{figure*}
+\centering
+\includegraphics[page=13,trim={68 255 67 255},clip,scale=0.95]{Figures/Figures3.pdf}
+\caption{\bf Differences in temperatures of a) \gls{tcan}, b) \gls{tsfc}, c) \gls{tmrt}, and d) \gls{utci} as surface fractions increase by 10\% (top panes) or average heights increase by 0.8m (bottom panes) at 4am on 12 February 2004. Positive values indicate that temperatures increase as the surface fraction or average height increases.}
+ \label{fig:diff4am}
+\end{figure*}
+
+
+
+
+\begin{figure*}
+\centering
+\includegraphics[page=1,trim={60 250 63 266},clip,scale=0.5]{Figures/Figures3.pdf}
+\caption{\bf Distribution of \gls{tsfc} across February 12, 2004 for scenario 50\% grass, 49.99\% trees, 0.01\% road, 0\% building, average vegetation height of 4m, and average building height of 0m. Insert shows percent fractions of surface types.}
  \label{fig:dist1}
 \end{figure*}
 
 
 \begin{figure*}
 \centering
-\includegraphics[page=8,trim={60 250 63 266},clip,scale=0.8]{Figures/Figures2.pdf}
-\caption{\bf Distribution of \gls{tsfc} across February 12, 2004 for scenario 19\% grass, 10\% trees, 30\% road, 40\% building, average vegetation height of 2m, and average building height of 6m.}
+\includegraphics[page=2,trim={60 250 63 266},clip,scale=0.5]{Figures/Figures3.pdf}
+\caption{\bf Distribution of \gls{tsfc} across February 12, 2004 for scenario 19\% grass, 10\% trees, 30\% road, 40\% building, average vegetation height of 2m, and average building height of 6m. Insert shows percent fractions of surface types.}
  \label{fig:dist2}
 \end{figure*}
 
@@ -301,77 +338,144 @@ These resulting heatmaps show a city-wide assessment of thermal performance due 
 
 \begin{figure*}
 \centering
-\includegraphics[page=9,trim={60 250 63 266},clip,scale=0.8]{Figures/Figures2.pdf}
-\caption{\bf Distribution of \gls{tsfc} across February 12, 2004 for scenario 29\% grass, 70\% trees, 1\% road, 0\% building, average vegetation height of 0.5m, and average building height of 0m.}
+\includegraphics[page=3,trim={60 250 63 266},clip,scale=0.5]{Figures/Figures3.pdf}
+\caption{\bf Distribution of \gls{tsfc} across February 12, 2004 for scenario 29\% grass, 70\% trees, 1\% road, 0\% building, average vegetation height of 0.5m, and average building height of 0m. Insert shows percent fractions of surface types.}
  \label{fig:dist3}
 \end{figure*}
 
 \begin{figure*}
 \centering
-\includegraphics[page=10,trim={60 250 63 266},clip,scale=0.8]{Figures/Figures2.pdf}
-\caption{\bf Distribution of \gls{tsfc} across February 12, 2004 for scenario 19\% grass, 10\% trees, 20\% road, 50\% building, average vegetation height of 1m, and average building height of 30m.}
+\includegraphics[page=4,trim={60 250 63 266},clip,scale=0.5]{Figures/Figures3.pdf}
+\caption{\bf Distribution of \gls{tsfc} across February 12, 2004 for scenario 19\% grass, 10\% trees, 20\% road, 50\% building, average vegetation height of 1m, and average building height of 30m. Insert shows percent fractions of surface types.}
  \label{fig:dist4}
 \end{figure*}
 
 
 \begin{figure*}
 \centering
-\includegraphics[page=11,trim={60 250 63 266},clip,scale=0.8]{Figures/Figures2.pdf}
-\caption{\bf Distribution of \gls{tsfc} across February 12, 2004 for scenario 89\% grass, 0\% trees, 8\% road, 3\% building, average vegetation height of 0m, and average building height of 5m.}
+\includegraphics[page=5,trim={60 250 63 266},clip,scale=0.5]{Figures/Figures3.pdf}
+\caption{\bf Distribution of \gls{tsfc} across February 12, 2004 for scenario 89\% grass, 0\% trees, 8\% road, 3\% building, average vegetation height of 0m, and average building height of 5m. Insert shows percent fractions of surface types.}
  \label{fig:dist5}
 \end{figure*}
 
 
 \begin{figure*}
 \centering
-\includegraphics[page=12,trim={60 250 63 266},clip,scale=0.8]{Figures/Figures2.pdf}
-\caption{\bf Distribution of \gls{tsfc} across February 12, 2004 for scenario 40\% grass, 10\% trees, 20\% road, 30\% building, average vegetation height of 2m, and average building height of 14m.}
+\includegraphics[page=6,trim={60 250 63 266},clip,scale=0.5]{Figures/Figures3.pdf}
+\caption{\bf Distribution of \gls{tsfc} across February 12, 2004 for scenario 40\% grass, 10\% trees, 20\% road, 30\% building, average vegetation height of 2m, and average building height of 14m. Insert shows percent fractions of surface types.}
  \label{fig:dist6}
 \end{figure*}
 
 \begin{figure*}
 \centering
-\includegraphics[page=13,trim={60 250 63 266},clip,scale=0.8]{Figures/Figures2.pdf}
-\caption{\bf Distribution of \gls{tsfc} across February 12, 2004 for scenario 19\% grass, 20\% trees, 21\% road, 40\% building, average vegetation height of 1m, and average building height of 9m.}
+\includegraphics[page=7,trim={60 250 63 266},clip,scale=0.5]{Figures/Figures3.pdf}
+\caption{\bf Distribution of \gls{tsfc} across February 12, 2004 for scenario 19\% grass, 20\% trees, 21\% road, 40\% building, average vegetation height of 1m, and average building height of 9m. Insert shows percent fractions of surface types.}
  \label{fig:dist7}
 \end{figure*}
 
 
 \begin{figure*}
 \centering
-\includegraphics[page=14,trim={155 270 147 328},clip,scale=1.0]{Figures/Figures2.pdf}
-\caption{\bf Air temperature heatmap on February 12, 2004 at 2pm generated by matching the closest matching parameters of surface fractions and average heights for each 100$\times$100m location in Melbourne from 9814 modelled scenario results.  }
+a)\includegraphics[page=14,trim={155 270 147 328},clip,scale=0.75]{Figures/Figures2.pdf}
+b)\includegraphics[page=15,trim={155 270 141 328},clip,scale=0.75]{Figures/Figures2.pdf}
+\caption{\bf a) Air temperature and b) surface temperature heatmaps on February 12, 2004 at 2pm generated by matching the closest matching parameters of surface fractions and average heights for each 100$\times$100m location in Melbourne from 9814 modelled scenario results.  }
  \label{fig:TaMelb}
 \end{figure*}
 
-\begin{figure*}
-\centering
-\includegraphics[page=15,trim={155 270 141 328},clip,scale=1.0]{Figures/Figures2.pdf}
-\caption{\bf Surface temperature heatmap on February 12, 2004 at 2pm generated by matching the closest matching parameters of surface fractions and average heights for each 100$\times$100m location in Melbourne from 9814 modelled scenario results.  }
- \label{fig:TsfcMelb}
-\end{figure*}
+
+
+
+
+%\begin{figure*}
+%\centering
+%\includegraphics[page=15,trim={155 270 141 328},clip,scale=1.0]{Figures/Figures2.pdf}
+%\caption{\bf Surface temperature heatmap on February 12, 2004 at 2pm generated by matching the closest matching parameters of surface fractions and average heights for each 100$\times$100m location in Melbourne from 9814 modelled scenario results.  }
+% \label{fig:TsfcMelb}
+%\end{figure*}
+%\begin{figure*}   % //  11/12/2018	12	25
+%\centering
+%\includegraphics[page=14,trim={220 255 75 315},clip,scale=0.95]{Figures/Figures3.pdf}
+%\caption{\bf  Melbourne-Landsat-LST-11-12-2018    11/12/2018	12	25}
+% \label{fig:Melbourne-Landsat-LST-11-12-2018}
+%\end{figure*}
+%%20 Melbourne-Landsat-TSFC-LST-11-12-2018  % //  11/12/2018	12	25
+%\begin{figure*}   
+%\centering
+%\includegraphics[page=20,trim={180 255 95 315},clip,scale=0.95]{Figures/Figures3.pdf}
+%\caption{\bf  Melbourne-Landsat-TSFC-LST-27-12-2018    11/12/2018	12	25}
+% \label{fig:Melbourne-Landsat-TSFC-LST-27-12-2018}
+%\end{figure*}
+%%26 Melbourne_TSFC12_85
+%\begin{figure*} 
+%\centering
+%\includegraphics[page=26,trim={94 328 100 338},clip,scale=0.95]{Figures/Figures3.pdf}
+%\caption{\bf Melbourne TSFC 12 85}
+% \label{fig:Melbourne_TSFC12_85}
+%\end{figure*}
+
 
 \begin{figure*}
 \centering
-\includegraphics[page=16,trim={155 290 124 329},clip,scale=1.0]{Figures/Figures2.pdf}
-\caption{\bf Differences in surface temperature heatmap on February 12, 2004 at 2pm generated by matching the closest matching parameters of surface fractions and average heights for each 100$\times$100m location in Melbourne from 9814 modelled scenario results from land surface temperature maps of \cite{Devereux2017}.  }
+%a)\includegraphics[page=15,trim={155 270 141 328},clip,scale=0.75]{Figures/Figures2.pdf}
+a)\includegraphics[page=14,trim={220 255 75 315},clip,scale=0.70]{Figures/Figures3.pdf}
+b)\includegraphics[page=20,trim={180 255 95 315},clip,scale=0.70]{Figures/Figures3.pdf}\\
+c)\includegraphics[page=26,trim={94 328 100 338},clip,scale=0.60]{Figures/Figures3.pdf}
+\caption{\bf a) Landsat8 land surface temperature in degrees kelvin captured 10am 11 December 2018. Local conditions of air temperature on this day were minimum and maximum of 22 and 26\SI{}{\degreeCelsius}. b) Differences in surface temperatures (modelled \gls{tsfc} minus observed LANDSAT8 LST) on February 12, 2004 at 10am generated by matching the closest matching parameters of surface fractions and average heights for each 100$\times$100m location in Melbourne from 9814 modelled scenario results. c) Histograms of temperature distributions of (left) modelled \gls{tsfc} and (right) observed LANDSAT8 LST on February 12, 2004 at 10am. }
  \label{fig:TsfcDiffMelb}
 \end{figure*}
 
+%%15 Melbourne-Landsat-LST-27-12-2018  % //  27/12/2018	15	39
+%\begin{figure*}  
+%\centering
+%\includegraphics[page=15,trim={220 255 75 315},clip,scale=0.95]{Figures/Figures3.pdf}
+%\caption{\bf  Melbourne-Landsat-LST-27-12-2018     27/12/2018	15	39}
+% \label{fig:Melbourne-Landsat-LST-27-12-2018}
+%\end{figure*}
+%%21 Melbourne-Landsat-TSFC-LST-27-12-2018  % //  27/12/2018	15	39
+%\begin{figure*}   % //  11/12/2018	12	25
+%\centering
+%\includegraphics[page=21,trim={180 255 95 315},clip,scale=0.95]{Figures/Figures3.pdf}
+%\caption{\bf  Melbourne-Landsat-TSFC-LST-27-12-2018     27/12/2018	15	39}
+% \label{fig:Melbourne-Landsat-TSFC-LST-27-12-2018}
+%\end{figure*}
+%%27 Melbourne_TSFC14_85
+%\begin{figure*} 
+%\centering
+%\includegraphics[page=27,trim={94 328 100 338},clip,scale=0.95]{Figures/Figures3.pdf}
+%\caption{\bf Melbourne TSFC 14 85}
+% \label{fig:Melbourne_TSFC14_85}
+%\end{figure*}
+
+
+
+%\begin{figure*}
+%\centering
+%\includegraphics[page=16,trim={155 290 124 329},clip,scale=1.0]{Figures/Figures2.pdf}
+%\caption{\bf Differences in surface temperature heatmap on February 12, 2004 at 2pm generated by matching the closest matching parameters of surface fractions and average heights for each 100$\times$100m location in Melbourne from 9814 modelled scenario results from land surface temperature maps of \cite{Devereux2017}.  }
+% \label{fig:TsfcDiffMelb}
+%\end{figure*}
+
+
+%\begin{figure*}
+%\centering
+%\includegraphics[page=17,trim={155 255 141 328},clip,scale=0.75]{Figures/Figures2.pdf}
+%\caption{\bf Mean radiant temperature heatmap on February 12, 2004 at 2pm generated by matching the closest matching parameters of surface fractions and average heights for each 100$\times$100m location in Melbourne from 9814 modelled scenario results.  }
+% \label{fig:TmrtMelb}
+%\end{figure*}
+%\begin{figure*}
+%\centering
+%\includegraphics[page=18,trim={155 255 147 328},clip,scale=0.75]{Figures/Figures2.pdf}
+%\caption{\bf \gls{utci} temperature heatmap on February 12, 2004 at 2pm generated by matching the closest matching parameters of surface fractions and average heights for each 100$\times$100m location in Melbourne from 9814 modelled scenario results.  }
+% \label{fig:utciMelb}
+%\end{figure*}
+
 
 \begin{figure*}
 \centering
-\includegraphics[page=17,trim={155 255 141 328},clip,scale=1.0]{Figures/Figures2.pdf}
-\caption{\bf Mean radiant temperature heatmap on February 12, 2004 at 2pm generated by matching the closest matching parameters of surface fractions and average heights for each 100$\times$100m location in Melbourne from 9814 modelled scenario results.  }
+a)\includegraphics[page=17,trim={155 255 141 328},clip,scale=0.75]{Figures/Figures2.pdf}
+b)\includegraphics[page=18,trim={155 255 147 328},clip,scale=0.75]{Figures/Figures2.pdf}
+\caption{\bf a) Mean radiant temperature and b) \gls{utci} heatmaps on February 12, 2004 at 2pm generated by matching the closest matching parameters of surface fractions and average heights for each 100$\times$100m location in Melbourne from 9814 modelled scenario results.  }
  \label{fig:TmrtMelb}
-\end{figure*}
-
-
-
-\begin{figure*}
-\centering
-\includegraphics[page=18,trim={155 255 147 328},clip,scale=1.0]{Figures/Figures2.pdf}
-\caption{\bf \gls{utci} temperature heatmap on February 12, 2004 at 2pm generated by matching the closest matching parameters of surface fractions and average heights for each 100$\times$100m location in Melbourne from 9814 modelled scenario results.  }
  \label{fig:utciMelb}
 \end{figure*}
 
@@ -380,53 +484,216 @@ These resulting heatmaps show a city-wide assessment of thermal performance due 
 
 \begin{figure*}
 \centering
-\includegraphics[page=19,trim={200 300 175 350},clip,scale=1.5]{Figures/Figures2.pdf}
-\caption{\bf Air temperature heatmap on February 12, 2004 at 2pm generated by matching the closest matching parameters of surface fractions and average heights for each 100$\times$100m location in Sydney from 9814 modelled scenario results.  }
+a)\includegraphics[page=19,trim={200 300 175 350},clip,scale=1.0]{Figures/Figures2.pdf}
+b)\includegraphics[page=20,trim={200 300 170 350},clip,scale=1.0]{Figures/Figures2.pdf}
+\caption{\bf a) Air temperature and b) surface temperature heatmaps on February 12, 2004 at 2pm generated by matching the closest matching parameters of surface fractions and average heights for each 100$\times$100m location in Sydney from 9814 modelled scenario results.  }
  \label{fig:TaSyd}
 \end{figure*}
 
-\begin{figure*}
+
+
+
+
+
+
+
+%\begin{figure*}
+%\centering
+%\includegraphics[page=20,trim={200 300 170 350},clip,scale=1.5]{Figures/Figures2.pdf}
+%\caption{\bf Surface temperature heatmap on February 12, 2004 at 2pm generated by matching the closest matching parameters of surface fractions and average heights for each 100$\times$100m location in Sydney from 9814 modelled scenario results.  }
+% \label{fig:TsfcSyd}
+%\end{figure*}
+%\begin{figure*}
+%\centering
+%\includegraphics[page=21,trim={200 290 170 280},clip,scale=1.5]{Figures/Figures2.pdf}
+%\caption{\bf Differences in surface temperature heatmap on February 12, 2004 at 2pm generated by matching the closest matching parameters of surface fractions and average heights for each 100$\times$100m location in Sydney from 9814 modelled scenario results from land surface temperature maps of \cite{Devereux2017}. TODO, yes I know degrees is misspelled in the image, will fix later. }
+% \label{fig:TsfcDiffSyd}
+%\end{figure*}
+
+
+%16 Sydney-Landsat-LST-11-03-2019  %//  11/03/2019	22	26
+\begin{figure*} 
 \centering
-\includegraphics[page=20,trim={200 300 170 350},clip,scale=1.5]{Figures/Figures2.pdf}
-\caption{\bf Surface temperature heatmap on February 12, 2004 at 2pm generated by matching the closest matching parameters of surface fractions and average heights for each 100$\times$100m location in Sydney from 9814 modelled scenario results.  }
- \label{fig:TsfcSyd}
+%a)\includegraphics[page=20,trim={200 300 170 350},clip,scale=0.75]{Figures/Figures2.pdf}
+a)\includegraphics[page=16,trim={210 265 115 315},clip,scale=0.75]{Figures/Figures3.pdf}
+b)\includegraphics[page=22,trim={210 265 110 315},clip,scale=0.75]{Figures/Figures3.pdf}\\
+c)\includegraphics[page=28,trim={94 328 100 338},clip,scale=0.60]{Figures/Figures3.pdf}
+\caption{\bf b) Landsat8 land surface temperature in degrees kelvin captured 10am 11 December 2018. Local conditions of air temperature on this day were minimum and maximum of 22 and 26\SI{}{\degreeCelsius}. c) Differences in surface temperatures (modelled \gls{tsfc} minus observed LANDSAT8 LST) on February 12, 2004 at 10am generated by matching the closest matching parameters of surface fractions and average heights for each 100$\times$100m location in Sydney from 9814 modelled scenario results. d) Histograms of temperature distributions of (left) modelled \gls{tsfc} and (right) observed LANDSAT8 LST on February 12, 2004 at 10am. }
+%\caption{\bf  Sydney-Landsat-LST-11-03-2019    11/03/2019	22	26}
+ \label{fig:Sydney-Landsat-LST-11-03-2019}
+%\end{figure*}
+%22 Sydney-Landsat-TSFC-LST-11-03-2019  %//  11/03/2019	22	26
+%\begin{figure*} 
+%\centering
+%\caption{\bf  Sydney-Landsat-TSFC-LST-11-03-2019    11/03/2019	22	26}
+% \label{fig:Sydney-Landsat-TSFC-LST-11-03-2019}
+%\end{figure*}
+%28 Sydney_TSFC12_85
+%\begin{figure*} 
+%\centering
+%\caption{\bf Sydney TSFC 12 85}
+ \label{fig:Sydney_TSFC12_85}
 \end{figure*}
+
+
+
+
+%\begin{figure*}
+%\centering
+%\includegraphics[page=22,trim={200 300 170 350},clip,scale=1.5]{Figures/Figures2.pdf}
+%\caption{\bf Mean radiant temperature heatmap on February 12, 2004 at 2pm generated by matching the closest matching parameters of surface fractions and average heights for each 100$\times$100m location in Sydney from 9814 modelled scenario results.  }
+% \label{fig:TmrtSyd}
+%\end{figure*}
+%\begin{figure*}
+%\centering
+%\includegraphics[page=23,trim={200 300 170 350},clip,scale=1.5]{Figures/Figures2.pdf}
+%\caption{\bf \gls{utci} heatmap on February 12, 2004 at 2pm generated by matching the closest matching parameters of surface fractions and average heights for each 100$\times$100m location in Sydney from 9814 modelled scenario results.  }
+% \label{fig:utciSyd}
+%\end{figure*}
+
+
+
+
+%17 Sydney-Landsat-LST-19-01-2018  %//  19/01/2018	18	31
+\begin{figure*}  
+\centering
+\includegraphics[page=17,trim={200 265 115 315},clip,scale=0.75]{Figures/Figures3.pdf}
+\includegraphics[page=23,trim={200 265 115 315},clip,scale=0.75]{Figures/Figures3.pdf}
+\includegraphics[page=29,trim={94 328 100 338},clip,scale=0.60]{Figures/Figures3.pdf}
+\caption{\bf a) Landsat8 land surface temperature in degrees kelvin captured 10am 19 January 2018. Local conditions of air temperature on this day were minimum and maximum of 18 and 31\SI{}{\degreeCelsius}. b) Differences in surface temperatures (modelled \gls{tsfc} minus observed LANDSAT8 LST) on February 12, 2004 at 10am generated by matching the closest matching parameters of surface fractions and average heights for each 100$\times$100m location in Sydney from 9814 modelled scenario results. c) Histograms of temperature distributions of (left) modelled \gls{tsfc} and (right) observed LANDSAT8 LST on February 12, 2004 at 10am. }
+%\caption{\bf  Sydney-Landsat-LST-19-01-2018    19/01/2018	18	31}
+ \label{fig:Sydney-Landsat-LST-19-01-2018}
+%\end{figure*}
+%23 Sydney-Landsat-TSFC-LST-19-01-2018  %//  19/01/2018	18	31
+%\begin{figure*}  
+%\centering
+%\caption{\bf  Sydney-Landsat-TSFC-LST-19-01-2018    19/01/2018	18	31}
+ \label{fig:Sydney-Landsat-TSFC-LST-19-01-2018}
+%\end{figure*}
+%29 Sydney_TSFC14_85
+%\begin{figure*} 
+%\centering
+%\caption{\bf Sydney TSFC 14 85}
+ \label{fig:Sydney_TSFC14_85}
+\end{figure*}
+
+
 
 \begin{figure*}
 \centering
-\includegraphics[page=21,trim={200 290 170 280},clip,scale=1.5]{Figures/Figures2.pdf}
-\caption{\bf Differences in surface temperature heatmap on February 12, 2004 at 2pm generated by matching the closest matching parameters of surface fractions and average heights for each 100$\times$100m location in Sydney from 9814 modelled scenario results from land surface temperature maps of \cite{Devereux2017}. TODO, yes I know degrees is misspelled in the image, will fix later. }
- \label{fig:TsfcDiffSyd}
+a)\includegraphics[page=22,trim={200 300 170 350},clip,scale=0.95]{Figures/Figures2.pdf}
+b)\includegraphics[page=23,trim={200 300 170 350},clip,scale=0.95]{Figures/Figures2.pdf}
+\caption{\bf a) Mean radiant temperature and b) \gls{utci}  heatmaps on February 12, 2004 at 2pm generated by matching the closest matching parameters of surface fractions and average heights for each 100$\times$100m location in Sydney from 9814 modelled scenario results.  }
+%\caption{\bf \gls{utci} heatmap on February 12, 2004 at 2pm generated by matching the closest matching parameters of surface fractions and average heights for each 100$\times$100m location in Sydney from 9814 modelled scenario results.  }
+ \label{fig:utciSyd}\label{fig:TmrtSyd}
 \end{figure*}
 
 
-\begin{figure*}
-\centering
-\includegraphics[page=22,trim={200 300 170 350},clip,scale=1.5]{Figures/Figures2.pdf}
-\caption{\bf Mean radiant temperature heatmap on February 12, 2004 at 2pm generated by matching the closest matching parameters of surface fractions and average heights for each 100$\times$100m location in Sydney from 9814 modelled scenario results.  }
- \label{fig:TmrtSyd}
-\end{figure*}
+
+
 
 \begin{figure*}
 \centering
-\includegraphics[page=23,trim={200 300 170 350},clip,scale=1.5]{Figures/Figures2.pdf}
-\caption{\bf \gls{utci} heatmap on February 12, 2004 at 2pm generated by matching the closest matching parameters of surface fractions and average heights for each 100$\times$100m location in Sydney from 9814 modelled scenario results.  }
- \label{fig:utciSyd}
+a)\includegraphics[page=24,trim={200 300 180 350},clip,scale=1.0]{Figures/Figures2.pdf}
+b)\includegraphics[page=25,trim={200 300 180 350},clip,scale=1.0]{Figures/Figures2.pdf}
+\caption{\bf a) Air temperature and b) surface temperature heatmaps on February 12, 2004 at 2pm generated by matching the closest matching parameters of surface fractions and average heights for each 100$\times$100m location in Perth from 9814 modelled scenario results.  }
+ \label{fig:TaPerth}\label{fig:TsfcPerth}
+\end{figure*}
+%\begin{figure*}
+%\centering
+%\includegraphics[page=25,trim={200 300 180 350},clip,scale=1.5]{Figures/Figures2.pdf}
+%\caption{\bf Surface temperature heatmap on February 12, 2004 at 2pm generated by matching the closest matching parameters of surface fractions and average heights for each 100$\times$100m location in Perth from 9814 modelled scenario results.  }
+% \label{fig:TsfcPerth}
+%\end{figure*}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%18 Perth-Landsat-LST-29-03-2019  % //  29/03/2019	13	27
+\begin{figure*}  
+\centering
+\includegraphics[page=18,trim={220 260 137 321},clip,scale=0.75]{Figures/Figures3.pdf}
+\includegraphics[page=24,trim={170 260 137 321},clip,scale=0.75]{Figures/Figures3.pdf}
+\includegraphics[page=30,trim={94 328 100 338},clip,scale=0.60]{Figures/Figures3.pdf}
+%\caption{\bf Perth-Landsat-LST-29-03-2019  29/03/2019	13	27}
+\caption{\bf a) Landsat8 land surface temperature in degrees kelvin captured 10am 29 March 2019. Local conditions of air temperature on this day were minimum and maximum of 13 and 27\SI{}{\degreeCelsius}. b) Differences in surface temperatures (modelled \gls{tsfc} minus observed LANDSAT8 LST) on February 12, 2004 at 10am generated by matching the closest matching parameters of surface fractions and average heights for each 100$\times$100m location in Perth from 9814 modelled scenario results. c) Histograms of temperature distributions of (left) modelled \gls{tsfc} and (right) observed LANDSAT8 LST on February 12, 2004 at 10am. }
+ \label{fig:Perth-Landsat-LST-29-03-2019}
+%\end{figure*}
+%24 Perth-Landsat-TSFC-LST-29-03-2019  % //  29/03/2019	13	27
+%\begin{figure*}  
+%\centering
+%\caption{\bf Perth-Landsat-TSFC-LST-29-03-2019  29/03/2019	13	27}
+ \label{fig:Perth-Landsat-TSFC-LST-29-03-2019}
+%\end{figure*}
+%30 Perth_TSFC12_85
+%\begin{figure*} 
+%\centering
+%\caption{\bf Perth TSFC 12 85}
+ \label{fig:Perth_TSFC12_85}
 \end{figure*}
 
-\begin{figure*}
+
+
+%19 Perth-Landsat-LST-25-02-2019   %  //  25/02/2019	19	37
+\begin{figure*} 
 \centering
-\includegraphics[page=24,trim={200 300 180 350},clip,scale=1.5]{Figures/Figures2.pdf}
-\caption{\bf Air temperature heatmap on February 12, 2004 at 2pm generated by matching the closest matching parameters of surface fractions and average heights for each 100$\times$100m location in Perth from 9814 modelled scenario results.  }
- \label{fig:TaPerth}
+a)\includegraphics[page=19,trim={220 260 137 321},clip,scale=0.75]{Figures/Figures3.pdf}
+b)\includegraphics[page=25,trim={160 260 137 321},clip,scale=0.75]{Figures/Figures3.pdf}\\
+c)\includegraphics[page=31,trim={94 328 100 338},clip,scale=0.60]{Figures/Figures3.pdf}
+%\caption{\bf Perth-Landsat-LST-25-02-2019  25/02/2019	19	37}
+\caption{\bf a) Landsat8 land surface temperature in degrees kelvin captured 10am 25 February 2019. Local conditions of air temperature on this day were minimum and maximum of 19 and 37\SI{}{\degreeCelsius}. b) Differences in surface temperatures (modelled \gls{tsfc} minus observed LANDSAT8 LST) on February 12, 2004 at 10am generated by matching the closest matching parameters of surface fractions and average heights for each 100$\times$100m location in Perth from 9814 modelled scenario results. c) Histograms of temperature distributions of (left) modelled \gls{tsfc} and (right) observed LANDSAT8 LST on February 12, 2004 at 10am. }
+ \label{fig:Perth-Landsat-LST-25-02-2019}
+%\end{figure*}
+%25 Perth-Landsat-TSFC-LST-25-02-2019  %  //  25/02/2019	19	37
+%\begin{figure*} 
+%\centering
+%\caption{\bf Perth-Landsat-TSFC-LST-25-02-2019  25/02/2019	19	37}
+ \label{fig:Perth-Landsat-TSFC-LST-25-02-2019}
+%\end{figure*}
+%31 Perth_TSFC14_85
+%\begin{figure*} 
+%\centering
+%\caption{\bf Perth TSFC 14 85}
+ \label{fig:Perth_TSFC14_85}
 \end{figure*}
 
-\begin{figure*}
-\centering
-\includegraphics[page=25,trim={200 300 180 350},clip,scale=1.5]{Figures/Figures2.pdf}
-\caption{\bf Surface temperature heatmap on February 12, 2004 at 2pm generated by matching the closest matching parameters of surface fractions and average heights for each 100$\times$100m location in Perth from 9814 modelled scenario results.  }
- \label{fig:TsfcPerth}
-\end{figure*}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 \printglossaries
 
