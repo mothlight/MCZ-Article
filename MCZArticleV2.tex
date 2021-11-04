@@ -204,12 +204,19 @@ A feature importance analysis was performed using the Random Forest Classifier f
 %  background colors of each plot were tinted by levels of feature importance.
 % then r2_boxplots.py
 % R2 calculated for each parameter over dinual cycle and plotted against the other parameters
+% Nope, didn't use R2. This is the replacement:
+% plot_box_reverse_zslice_per_10percent.py
+% plot_box_10percent_r2_replacement.py
+% plot_10percent_increases_cycle.R
+%  plot box per 10 % used pandas describe and groupby to find the mean temperature increases per 10 % fraction increases or 0.8m height increases.
+%    These were plotted at a few specific times comparing temperature increases vs surface fractions.
+%  To replace R2, a full day's data was split into panels for each surface type and the differences plotted individually for each 10 % increment.
 
 To determine the trends of the four temperature types (\gls{tcan}, \gls{tsfc}, \gls{tmrt}, and \gls{utci}), Matplotlib \citep{Hunter2007} was used to generate box plots of modelled temperature results vs surface types (tree, grass, building, road) in 10\% ranges as well as average building and vegetation heights (in 0.4m ranges). The backgrounds of each plot were tinted in green according to the parameter's calculated level of feature importance.
 
-To explore the trends associated with each surface fraction type over a diurnal cycle, the $R^{2}$ of modelled temperature vs. surface fraction percentage or average building or vegetation heights was calculated for each hour for each of the six parameters and four temperature types and plotted as a line graph. 
+%To explore the trends associated with each surface fraction type over a diurnal cycle, the $R^{2}$ of modelled temperature vs. surface fraction percentage or average building or vegetation heights was calculated for each hour for each of the six parameters and four temperature types and plotted as a line graph. 
 
-In addition, mean temperatures were calculated for each temperature type and fraction percentages and heights using pandas \citep{reback2020pandas} describe method and groupby of 10\% increments of surface fractions or 0.4 meter average heights. Then temperature differences between increasing fractions and heights were calculated.
+In addition, mean temperatures were calculated for each temperature type and fraction percentages and heights using pandas \citep{reback2020pandas} describe method and groupby of 10\% increments of surface fractions or 0.4 meter average heights. Then temperature differences between increasing fractions and heights were calculated and plotted across for specific hours on 12 Feburary 2004 as well as across the entire diurnal cycle.
 
 
 
@@ -288,17 +295,45 @@ These resulting heatmaps show a city-wide assessment of thermal performance due 
 
 
 
-
+\begin{figure*}
+\centering
+\includegraphics[page=36,trim={55 275 50 295},clip,scale=0.75]{Figures/Figures3.pdf}
+\caption{\bf Feature importance in \gls{tcan} for the four surface fractions of streets, buildings, trees, and grass and the two average heights of vegetation and buildings across 11-12 February 2004. }
+ \label{fig:featimpttcan}
+\end{figure*}
 
 \begin{figure*}
 \centering
-a)\includegraphics[page=8,trim={85 260 110 270},clip,scale=0.5]{Figures/Figures3.pdf}
-b)\includegraphics[page=9,trim={85 260 110 270},clip,scale=0.5]{Figures/Figures3.pdf}\\
-c)\includegraphics[page=10,trim={85 260 110 270},clip,scale=0.5]{Figures/Figures3.pdf}
-d)\includegraphics[page=11,trim={85 260 110 270},clip,scale=0.5]{Figures/Figures3.pdf}
-\caption{\bf $R^{2}$ of modelled temperatures of a)\gls{tcan}, b)\gls{tsfc}, c)\gls{tmrt}, and d)\gls{utci} vs. surface fraction percentages and average heights (as seen in Figure \ref{fig:box14a}) over a diurnal cycle of 12 February 2004. A positive $R^{2}$ indicates that temperatures increase as the percentage of the surface fraction increases. }
- \label{fig:r2parameters}
+\includegraphics[page=37,trim={55 275 50 295},clip,scale=0.75]{Figures/Figures3.pdf}
+\caption{\bf Feature importance in \gls{tmrt} for the four surface fractions of streets, buildings, trees, and grass and the two average heights of vegetation and buildings across 11-12 February 2004. }
+ \label{fig:featimpttcan}
 \end{figure*}
+
+\begin{figure*}
+\centering
+\includegraphics[page=38,trim={55 275 50 295},clip,scale=0.75]{Figures/Figures3.pdf}
+\caption{\bf Feature importance in \gls{tsfc} for the four surface fractions of streets, buildings, trees, and grass and the two average heights of vegetation and buildings across 11-12 February 2004. }
+ \label{fig:featimpttcan}
+\end{figure*}
+
+\begin{figure*}
+\centering
+\includegraphics[page=39,trim={55 275 50 295},clip,scale=0.75]{Figures/Figures3.pdf}
+\caption{\bf Feature importance in \gls{utci} for the four surface fractions of streets, buildings, trees, and grass and the two average heights of vegetation and buildings across 11-12 February 2004. }
+ \label{fig:featimpttcan}
+\end{figure*}
+
+%\begin{figure*}
+%\centering
+%a)\includegraphics[page=8,trim={85 260 110 270},clip,scale=0.5]{Figures/Figures3.pdf}
+%b)\includegraphics[page=9,trim={85 260 110 270},clip,scale=0.5]{Figures/Figures3.pdf}\\
+%c)\includegraphics[page=10,trim={85 260 110 270},clip,scale=0.5]{Figures/Figures3.pdf}
+%d)\includegraphics[page=11,trim={85 260 110 270},clip,scale=0.5]{Figures/Figures3.pdf}
+%\caption{\bf $R^{2}$ of modelled temperatures of a)\gls{tcan}, b)\gls{tsfc}, c)\gls{tmrt}, and d)\gls{utci} vs. surface fraction percentages and average heights (as seen in Figure \ref{fig:box14a}) over a diurnal cycle of 12 February 2004. A positive $R^{2}$ indicates that temperatures increase as the percentage of the surface fraction increases. }
+% \label{fig:r2parameters}
+%\end{figure*}
+
+
 
 
 
@@ -317,7 +352,35 @@ d)\includegraphics[page=11,trim={85 260 110 270},clip,scale=0.5]{Figures/Figures
 \end{figure*}
 
 
+\begin{figure*}
+\centering
+\includegraphics[page=32,trim={92 245 92 245},clip,scale=0.95]{Figures/Figures3.pdf}
+\caption{\bf Differences in \gls{tcan} as surface fractions of a) grass, b) streets, c) trees, and d) buildings increase by 10\% and e) average vegetation and f) average building heights increase by 0.8m over a diurnal cycle of 12 February 2004. Positive values indicate that temperatures increase as the surface fraction or average height increases. }
+ \label{fig:r2parameterstcan}
+\end{figure*}
 
+\begin{figure*}
+\centering
+\includegraphics[page=33,trim={92 245 92 245},clip,scale=0.95]{Figures/Figures3.pdf}
+\caption{\bf Differences in \gls{tmrt} as surface fractions of a) grass, b) streets, c) trees, and d) buildings increase by 10\% and e) average vegetation and f) average building heights increase by 0.8m over a diurnal cycle of 12 February 2004. Positive values indicate that temperatures increase as the surface fraction or average height increases. }
+ \label{fig:r2parameterstmrt}
+\end{figure*}
+
+\begin{figure*}
+\centering
+\includegraphics[page=34,trim={92 245 92 245},clip,scale=0.95]{Figures/Figures3.pdf}
+\caption{\bf Differences in \gls{tsfc} as surface fractions of a) grass, b) streets, c) trees, and d) buildings increase by 10\% and e) average vegetation and f) average building heights increase by 0.8m over a diurnal cycle of 12 February 2004. Positive values indicate that temperatures increase as the surface fraction or average height increases. }
+ \label{fig:r2parameterstsfc}
+\end{figure*}
+
+
+
+\begin{figure*}
+\centering
+\includegraphics[page=35,trim={92 245 92 245},clip,scale=0.95]{Figures/Figures3.pdf}
+\caption{\bf Differences in \gls{utci} as surface fractions of a) grass, b) streets, c) trees, and d) buildings increase by 10\% and e) average vegetation and f) average building heights increase by 0.8m over a diurnal cycle of 12 February 2004. Positive values indicate that temperatures increase as the surface fraction or average height increases. }
+ \label{fig:r2parametersutci}
+\end{figure*}
 
 \begin{figure*}
 \centering
