@@ -1,0 +1,660 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\pagenumbering{gobble}
+\usepackage{subfig}
+\usepackage{tikz}
+
+
+\usepackage{geometry}
+ \geometry{
+ a4paper,
+ total={170mm,257mm},
+ left=20mm,
+ top=20mm,
+ }
+
+
+
+
+
+
+
+
+
+\begin{document}
+
+
+
+%
+%\begin{figure}
+%\centering    
+%\begin{tikzpicture}
+%\node(img1) {\includegraphics[trim={0 0 0 0},clip,scale=0.50]{/home/kerryn/git/2020-07-Frontiers-UrbClimInformatics/Analysis/Figures/zSlice/distributions/TSFC_Cluster_1_Grass_0_Road_0_Building_0_Tree_50_VegHt_4_BldHt_0.png}};
+%\node(img2) at (img1.north east)[anchor=center,xshift=-41mm,yshift=-33mm]
+%{\fbox{\includegraphics[trim={0 0 0 0},clip,scale=0.20]{/home/kerryn/git/2020-07-Frontiers-UrbClimInformatics/Analysis/Figures/zSlice/distributions/50_49_0_0.png}}};
+%\end{tikzpicture}
+%\end{figure} 
+%\clearpage
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%\begin{figure}
+%\centering    
+%\begin{tikzpicture}
+%\node(img1) {\includegraphics[trim={0 0 0 0},clip,scale=0.50]{/home/kerryn/git/2020-07-Frontiers-UrbClimInformatics/Analysis/Figures/zSlice/distributions/TSFC_Cluster_1_Grass_0_Road_30_Building_40_Tree_10_VegHt_2_BldHt_6.png}};
+%\node(img2) at (img1.north east)[anchor=center,xshift=-41mm,yshift=-33mm]
+%{\fbox{\includegraphics[trim={0 0 0 0},clip,scale=0.20]{/home/kerryn/git/2020-07-Frontiers-UrbClimInformatics/Analysis/Figures/zSlice/distributions/19_10_30_40.png}}};
+%\end{tikzpicture}
+%\end{figure} 
+%\clearpage
+%
+%
+%\begin{figure}
+%\centering    
+%\begin{tikzpicture}
+%\node(img1) {\includegraphics[trim={0 0 0 0},clip,scale=0.50]{/home/kerryn/git/2020-07-Frontiers-UrbClimInformatics/Analysis/Figures/zSlice/distributions/TSFC_Cluster_1_Grass_10_Road_0_Building_0_Tree_70_VegHt_1_BldHt_0.png}};
+%\node(img2) at (img1.north east)[anchor=center,xshift=-41mm,yshift=-33mm]
+%{\fbox{\includegraphics[trim={0 0 0 0},clip,scale=0.20]{/home/kerryn/git/2020-07-Frontiers-UrbClimInformatics/Analysis/Figures/zSlice/distributions/29_70_1_0.png}}};
+%\end{tikzpicture}
+%\end{figure} 
+%\clearpage
+%
+%
+%
+%\begin{figure}
+%\centering    
+%\begin{tikzpicture}
+%\node(img1) {\includegraphics[trim={0 0 0 0},clip,scale=0.50]{/home/kerryn/git/2020-07-Frontiers-UrbClimInformatics/Analysis/Figures/zSlice/distributions/TSFC_Cluster_1_Grass_20_Road_20_Building_50_Tree_10_VegHt_1_BldHt_30.png}};
+%\node(img2) at (img1.north east)[anchor=center,xshift=-41mm,yshift=-33mm]
+%{\fbox{\includegraphics[trim={0 0 0 0},clip,scale=0.20]{/home/kerryn/git/2020-07-Frontiers-UrbClimInformatics/Analysis/Figures/zSlice/distributions/19_10_20_50.png}}};
+%\end{tikzpicture}
+%\end{figure} 
+%\clearpage
+%
+%
+%
+%
+%\begin{figure}
+%\centering    
+%\begin{tikzpicture}
+%\node(img1) {\includegraphics[trim={0 0 0 0},clip,scale=0.50]{/home/kerryn/git/2020-07-Frontiers-UrbClimInformatics/Analysis/Figures/zSlice/distributions/TSFC_Cluster_1_Grass_40_Road_0_Building_10_Tree_0_VegHt_0_BldHt_1.png}};
+%\node(img2) at (img1.north east)[anchor=center,xshift=-41mm,yshift=-33mm]
+%{\fbox{\includegraphics[trim={0 0 0 0},clip,scale=0.20]{/home/kerryn/git/2020-07-Frontiers-UrbClimInformatics/Analysis/Figures/zSlice/distributions/89_0_8_3.png}}};
+%\end{tikzpicture}
+%\end{figure} 
+%\clearpage
+%
+%
+%
+%\begin{figure}
+%\centering    
+%\begin{tikzpicture}
+%\node(img1) {\includegraphics[trim={0 0 0 0},clip,scale=0.50]{/home/kerryn/git/2020-07-Frontiers-UrbClimInformatics/Analysis/Figures/zSlice/distributions/TSFC_Cluster_1_Grass_40_Road_20_Building_30_Tree_10_VegHt_2_BldHt_15.png}};
+%\node(img2) at (img1.north east)[anchor=center,xshift=-41mm,yshift=-33mm]
+%{\fbox{\includegraphics[trim={0 0 0 0},clip,scale=0.20]{/home/kerryn/git/2020-07-Frontiers-UrbClimInformatics/Analysis/Figures/zSlice/distributions/40_10_20_30.png}}};
+%\end{tikzpicture}
+%\end{figure} 
+%\clearpage
+%
+%
+%
+%\begin{figure}
+%\centering    
+%\begin{tikzpicture}
+%\node(img1) {\includegraphics[trim={0 0 0 0},clip,scale=0.50]{/home/kerryn/git/2020-07-Frontiers-UrbClimInformatics/Analysis/Figures/zSlice/distributions/TSFC_Cluster_2_Grass_10_Road_20_Building_40_Tree_20_VegHt_1_BldHt_9.png}};
+%\node(img2) at (img1.north east)[anchor=center,xshift=-41mm,yshift=-33mm]
+%{\fbox{\includegraphics[trim={0 0 0 0},clip,scale=0.20]{/home/kerryn/git/2020-07-Frontiers-UrbClimInformatics/Analysis/Figures/zSlice/distributions/19_20_21_40.png}}};
+%\end{tikzpicture}
+%\end{figure} 
+%\clearpage
+%
+%
+%
+%
+%
+%
+%\begin{figure}
+%\centering    
+%\includegraphics[trim={0 0 0 0},clip,scale=1.0]{/home/kerryn/git/2020-07-Frontiers-UrbClimInformatics/Analysis/Figures/zSlice/box/TcanR2.png}
+%\end{figure} 
+%\clearpage
+%
+%\begin{figure}
+%\centering    
+%\includegraphics[trim={0 0 0 0},clip,scale=1.0]{/home/kerryn/git/2020-07-Frontiers-UrbClimInformatics/Analysis/Figures/zSlice/box/TsfcR2.png}
+%\end{figure} 
+%\clearpage
+%
+%
+%\begin{figure}
+%\centering    
+%\includegraphics[trim={0 0 0 0},clip,scale=1.0]{/home/kerryn/git/2020-07-Frontiers-UrbClimInformatics/Analysis/Figures/zSlice/box/TmrtR2.png}
+%\end{figure} 
+%\clearpage
+%
+%
+%\begin{figure}
+%\centering    
+%\includegraphics[trim={0 0 0 0},clip,scale=1.0]{/home/kerryn/git/2020-07-Frontiers-UrbClimInformatics/Analysis/Figures/zSlice/box/UTCIR2.png}
+%\end{figure} 
+%\clearpage
+%
+%
+%\begin{figure}
+%\centering    
+%a)\includegraphics[trim={10 10 15 10},clip,scale=0.5]{/home/kerryn/git/2020-07-Frontiers-UrbClimInformatics/Analysis/Figures/zSlice/box/{"tcan_2004-02-12 14:00:00"}.png}
+%b)\includegraphics[trim={10 10 15 10},clip,scale=0.5]{/home/kerryn/git/2020-07-Frontiers-UrbClimInformatics/Analysis/Figures/zSlice/box/{"tsfc_2004-02-12 14:00:00"}.png}
+%c)\includegraphics[trim={10 10 15 10},clip,scale=0.5]{/home/kerryn/git/2020-07-Frontiers-UrbClimInformatics/Analysis/Figures/zSlice/box/{"tmrt_2004-02-12 14:00:00"}.png}
+%d)\includegraphics[trim={10 10 15 10},clip,scale=0.5]{/home/kerryn/git/2020-07-Frontiers-UrbClimInformatics/Analysis/Figures/zSlice/box/{"utci_2004-02-12 14:00:00"}.png}
+%\end{figure} 
+%\clearpage
+%
+%
+%\begin{figure}
+%\centering    
+%a)\includegraphics[trim={10 10 15 10},clip,scale=0.5]{/home/kerryn/git/2020-07-Frontiers-UrbClimInformatics/Analysis/Figures/zSlice/box/{"tcan_2004-02-12 04:00:00"}.png}
+%b)\includegraphics[trim={10 10 15 10},clip,scale=0.5]{/home/kerryn/git/2020-07-Frontiers-UrbClimInformatics/Analysis/Figures/zSlice/box/{"tsfc_2004-02-12 04:00:00"}.png}
+%c)\includegraphics[trim={10 10 15 10},clip,scale=0.5]{/home/kerryn/git/2020-07-Frontiers-UrbClimInformatics/Analysis/Figures/zSlice/box/{"tmrt_2004-02-12 04:00:00"}.png}
+%d)\includegraphics[trim={10 10 15 10},clip,scale=0.5]{/home/kerryn/git/2020-07-Frontiers-UrbClimInformatics/Analysis/Figures/zSlice/box/{"utci_2004-02-12 04:00:00"}.png}
+%\end{figure} 
+%\clearpage
+%
+%
+%% //  11/12/2018	12	25
+%\begin{figure}
+%\centering    
+%\includegraphics[trim={0 0 0 0},clip,scale=0.70]{/home/kerryn/git/2020-07-Frontiers-UrbClimInformatics/Analysis/Figures/GISMap/Melbourne-Landsat-LST-11-12-2018.png}
+%\end{figure} 
+%\clearpage
+%
+%
+%% //  27/12/2018	15	39
+%\begin{figure}
+%\centering    
+%\includegraphics[trim={0 0 0 0},clip,scale=0.70]{/home/kerryn/git/2020-07-Frontiers-UrbClimInformatics/Analysis/Figures/GISMap/Melbourne-Landsat-LST-27-12-2018.png}
+%\end{figure} 
+%\clearpage
+%
+%%//  11/03/2019	22	26
+%\begin{figure}
+%\centering    
+%\includegraphics[trim={0 0 0 0},clip,scale=0.70]{/home/kerryn/git/2020-07-Frontiers-UrbClimInformatics/Analysis/Figures/GISMap/Sydney-Landsat-LST-11-03-2019.png}
+%\end{figure} 
+%\clearpage
+%
+%
+%%//  19/01/2018	18	31
+%\begin{figure}
+%\centering    
+%\includegraphics[trim={0 0 0 0},clip,scale=0.70]{/home/kerryn/git/2020-07-Frontiers-UrbClimInformatics/Analysis/Figures/GISMap/Sydney-Landsat-LST-19-01-2018.png}
+%\end{figure} 
+%\clearpage
+%
+%% //  29/03/2019	13	27
+%\begin{figure}
+%\centering    
+%\includegraphics[trim={0 0 0 0},clip,scale=0.70]{/home/kerryn/git/2020-07-Frontiers-UrbClimInformatics/Analysis/Figures/GISMap/Perth-Landsat-LST-29-03-2019.png}
+%\end{figure} 
+%\clearpage
+%
+%
+%%  //  25/02/2019	19	37
+%\begin{figure}
+%\centering    
+%\includegraphics[trim={0 0 0 0},clip,scale=0.70]{/home/kerryn/git/2020-07-Frontiers-UrbClimInformatics/Analysis/Figures/GISMap/Perth-Landsat-LST-25-02-2019.png}
+%\end{figure} 
+%\clearpage
+%
+%
+%
+%% //  11/12/2018	12	25
+%\begin{figure}
+%\centering    
+%\includegraphics[trim={0 0 0 0},clip,scale=0.70]{/home/kerryn/git/2020-07-Frontiers-UrbClimInformatics/Analysis/Figures/GISMap/Melbourne-Landsat-TSFC-LST-11-12-2018.png}
+%\end{figure} 
+%\clearpage
+%
+%
+%% //  27/12/2018	15	39
+%\begin{figure}
+%\centering    
+%\includegraphics[trim={0 0 0 0},clip,scale=0.70]{/home/kerryn/git/2020-07-Frontiers-UrbClimInformatics/Analysis/Figures/GISMap/Melbourne-Landsat-TSFC-LST-27-12-2018.png}
+%\end{figure} 
+%\clearpage
+%
+%%//  11/03/2019	22	26
+%\begin{figure}
+%\centering    
+%\includegraphics[trim={0 0 0 0},clip,scale=0.70]{/home/kerryn/git/2020-07-Frontiers-UrbClimInformatics/Analysis/Figures/GISMap/Sydney-Landsat-TSFC-LST-11-03-2019.png}
+%\end{figure} 
+%\clearpage
+%
+%
+%%//  19/01/2018	18	31
+%\begin{figure}
+%\centering    
+%\includegraphics[trim={0 0 0 0},clip,scale=0.70]{/home/kerryn/git/2020-07-Frontiers-UrbClimInformatics/Analysis/Figures/GISMap/Sydney-Landsat-TSFC-LST-19-01-2018.png}
+%\end{figure} 
+%\clearpage
+%
+%% //  29/03/2019	13	27
+%\begin{figure}
+%\centering    
+%\includegraphics[trim={0 0 0 0},clip,scale=0.70]{/home/kerryn/git/2020-07-Frontiers-UrbClimInformatics/Analysis/Figures/GISMap/Perth-Landsat-TSFC-LST-29-03-2019.png}
+%\end{figure} 
+%\clearpage
+%
+%
+%%  //  25/02/2019	19	37
+%\begin{figure}
+%\centering    
+%\includegraphics[trim={0 0 0 0},clip,scale=0.70]{/home/kerryn/git/2020-07-Frontiers-UrbClimInformatics/Analysis/Figures/GISMap/Perth-Landsat-TSFC-LST-25-02-2019.png}
+%\end{figure} 
+%\clearpage
+%
+%
+%\begin{figure}
+%\centering    
+%\includegraphics[trim={0 0 0 0},clip,scale=0.25]{/home/kerryn/git/2020-07-Frontiers-UrbClimInformatics/Analysis/Figures/GISMap/Melbourne_TSFC12_85.png}
+%\includegraphics[trim={0 0 0 0},clip,scale=0.25]{/home/kerryn/git/2020-07-Frontiers-UrbClimInformatics/Analysis/Figures/GISMap/Melbourne_LST12_85.png}
+%\end{figure} 
+%\clearpage
+%
+%
+%\begin{figure}
+%\centering    
+%\includegraphics[trim={0 0 0 0},clip,scale=0.25]{/home/kerryn/git/2020-07-Frontiers-UrbClimInformatics/Analysis/Figures/GISMap/Melbourne_TSFC14_85.png}
+%\includegraphics[trim={0 0 0 0},clip,scale=0.25]{/home/kerryn/git/2020-07-Frontiers-UrbClimInformatics/Analysis/Figures/GISMap/Melbourne_LST14_85.png}
+%\end{figure} 
+%\clearpage
+%
+%
+%
+%\begin{figure}
+%\centering    
+%\includegraphics[trim={0 0 0 0},clip,scale=0.25]{/home/kerryn/git/2020-07-Frontiers-UrbClimInformatics/Analysis/Figures/GISMap/Sydney_TSFC12_85.png}
+%\includegraphics[trim={0 0 0 0},clip,scale=0.25]{/home/kerryn/git/2020-07-Frontiers-UrbClimInformatics/Analysis/Figures/GISMap/Sydney_LST12_85.png}
+%\end{figure} 
+%\clearpage
+%
+%
+%\begin{figure}
+%\centering    
+%\includegraphics[trim={0 0 0 0},clip,scale=0.25]{/home/kerryn/git/2020-07-Frontiers-UrbClimInformatics/Analysis/Figures/GISMap/Sydney_TSFC14_85.png}
+%\includegraphics[trim={0 0 0 0},clip,scale=0.25]{/home/kerryn/git/2020-07-Frontiers-UrbClimInformatics/Analysis/Figures/GISMap/Sydney_LST14_85.png}
+%\end{figure} 
+%\clearpage
+%
+%
+%
+%
+%\begin{figure}
+%\centering    
+%\includegraphics[trim={0 0 0 0},clip,scale=0.25]{/home/kerryn/git/2020-07-Frontiers-UrbClimInformatics/Analysis/Figures/GISMap/Perth_TSFC12_85.png}
+%\includegraphics[trim={0 0 0 0},clip,scale=0.25]{/home/kerryn/git/2020-07-Frontiers-UrbClimInformatics/Analysis/Figures/GISMap/Perth_LST12_85.png}
+%\end{figure} 
+%\clearpage
+%
+%
+%\begin{figure}
+%\centering    
+%\includegraphics[trim={0 0 0 0},clip,scale=0.25]{/home/kerryn/git/2020-07-Frontiers-UrbClimInformatics/Analysis/Figures/GISMap/Perth_TSFC14_85.png}
+%\includegraphics[trim={0 0 0 0},clip,scale=0.25]{/home/kerryn/git/2020-07-Frontiers-UrbClimInformatics/Analysis/Figures/GISMap/Perth_LST14_85.png}
+%\end{figure} 
+%\clearpage
+%
+%
+%
+%\begin{figure}
+%\centering    
+%a)\includegraphics[trim={0 18 25 20},clip,scale=0.20]{/home/kerryn/git/2020-07-Frontiers-UrbClimInformatics/Analysis/Figures/zSlice/box/Tcan_Grass10Percent.png}
+%b)\includegraphics[trim={0 18 25 20},clip,scale=0.20]{/home/kerryn/git/2020-07-Frontiers-UrbClimInformatics/Analysis/Figures/zSlice/box/Tcan_Streets10Percent.png}\\
+%c)\includegraphics[trim={0 18 25 20},clip,scale=0.20]{/home/kerryn/git/2020-07-Frontiers-UrbClimInformatics/Analysis/Figures/zSlice/box/Tcan_Trees10Percent.png}
+%d)\includegraphics[trim={0 18 25 20},clip,scale=0.20]{/home/kerryn/git/2020-07-Frontiers-UrbClimInformatics/Analysis/Figures/zSlice/box/Tcan_Buildings10Percent.png}\\
+%e)\includegraphics[trim={0 18 25 20},clip,scale=0.20]{/home/kerryn/git/2020-07-Frontiers-UrbClimInformatics/Analysis/Figures/zSlice/box/Tcan_AveVegHt08.png}
+%f)\includegraphics[trim={0 18 25 20},clip,scale=0.20]{/home/kerryn/git/2020-07-Frontiers-UrbClimInformatics/Analysis/Figures/zSlice/box/Tcan_AveBldHt08.png}
+%\end{figure} 
+%\clearpage
+%
+%
+%
+%\begin{figure}
+%\centering    
+%a)\includegraphics[trim={0 18 25 20},clip,scale=0.20]{/home/kerryn/git/2020-07-Frontiers-UrbClimInformatics/Analysis/Figures/zSlice/box/Tmrt_Grass10Percent.png}
+%b)\includegraphics[trim={0 18 25 20},clip,scale=0.20]{/home/kerryn/git/2020-07-Frontiers-UrbClimInformatics/Analysis/Figures/zSlice/box/Tmrt_Streets10Percent.png}\\
+%c)\includegraphics[trim={0 18 25 20},clip,scale=0.20]{/home/kerryn/git/2020-07-Frontiers-UrbClimInformatics/Analysis/Figures/zSlice/box/Tmrt_Trees10Percent.png}
+%d)\includegraphics[trim={0 18 25 20},clip,scale=0.20]{/home/kerryn/git/2020-07-Frontiers-UrbClimInformatics/Analysis/Figures/zSlice/box/Tmrt_Buildings10Percent.png}\\
+%e)\includegraphics[trim={0 18 25 20},clip,scale=0.20]{/home/kerryn/git/2020-07-Frontiers-UrbClimInformatics/Analysis/Figures/zSlice/box/Tmrt_AveVegHt08.png}
+%f)\includegraphics[trim={0 18 25 20},clip,scale=0.20]{/home/kerryn/git/2020-07-Frontiers-UrbClimInformatics/Analysis/Figures/zSlice/box/Tmrt_AveBldHt08.png}
+%\end{figure} 
+%\clearpage
+%
+%\begin{figure}
+%\centering    
+%a)\includegraphics[trim={0 18 25 20},clip,scale=0.20]{/home/kerryn/git/2020-07-Frontiers-UrbClimInformatics/Analysis/Figures/zSlice/box/Tsfc_Grass10Percent.png}
+%b)\includegraphics[trim={0 18 25 20},clip,scale=0.20]{/home/kerryn/git/2020-07-Frontiers-UrbClimInformatics/Analysis/Figures/zSlice/box/Tsfc_Streets10Percent.png}\\
+%c)\includegraphics[trim={0 18 25 20},clip,scale=0.20]{/home/kerryn/git/2020-07-Frontiers-UrbClimInformatics/Analysis/Figures/zSlice/box/Tsfc_Trees10Percent.png}
+%d)\includegraphics[trim={0 18 25 20},clip,scale=0.20]{/home/kerryn/git/2020-07-Frontiers-UrbClimInformatics/Analysis/Figures/zSlice/box/Tsfc_Buildings10Percent.png}\\
+%e)\includegraphics[trim={0 18 25 20},clip,scale=0.20]{/home/kerryn/git/2020-07-Frontiers-UrbClimInformatics/Analysis/Figures/zSlice/box/Tsfc_AveVegHt08.png}
+%f)\includegraphics[trim={0 18 25 20},clip,scale=0.20]{/home/kerryn/git/2020-07-Frontiers-UrbClimInformatics/Analysis/Figures/zSlice/box/Tsfc_AveBldHt08.png}
+%\end{figure} 
+%\clearpage
+%
+%\begin{figure}
+%\centering    
+%a)\includegraphics[trim={0 18 25 20},clip,scale=0.20]{/home/kerryn/git/2020-07-Frontiers-UrbClimInformatics/Analysis/Figures/zSlice/box/Utci_Grass10Percent.png}
+%b)\includegraphics[trim={0 18 25 20},clip,scale=0.20]{/home/kerryn/git/2020-07-Frontiers-UrbClimInformatics/Analysis/Figures/zSlice/box/Utci_Streets10Percent.png}\\
+%c)\includegraphics[trim={0 18 25 20},clip,scale=0.20]{/home/kerryn/git/2020-07-Frontiers-UrbClimInformatics/Analysis/Figures/zSlice/box/Utci_Trees10Percent.png}
+%d)\includegraphics[trim={0 18 25 20},clip,scale=0.20]{/home/kerryn/git/2020-07-Frontiers-UrbClimInformatics/Analysis/Figures/zSlice/box/Utci_Buildings10Percent.png}\\
+%e)\includegraphics[trim={0 18 25 20},clip,scale=0.20]{/home/kerryn/git/2020-07-Frontiers-UrbClimInformatics/Analysis/Figures/zSlice/box/Utci_AveVegHt08.png}
+%f)\includegraphics[trim={0 18 25 20},clip,scale=0.20]{/home/kerryn/git/2020-07-Frontiers-UrbClimInformatics/Analysis/Figures/zSlice/box/Utci_AveBldHt08.png}
+%\end{figure} 
+%\clearpage
+%
+%
+\begin{figure}
+\centering    
+\includegraphics[trim={0 0 0 0},clip,scale=0.5]{/media/kerryn/87d9469d-56aa-4a1f-a62d-5f03d7599bbf/Data/VTUF-3D/Output/FeatureImportance/Tcan_ComparezSliceMCZ4.png}
+\end{figure} 
+\clearpage
+
+
+\begin{figure}
+\centering    
+\includegraphics[trim={0 0 0 0},clip,scale=0.5]{/media/kerryn/87d9469d-56aa-4a1f-a62d-5f03d7599bbf/Data/VTUF-3D/Output/FeatureImportance/Tmrt_ComparezSliceMCZ4.png}
+\end{figure} 
+\clearpage
+
+
+\begin{figure}
+\centering    
+\includegraphics[trim={0 0 0 0},clip,scale=0.5]{/media/kerryn/87d9469d-56aa-4a1f-a62d-5f03d7599bbf/Data/VTUF-3D/Output/FeatureImportance/Tsfc_ComparezSliceMCZ4.png}
+\end{figure} 
+\clearpage
+
+\begin{figure}
+\centering    
+\includegraphics[trim={0 0 0 0},clip,scale=0.5]{/media/kerryn/87d9469d-56aa-4a1f-a62d-5f03d7599bbf/Data/VTUF-3D/Output/FeatureImportance/Utci_ComparezSliceMCZ4.png}
+\end{figure} 
+\clearpage
+
+
+
+
+
+
+
+
+
+\begin{figure}
+\centering    
+\includegraphics[trim={0 0 0 0},clip,scale=0.10]{/home/kerryn/git/2020-07-Frontiers-UrbClimInformatics/Analysis/Figures/boxMCZ4/montage_box_uncluster_75.png}
+\end{figure} 
+\clearpage
+
+\begin{figure}
+\centering    
+\includegraphics[trim={0 0 0 0},clip,scale=0.10]{/home/kerryn/git/2020-07-Frontiers-UrbClimInformatics/Analysis/Figures/boxMCZ4/montage_box_uncluster_80.png}
+\end{figure} 
+\clearpage
+
+
+\begin{figure}
+\centering    
+\includegraphics[trim={0 0 0 0},clip,scale=0.10]{/home/kerryn/git/2020-07-Frontiers-UrbClimInformatics/Analysis/Figures/boxMCZ4/montage_box_uncluster_89.png}
+\end{figure} 
+\clearpage
+
+
+
+
+
+\begin{figure}
+\centering    
+\includegraphics[trim={0 0 0 0},clip,scale=0.20]{/home/kerryn/git/2020-07-Frontiers-UrbClimInformatics/Analysis/Figures/boxMCZ4/montage4_box_uncluster_75.png}
+\end{figure} 
+\clearpage
+
+\begin{figure}
+\centering    
+\includegraphics[trim={0 0 0 0},clip,scale=0.20]{/home/kerryn/git/2020-07-Frontiers-UrbClimInformatics/Analysis/Figures/boxMCZ4/montage4_box_uncluster_80.png}
+\end{figure} 
+\clearpage
+
+
+\begin{figure}
+\centering    
+\includegraphics[trim={0 0 0 0},clip,scale=0.20]{/home/kerryn/git/2020-07-Frontiers-UrbClimInformatics/Analysis/Figures/boxMCZ4/montage4_box_uncluster_89.png}
+\end{figure} 
+\clearpage
+
+
+
+
+
+
+
+\begin{figure}
+\centering    
+a)\includegraphics[trim={0 18 25 20},clip,scale=0.20]{/home/kerryn/git/2020-07-Frontiers-UrbClimInformatics/Analysis/Figures/zSlice/box/Tcan_Grass10Percent_absolute.png}
+b)\includegraphics[trim={0 18 25 20},clip,scale=0.20]{/home/kerryn/git/2020-07-Frontiers-UrbClimInformatics/Analysis/Figures/zSlice/box/Tcan_Streets10Percent_absolute.png}\\
+c)\includegraphics[trim={0 18 25 20},clip,scale=0.20]{/home/kerryn/git/2020-07-Frontiers-UrbClimInformatics/Analysis/Figures/zSlice/box/Tcan_Trees10Percent_absolute.png}
+d)\includegraphics[trim={0 18 25 20},clip,scale=0.20]{/home/kerryn/git/2020-07-Frontiers-UrbClimInformatics/Analysis/Figures/zSlice/box/Tcan_Buildings10Percent_absolute.png}\\
+e)\includegraphics[trim={0 18 25 20},clip,scale=0.20]{/home/kerryn/git/2020-07-Frontiers-UrbClimInformatics/Analysis/Figures/zSlice/box/Tcan_AveVegHt08_absolute.png}
+f)\includegraphics[trim={0 18 25 20},clip,scale=0.20]{/home/kerryn/git/2020-07-Frontiers-UrbClimInformatics/Analysis/Figures/zSlice/box/Tcan_AveBldHt08_absolute.png}
+\end{figure} 
+\clearpage
+
+
+
+\begin{figure}
+\centering    
+a)\includegraphics[trim={0 18 25 20},clip,scale=0.20]{/home/kerryn/git/2020-07-Frontiers-UrbClimInformatics/Analysis/Figures/zSlice/box/Tmrt_Grass10Percent_absolute.png}
+b)\includegraphics[trim={0 18 25 20},clip,scale=0.20]{/home/kerryn/git/2020-07-Frontiers-UrbClimInformatics/Analysis/Figures/zSlice/box/Tmrt_Streets10Percent_absolute.png}\\
+c)\includegraphics[trim={0 18 25 20},clip,scale=0.20]{/home/kerryn/git/2020-07-Frontiers-UrbClimInformatics/Analysis/Figures/zSlice/box/Tmrt_Trees10Percent_absolute.png}
+d)\includegraphics[trim={0 18 25 20},clip,scale=0.20]{/home/kerryn/git/2020-07-Frontiers-UrbClimInformatics/Analysis/Figures/zSlice/box/Tmrt_Buildings10Percent_absolute.png}\\
+e)\includegraphics[trim={0 18 25 20},clip,scale=0.20]{/home/kerryn/git/2020-07-Frontiers-UrbClimInformatics/Analysis/Figures/zSlice/box/Tmrt_AveVegHt08_absolute.png}
+f)\includegraphics[trim={0 18 25 20},clip,scale=0.20]{/home/kerryn/git/2020-07-Frontiers-UrbClimInformatics/Analysis/Figures/zSlice/box/Tmrt_AveBldHt08_absolute.png}
+\end{figure} 
+\clearpage
+
+\begin{figure}
+\centering    
+a)\includegraphics[trim={0 18 25 20},clip,scale=0.20]{/home/kerryn/git/2020-07-Frontiers-UrbClimInformatics/Analysis/Figures/zSlice/box/Tsfc_Grass10Percent_absolute.png}
+b)\includegraphics[trim={0 18 25 20},clip,scale=0.20]{/home/kerryn/git/2020-07-Frontiers-UrbClimInformatics/Analysis/Figures/zSlice/box/Tsfc_Streets10Percent_absolute.png}\\
+c)\includegraphics[trim={0 18 25 20},clip,scale=0.20]{/home/kerryn/git/2020-07-Frontiers-UrbClimInformatics/Analysis/Figures/zSlice/box/Tsfc_Trees10Percent_absolute.png}
+d)\includegraphics[trim={0 18 25 20},clip,scale=0.20]{/home/kerryn/git/2020-07-Frontiers-UrbClimInformatics/Analysis/Figures/zSlice/box/Tsfc_Buildings10Percent_absolute.png}\\
+e)\includegraphics[trim={0 18 25 20},clip,scale=0.20]{/home/kerryn/git/2020-07-Frontiers-UrbClimInformatics/Analysis/Figures/zSlice/box/Tsfc_AveVegHt08_absolute.png}
+f)\includegraphics[trim={0 18 25 20},clip,scale=0.20]{/home/kerryn/git/2020-07-Frontiers-UrbClimInformatics/Analysis/Figures/zSlice/box/Tsfc_AveBldHt08_absolute.png}
+\end{figure} 
+\clearpage
+
+\begin{figure}
+\centering    
+a)\includegraphics[trim={0 18 25 20},clip,scale=0.20]{/home/kerryn/git/2020-07-Frontiers-UrbClimInformatics/Analysis/Figures/zSlice/box/Utci_Grass10Percent_absolute.png}
+b)\includegraphics[trim={0 18 25 20},clip,scale=0.20]{/home/kerryn/git/2020-07-Frontiers-UrbClimInformatics/Analysis/Figures/zSlice/box/Utci_Streets10Percent_absolute.png}\\
+c)\includegraphics[trim={0 18 25 20},clip,scale=0.20]{/home/kerryn/git/2020-07-Frontiers-UrbClimInformatics/Analysis/Figures/zSlice/box/Utci_Trees10Percent_absolute.png}
+d)\includegraphics[trim={0 18 25 20},clip,scale=0.20]{/home/kerryn/git/2020-07-Frontiers-UrbClimInformatics/Analysis/Figures/zSlice/box/Utci_Buildings10Percent_absolute.png}\\
+e)\includegraphics[trim={0 18 25 20},clip,scale=0.20]{/home/kerryn/git/2020-07-Frontiers-UrbClimInformatics/Analysis/Figures/zSlice/box/Utci_AveVegHt08_absolute.png}
+f)\includegraphics[trim={0 18 25 20},clip,scale=0.20]{/home/kerryn/git/2020-07-Frontiers-UrbClimInformatics/Analysis/Figures/zSlice/box/Utci_AveBldHt08_absolute.png}
+\end{figure} 
+\clearpage
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\begin{figure}
+\centering    
+a)\includegraphics[trim={0 18 25 20},clip,scale=0.20]{/home/kerryn/git/2020-07-Frontiers-UrbClimInformatics/Analysis/Figures/zSlice/box/Tcan_Grass10Percent_absolute2.png}
+b)\includegraphics[trim={0 18 25 20},clip,scale=0.20]{/home/kerryn/git/2020-07-Frontiers-UrbClimInformatics/Analysis/Figures/zSlice/box/Tcan_Streets10Percent_absolute2.png}\\
+c)\includegraphics[trim={0 18 25 20},clip,scale=0.20]{/home/kerryn/git/2020-07-Frontiers-UrbClimInformatics/Analysis/Figures/zSlice/box/Tcan_Trees10Percent_absolute2.png}
+d)\includegraphics[trim={0 18 25 20},clip,scale=0.20]{/home/kerryn/git/2020-07-Frontiers-UrbClimInformatics/Analysis/Figures/zSlice/box/Tcan_Buildings10Percent_absolute2.png}\\
+e)\includegraphics[trim={0 18 25 20},clip,scale=0.20]{/home/kerryn/git/2020-07-Frontiers-UrbClimInformatics/Analysis/Figures/zSlice/box/Tcan_AveVegHt08_absolute.png}
+f)\includegraphics[trim={0 18 25 20},clip,scale=0.20]{/home/kerryn/git/2020-07-Frontiers-UrbClimInformatics/Analysis/Figures/zSlice/box/Tcan_AveBldHt08_absolute.png}
+\end{figure} 
+\clearpage
+
+
+
+\begin{figure}
+\centering    
+a)\includegraphics[trim={0 18 25 20},clip,scale=0.20]{/home/kerryn/git/2020-07-Frontiers-UrbClimInformatics/Analysis/Figures/zSlice/box/Tmrt_Grass10Percent_absolute2.png}
+b)\includegraphics[trim={0 18 25 20},clip,scale=0.20]{/home/kerryn/git/2020-07-Frontiers-UrbClimInformatics/Analysis/Figures/zSlice/box/Tmrt_Streets10Percent_absolute2.png}\\
+c)\includegraphics[trim={0 18 25 20},clip,scale=0.20]{/home/kerryn/git/2020-07-Frontiers-UrbClimInformatics/Analysis/Figures/zSlice/box/Tmrt_Trees10Percent_absolute2.png}
+d)\includegraphics[trim={0 18 25 20},clip,scale=0.20]{/home/kerryn/git/2020-07-Frontiers-UrbClimInformatics/Analysis/Figures/zSlice/box/Tmrt_Buildings10Percent_absolute2.png}\\
+e)\includegraphics[trim={0 18 25 20},clip,scale=0.20]{/home/kerryn/git/2020-07-Frontiers-UrbClimInformatics/Analysis/Figures/zSlice/box/Tmrt_AveVegHt08_absolute.png}
+f)\includegraphics[trim={0 18 25 20},clip,scale=0.20]{/home/kerryn/git/2020-07-Frontiers-UrbClimInformatics/Analysis/Figures/zSlice/box/Tmrt_AveBldHt08_absolute.png}
+\end{figure} 
+\clearpage
+
+\begin{figure}
+\centering    
+a)\includegraphics[trim={0 18 25 20},clip,scale=0.20]{/home/kerryn/git/2020-07-Frontiers-UrbClimInformatics/Analysis/Figures/zSlice/box/Tsfc_Grass10Percent_absolute2.png}
+b)\includegraphics[trim={0 18 25 20},clip,scale=0.20]{/home/kerryn/git/2020-07-Frontiers-UrbClimInformatics/Analysis/Figures/zSlice/box/Tsfc_Streets10Percent_absolute2.png}\\
+c)\includegraphics[trim={0 18 25 20},clip,scale=0.20]{/home/kerryn/git/2020-07-Frontiers-UrbClimInformatics/Analysis/Figures/zSlice/box/Tsfc_Trees10Percent_absolute2.png}
+d)\includegraphics[trim={0 18 25 20},clip,scale=0.20]{/home/kerryn/git/2020-07-Frontiers-UrbClimInformatics/Analysis/Figures/zSlice/box/Tsfc_Buildings10Percent_absolute2.png}\\
+e)\includegraphics[trim={0 18 25 20},clip,scale=0.20]{/home/kerryn/git/2020-07-Frontiers-UrbClimInformatics/Analysis/Figures/zSlice/box/Tsfc_AveVegHt08_absolute.png}
+f)\includegraphics[trim={0 18 25 20},clip,scale=0.20]{/home/kerryn/git/2020-07-Frontiers-UrbClimInformatics/Analysis/Figures/zSlice/box/Tsfc_AveBldHt08_absolute.png}
+\end{figure} 
+\clearpage
+
+\begin{figure}
+\centering    
+a)\includegraphics[trim={0 18 25 20},clip,scale=0.20]{/home/kerryn/git/2020-07-Frontiers-UrbClimInformatics/Analysis/Figures/zSlice/box/Utci_Grass10Percent_absolute2.png}
+b)\includegraphics[trim={0 18 25 20},clip,scale=0.20]{/home/kerryn/git/2020-07-Frontiers-UrbClimInformatics/Analysis/Figures/zSlice/box/Utci_Streets10Percent_absolute2.png}\\
+c)\includegraphics[trim={0 18 25 20},clip,scale=0.20]{/home/kerryn/git/2020-07-Frontiers-UrbClimInformatics/Analysis/Figures/zSlice/box/Utci_Trees10Percent_absolute2.png}
+d)\includegraphics[trim={0 18 25 20},clip,scale=0.20]{/home/kerryn/git/2020-07-Frontiers-UrbClimInformatics/Analysis/Figures/zSlice/box/Utci_Buildings10Percent_absolute2.png}\\
+e)\includegraphics[trim={0 18 25 20},clip,scale=0.20]{/home/kerryn/git/2020-07-Frontiers-UrbClimInformatics/Analysis/Figures/zSlice/box/Utci_AveVegHt08_absolute.png}
+f)\includegraphics[trim={0 18 25 20},clip,scale=0.20]{/home/kerryn/git/2020-07-Frontiers-UrbClimInformatics/Analysis/Figures/zSlice/box/Utci_AveBldHt08_absolute.png}
+\end{figure} 
+\clearpage
+
+
+
+
+\begin{figure}
+\centering    
+a)\includegraphics[trim={150 70 210 128},clip,scale=0.40]{/home/kerryn/git/2020-07-Frontiers-UrbClimInformatics/Analysis/Figures/GISMap/Melbourne_grassFractions.png}
+b)\includegraphics[trim={150 70 210 128},clip,scale=0.40]{/home/kerryn/git/2020-07-Frontiers-UrbClimInformatics/Analysis/Figures/GISMap/Melbourne_treeFractions.png}
+c)\includegraphics[trim={150 70 210 128},clip,scale=0.40]{/home/kerryn/git/2020-07-Frontiers-UrbClimInformatics/Analysis/Figures/GISMap/Melbourne_bldFractions.png}
+d)\includegraphics[trim={150 70 210 128},clip,scale=0.40]{/home/kerryn/git/2020-07-Frontiers-UrbClimInformatics/Analysis/Figures/GISMap/Melbourne_streetFractions.png}
+\end{figure} 
+\clearpage
+
+
+\begin{figure}
+\centering    
+a)\includegraphics[trim={220 70 195 135},clip,scale=0.40]{/home/kerryn/git/2020-07-Frontiers-UrbClimInformatics/Analysis/Figures/GISMap/Sydney_grassFractions.png}
+b)\includegraphics[trim={220 70 195 135},clip,scale=0.40]{/home/kerryn/git/2020-07-Frontiers-UrbClimInformatics/Analysis/Figures/GISMap/Sydney_treeFractions.png}
+c)\includegraphics[trim={220 70 195 135},clip,scale=0.40]{/home/kerryn/git/2020-07-Frontiers-UrbClimInformatics/Analysis/Figures/GISMap/Sydney_bldFractions.png}
+d)\includegraphics[trim={220 70 195 135},clip,scale=0.40]{/home/kerryn/git/2020-07-Frontiers-UrbClimInformatics/Analysis/Figures/GISMap/Sydney_streetFractions.png}
+\end{figure} 
+\clearpage
+
+\begin{figure}
+\centering    
+a)\includegraphics[trim={130 60 292 123},clip,scale=0.40]{/home/kerryn/git/2020-07-Frontiers-UrbClimInformatics/Analysis/Figures/GISMap/Perth_grassFractions.png}
+b)\includegraphics[trim={130 60 292 123},clip,scale=0.40]{/home/kerryn/git/2020-07-Frontiers-UrbClimInformatics/Analysis/Figures/GISMap/Perth_treeFractions.png}
+c)\includegraphics[trim={130 60 292 123},clip,scale=0.40]{/home/kerryn/git/2020-07-Frontiers-UrbClimInformatics/Analysis/Figures/GISMap/Perth_bldFractions.png}
+d)\includegraphics[trim={130 60 292 123},clip,scale=0.40]{/home/kerryn/git/2020-07-Frontiers-UrbClimInformatics/Analysis/Figures/GISMap/Perth_streetFractions.png}
+\end{figure} 
+\clearpage
+
+
+
+%\begin{figure}
+%a)\includegraphics[trim={50 70 0 60},clip,scale=0.70]{/home/kerryn/git/2020-07-Frontiers-UrbClimInformatics/Analysis/Figures/GISMap/corr_melb_diff_12.png}
+%b)\includegraphics[trim={50 70 0 60},clip,scale=0.70]{/home/kerryn/git/2020-07-Frontiers-UrbClimInformatics/Analysis/Figures/GISMap/corr_syd_diff_12.png}
+%c)\includegraphics[trim={50 70 0 60},clip,scale=0.70]{/home/kerryn/git/2020-07-Frontiers-UrbClimInformatics/Analysis/Figures/GISMap/corr_perth_diff_12.png}
+%\end{figure} 
+%\clearpage
+
+\begin{figure} %page 22
+\includegraphics[trim={50 70 0 60},clip,scale=0.70]{/home/kerryn/git/2020-07-Frontiers-UrbClimInformatics/Analysis/Figures/GISMap/corr_melb_diff_12.png}
+\end{figure} 
+\clearpage
+
+\begin{figure} %page 23
+\includegraphics[trim={50 70 0 60},clip,scale=0.70]{/home/kerryn/git/2020-07-Frontiers-UrbClimInformatics/Analysis/Figures/GISMap/corr_syd_diff_12.png}
+\end{figure} 
+\clearpage
+
+\begin{figure} % page 24
+\includegraphics[trim={50 70 0 60},clip,scale=0.70]{/home/kerryn/git/2020-07-Frontiers-UrbClimInformatics/Analysis/Figures/GISMap/corr_perth_diff_12.png}
+\end{figure} 
+\clearpage
+
+
+\begin{figure} % page 25
+\includegraphics[trim={0 0 0 0},clip,scale=0.70]{/home/kerryn/git/2020-07-Frontiers-UrbClimInformatics/Analysis/Figures/GISMap/LST_Melb_27-12-2018_Hist.png}
+\end{figure} 
+\clearpage
+
+\begin{figure} % page 26
+\includegraphics[trim={0 0 0 0},clip,scale=0.70]{/home/kerryn/git/2020-07-Frontiers-UrbClimInformatics/Analysis/Figures/GISMap/LST_Melb_11-12-2018_hist.png}
+\end{figure} 
+\clearpage
+
+\begin{figure} % page 27
+\includegraphics[trim={0 0 0 0},clip,scale=0.70]{/home/kerryn/git/2020-07-Frontiers-UrbClimInformatics/Analysis/Figures/GISMap/LST_Sydney_19-01-2018_hist.png}
+\end{figure} 
+\clearpage
+
+\begin{figure} % page 28
+\includegraphics[trim={0 0 0 0},clip,scale=0.70]{/home/kerryn/git/2020-07-Frontiers-UrbClimInformatics/Analysis/Figures/GISMap/LST_Sydney_11-03-2019_hist.png}
+\end{figure} 
+\clearpage
+
+\begin{figure} % page 29
+\includegraphics[trim={0 0 0 0},clip,scale=0.70]{/home/kerryn/git/2020-07-Frontiers-UrbClimInformatics/Analysis/Figures/GISMap/LST_Perth_29-03-2019_hist.png}
+\end{figure} 
+\clearpage
+
+\begin{figure}  % page 30
+\includegraphics[trim={0 0 0 0},clip,scale=0.70]{/home/kerryn/git/2020-07-Frontiers-UrbClimInformatics/Analysis/Figures/GISMap/LST_Perth_25-02-2019_hist.png}
+\end{figure} 
+\clearpage
+
+\begin{figure} %page 31
+\includegraphics[trim={50 70 0 60},clip,scale=0.70]{/home/kerryn/git/2020-07-Frontiers-UrbClimInformatics/Analysis/Figures/GISMap/corr_melb_diff_14.png}
+\end{figure} 
+\clearpage
+
+\begin{figure} %page 32
+\includegraphics[trim={50 70 0 60},clip,scale=0.70]{/home/kerryn/git/2020-07-Frontiers-UrbClimInformatics/Analysis/Figures/GISMap/corr_syd_diff_14.png}
+\end{figure} 
+\clearpage
+
+\begin{figure} % page 33
+\includegraphics[trim={50 70 0 60},clip,scale=0.70]{/home/kerryn/git/2020-07-Frontiers-UrbClimInformatics/Analysis/Figures/GISMap/corr_perth_diff_14.png}
+\end{figure} 
+\clearpage
+
+\end{document}

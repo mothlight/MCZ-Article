@@ -118,56 +118,76 @@ urban heat
 
 
 \section{Introduction}
-TODO
-   
+Heat in urban areas is the most dangerous natural hazard in Australia \citep{Coates2014}, with these risks falling disproportionately on the elderly and the very young \citep{Nicholls2008}. Exposure to dangerous levels of heat stress is expected to increase by a factor of 5-10 by 2080 \citep{Coffel2018}, driven by more frequent, severe, and long-lasting heatwaves \citep{IPCC2013a}. The design of cities has exasperated these risks, resulting in increased heat stress for those who live in cities \citep{Coutts2012,Martilli2020}. This design has altered urban energy balances in a number of ways \citep{Oke1982}. Anthropogenic heat from buildings and transport and reduced shading through diminishing tree canopy cover result in larger amounts of net energy at street level. Meanwhile, the conversion of vegetated to impervious surfaces and reductions of available water in cities shift the urban energy balance away from latent heat (water evaporation) towards increased sensible heat (heat that can be felt) and heat storage in urban surfaces. 
 
-Local climate zones based on clustering areas
+Performing human thermal comfort modelling of urban areas has many challenges. To capture all the influences of urban geometry and materials on human thermal comfort, especially the influences on mean radiant temperature \citep{Kantor2011} (a temperature that accounts for the thermal stresses on a person from both solar exposure and energy/heat radiating from nearby surfaces), modelling needs to be done at a micro-scale (that is, at a grid square or pixel resolution under 1km) and should account for the influence of vegetation and water features.
 
-Micro climate zones, based on clustering based on outcomes.
+Designing mitigation strategies requires both an understanding of the processes driving excess heat (especially at a micro-climate level) and methods to identify areas of high risk in need of interventions. More importantly, being able to incorporate this knowledge into planning of future development means that new built areas can be designed as climate sensitive before the built form is locked in for decades to come. 
+
+
+
+
+Urban heat is a problem.
+
+Urban heat mitigations strategies require an understanding of the drivers.
+
+Land cover and morphology drives the micro-climates.
+  Land cover of hard impervious surfaces, vegetated surfaces, buildings. And heights of vegetation and buildings.
+  
+Local climate zones gather ranges of land cover and heights and other things and have been used to predict temperature outcomes.
+
+Observations of all types are limited.
+
+Urban morphology databases to provide detailed data allows assessments.
+
+Modelling tools to model the impacts of different urban arrangements.
+
+Can you predict outcomes just based on parameters?
+
+Can you remove weather and just look at the impacts of urban form?
+
+Dependence on satellite LST can be misleading. \citep{Coutts2016d}
+Help identify hot spots
+
+Small scale building up to large scale.
+
+Finally can make recommendations on urban design. What are the most important factors and how do they change across parameter ranges.
+
+
+%Strategies, especially those that utilise blue-green infrastructure (BGI)\cite{Norton2015,Bowler2010,Gunawardena2017,Newton2020} such as increased vegetation cover, water features, and water practices (rain gardens, misting systems, or pavement watering), are available to mitigate heat. These strategies are ideally considered during the planning of future development, before these decisions are hardened into the built form for decades to come. Benefits can also be realised by an analysis of existing areas to find problem areas and incorporating BGI through remedial redesign. Both cases are best addressed using modelling tools, but as will be detailed below, these tools are currently insufficient for this task. \textbf{This leads to two project aims. The first is to improve existing models so that they are suitable to model a full range of BGI features and their human thermal comfort benefits. The second is to integrate these models into an accessible platform to simplify the analysis and use of modelled results. This project will provide high value tools to a wide range of users including urban planners and policy makers, enabling them to analyse and redesign urban areas to maximise the cooling benefits of BGI, something that has long been out of their reach.}
+
+
+%Performing human thermal comfort modelling of urban areas has many challenges. To capture all the influences of urban geometry and materials on human thermal comfort, especially the influences on mean radiant temperature\cite{Kantor2011} (a temperature that accounts for the thermal stresses on a person from both solar exposure and energy/heat radiating from nearby surfaces), modelling needs to be done at a micro-scale (that is, at a grid square or pixel resolution under 1km) and should account for the influence of vegetation and water features. However, while there are many urban models, there are few modelling options available at an appropriate scale and especially models that account for all the elements of vegetation impacts and urban hydrology or that can explicitly calculate parameters needed to calculate human thermal comfort. Some of the available urban models include ENVI-met\cite{Bruse1999}, VTUF-3D\cite{Nice2018a}, SOLWEIG/UMEP\cite{Lindberg2018}, PALM\cite{Dominik2019}, canyon air temperature (CAT)\cite{Erell2006}, and OTC3D\cite{Nazarian2018}. Other models offer lower resolution local-scaled (grid resolution greater than 1km) modelling (TARGET\cite{Broadbent2019c} and SURFEX\cite{Masson2013}) or of a single point averaged across an entire (often idealised) urban canyon (TEB\cite{Masson2002a},  TEB-Veg and TEB-Tree\cite{Lemonsu2012,Redon2020}, RayMan\cite{Matzarakis2010}/SkyHelios\cite{Matzarakis2011}, and Urban Tethys-Chloris (UT\&C)\cite{Meili2020}). Some of these models (e.g. ENVI-met, PALM) are highly spatially explicit at the cost of high computational burden (and in the case of ENVI-met high licensing costs), or high levels of configuration and software expertise (e.g. SURFEX requires modification and compilation of FORTRAN code). Others (e.g. UT\&C) rely on simplified parameterisations and an idealised representation of vegetation and urban canyons for producing a detailed time series of the energy balance at the local scale. 
+
+
+
+
+
 
 \section{Methods}\label{sec:methods}
 
 \subsection{Scenario generation}\label{sec:methodsgen}
-This study starts with Geoscape \citep{Geoscape2020} data from Public Sector Mapping Agency (PSMA) Australia. Geoscape provides 2 meter resolution land cover (road, building, grass, bare earth, etc) as well as building and tree footprints and heights (figure \ref{fig:geoscape}). Using this dataset for Melbourne, representative ranges were found for surface covers and tree and building heights and footprints. From these, 9814 model domains were created with all iterations (by 5\% increments) of fractions of trees, grass, buildings and streets, as well as average building heights (from 0 to 49 meters) and vegetation heights (from 0 to 20 meters in 0.5m increments) (figure \ref{fig:scenarios}). Domains were created of 100$\times$100m with 5m resolution grids.
+Geoscape \citep{Geoscape2020}, data from Public Sector Mapping Agency (PSMA) Australia, provides 2 meter resolution land cover (road, building, grass, bare earth, etc) as well as building and tree footprints and heights. Representative ranges of surface covers and tree and building heights and footprints were calculated for Melbourne. From these, 9814 model domains were created with all iterations (by 5\% increments) of fractions of trees, grass, buildings and streets, as well as heights of buildings (from 0 to 49 meters) and vegetation (from 0 to 20 meters in 0.5m increments) (figure \ref{fig:scenarios}). These domains were created of 100$\times$100m with 5m resolution grids. Additionally, surface fractions and average building and vegetation heights were calculated for 100$\times$100m locations across Melbourne, Sydney, Adelaide, Brisbane, and Perth.
 
-
-
-\begin{figure*}
-\centering
-\includegraphics[page=2,trim={70 345 60 360},clip,scale=0.65]{Figures/Figures.pdf}
-\caption{\bf 2m surface cover (bare earth, roads, grass, trees, water, and buildings), building footprints and heights, and tree cover locations and heights from Geoscape for Melbourne.}
- \label{fig:geoscape}
-\end{figure*} 
-
-\begin{figure*}
-\centering
-\includegraphics[page=3,trim={55 240 60 240},clip,scale=0.65]{Figures/PresentationImages.pdf}
-\caption{\bf Melbourne, parameter ranges.}
-\end{figure*} 
 
 \begin{figure*}
 \centering
 \includegraphics[page=1,trim={70 380 60 390},clip,scale=0.65]{Figures/Figures.pdf}
-\caption{\bf Melbourne, creation of VTUF-3D scenarios for 9814 variations of parameters.}
+\caption{\bf Creation of VTUF-3D scenarios for 9814 variations of parameters across representative ranges in Melbourne.}
  \label{fig:scenarios}
 \end{figure*} 
 
 
 
-
-
-
 \subsection{VTUF-3D}\label{sec:methodsvtuf}
-VTUF-3D \citep{Nice2018a} was used as the micro-climate modelling tool for this study. VTUF-3D is a urban micro-climate surface energy balance model that incorporates vegetation physiological processes and shading effects. The model provides output of canyon averaged air temperature ($T_{can}$) as well as 5m resolution values for each surface of surface temperature ($T_{surf}$), mean radiant temperature ($T_{mrt}$), and universal thermal climate index ($UTCI$) (figure \ref{fig:vtufresults}). Each model run was forced by the observations of Preston in Melbourne from \cite{Coutts2007} over the days February 9-13, 2004. 
-
-TODO, will also add additional runs, Feb 14 reaches 36C and will have heat wave data.
+VTUF-3D \citep{Nice2018a} was used as the micro-climate modelling tool for this study. VTUF-3D is a urban micro-climate surface energy balance model that incorporates vegetation physiological processes and shading effects. The model provides output of canyon averaged air temperature ($T_{can}$) as well as 5m resolution values for each surface of surface temperature ($T_{surf}$), mean radiant temperature ($T_{mrt}$), and universal thermal climate index ($UTCI$) (figure \ref{fig:vtufresults}). Each model run was forced by the observations of Preston in Melbourne from \cite{Coutts2007} over the days February 9-13, 2004. Additional scenario runs were performed for February 13-16 2004 using the same forcing data source. As temperatures reached 36\SI{}{\degreeCelsius} on February 14th, these will provide extreme heat days.
 
 An analysis time was used of  4 pm of February 12th. The current forcing conditions at that point were downward shortwave (\gls{kdown}) of 501.7$Wm^{-2}$, downward longwave (\gls{ldown}) of 365.1$Wm^{-2}$, air temperature of 25.9\SI{}{\degreeCelsius}, vapour pressure of 1.16 $mb$, wind at 173$^{\circ}$ of 5.4 $ms^{-1}$ and air pressure of 995.5$mb$. Energy balance parameters for net radiation (\gls{qstar}), sensible fluxes (\gls{qh}), ground flux (\gls{qg}), and latent heat (\gls{qe}) were also extracted, as well as shortwave and longwave up (\gls{kup} and \gls{lup}) (all in $Wm^{-2}$) and canyon wind speed ($U_{road}$) (in $ms^{-1}$).
 
 \begin{figure*}
 \centering
-\includegraphics[page=2,trim={75 240 60 240},clip,scale=0.55]{Figures/PresentationImages.pdf}
-\caption{\bf Melbourne, VTUF-3D results.}
+\includegraphics[page=2,trim={75 240 60 240},clip,scale=0.40]{Figures/PresentationImages.pdf}
+\caption{\bf Example VTUF-3D results of UTCI at ground surface levels for a Melbourne scenario.}
  \label{fig:vtufresults}
 \end{figure*} 
 
@@ -180,7 +200,7 @@ An analysis time was used of  4 pm of February 12th. The current forcing conditi
 % - All runs are combined into single data file for each timestep
 %     contains temperatures and energy fluxes
 
-Domain mean values at ground surface level were calculated from the results from each scenario for for the parameters of $T_{can}$, $T_{surf}$, $T_{mrt}$, and $UTCI$ (all in $^{\circ}$C). 
+Domain mean values at ground surface level were calculated from the results from each scenario for the parameters of $T_{can}$, $T_{surf}$, $T_{mrt}$, and $UTCI$ (all in $^{\circ}$C). 
 
 Results from the 9814 completed model runs were extracted for each hourly timestep including the values for \gls{tsfc}, \gls{tmrt}, and \gls{utci} at ground level. VTUF-3D generates a single canyon averaged air temperature (\gls{tcan}). Additionally, domain averaged energy flux values were extracted, including latent fluxes (\gls{qe}), sensible fluxes (\gls{qh}), net radiation (\gls{qstar}), ground fluxes (\gls{qg}), shortwave up (\gls{kup}), shortwave down (\gls{kdown}), longwave up (\gls{lup}), and longwave down (\gls{ldown}). Hourly results were combined and indexed by their unique parameter ranges.
 
@@ -188,6 +208,8 @@ Results from the 9814 completed model runs were extracted for each hourly timest
 %
 % Feature importance
 % /media/kerryn/87d9469d-56aa-4a1f-a62d-5f03d7599bbf/Data/VTUF-3D/Output/FeatureImportance/rf_all_runszslice.py
+% also rf_all_runszslicemcz4.py (for heatwave)
+% plotted with plot_daily_feature_imp.R
 % feature_imporantance from RandomForestClassifier was used from scikit-learn \citep{scikit-learn}
 % determine feature importance for paramaters of percentages of grass, trees, buildings, and roads, as well as average vegetation and building heights for Tair, Tsfc, Tmrt, and UTCI.
 
@@ -196,18 +218,26 @@ A feature importance analysis was performed using the Random Forest Classifier f
 
 \subsection{Temperature trends due to surface fractions and average heights}\label{sec:methodstempvspercent}
 
-% 
+% cd /home/kerryn/git/2020-07-Frontiers-UrbClimInformatics/Analysis/Figures
 % box_montage_reverse_zslice.sh
 % plot_box_unclustered_tempRangeszSlice.py -> plot_box_reverse_6zSlice.py
+% for heatwave:
+%  box_montage_reverse_mcz4.sh
+%      plot_box_unclustered_tempRangesMCZ4.py -> plot_box_reverse_6MCZ4.py
 % matplotlib used to plot hourly results for all scenarios for 4 temperature types
 %  box plots made of temperatures vs percentages (by 10 %) of surfaces (tree, grass, building, road) and ave heights (by 0.4m) of vegetation and buildings
 %  background colors of each plot were tinted by levels of feature importance.
-% then r2_boxplots.py
-% R2 calculated for each parameter over dinual cycle and plotted against the other parameters
-% Nope, didn't use R2. This is the replacement:
-% plot_box_reverse_zslice_per_10percent.py
-% plot_box_10percent_r2_replacement.py
+     % then r2_boxplots.py
+     % R2 calculated for each parameter over dinual cycle and plotted against the other parameters
+     % Nope, didn't use R2. This is the replacement:
+% plot_box_reverse_zslice_per_10percent.py (called from 'bash ten_percent_fraction_plots.sh')
+%     heatwave plot_box_reverse_zslice_per_10percentMCZ4.py (called from 'bash ten_percent_fraction_plotsMCZ4.sh')
+% plot_box_10percent_r2_replacement.py (to generate the data file)
 % plot_10percent_increases_cycle.R
+% switch to absolute values instead of increases
+% plot_box_absolute_10percent_r2_replacement.py
+% plot_10percent_absolute_cycle.R
+%
 %  plot box per 10 % used pandas describe and groupby to find the mean temperature increases per 10 % fraction increases or 0.8m height increases.
 %    These were plotted at a few specific times comparing temperature increases vs surface fractions.
 %  To replace R2, a full day's data was split into panels for each surface type and the differences plotted individually for each 10 % increment.
@@ -238,8 +268,9 @@ A number of scenarios were selected that represented frequent urban morphologies
 %  resulting heat maps of Ta, Tsfc, Tmrt, and UTCI were visualised in QGIS.
 %  Tsfc results were compared to CSIRO LST maps generated by \citep{Devereux2017} and visialised in QGIS.
 %  In addition, model results were matched to locations in Sydney, Perth, Brisbane, and Adelaide to generate heatmaps
-%
-%  
+%  Correlations between differences and surface fractions 
+%  /home/kerryn/git/2020-07-Frontiers-UrbClimInformatics/Analysis/Figures/GISMap
+%  correlations.R
 
 City-wide heat maps of \gls{tcan}, \gls{tsfc}, \gls{tmrt}, and \gls{utci} were generated from the 9814 modelled scenario results. Each model run was forced by the observations of Preston in Melbourne from \cite{Coutts2007} over the days February 9-14, 2004. The actual urban morphology parameters calculated from the Geoscape data were matched to the modelled scenario with the closest matching parameters of surface fractions and average heights for each 100$\times$100m location in Melbourne and visualized in QGIS \citep{QGIS2009}. Locations with greater than 10\% surface fraction of water were removed from the results as VTUF-3D does not currently model water bodies.
 
@@ -306,21 +337,21 @@ These resulting heatmaps show a city-wide assessment of thermal performance due 
 \centering
 \includegraphics[page=37,trim={55 275 50 295},clip,scale=0.75]{Figures/Figures3.pdf}
 \caption{\bf Feature importance in \gls{tmrt} for the four surface fractions of streets, buildings, trees, and grass and the two average heights of vegetation and buildings across 11-12 February 2004. }
- \label{fig:featimpttcan}
+ \label{fig:featimpttmrt}
 \end{figure*}
 
 \begin{figure*}
 \centering
 \includegraphics[page=38,trim={55 275 50 295},clip,scale=0.75]{Figures/Figures3.pdf}
 \caption{\bf Feature importance in \gls{tsfc} for the four surface fractions of streets, buildings, trees, and grass and the two average heights of vegetation and buildings across 11-12 February 2004. }
- \label{fig:featimpttcan}
+ \label{fig:featimpttsfc}
 \end{figure*}
 
 \begin{figure*}
 \centering
 \includegraphics[page=39,trim={55 275 50 295},clip,scale=0.75]{Figures/Figures3.pdf}
 \caption{\bf Feature importance in \gls{utci} for the four surface fractions of streets, buildings, trees, and grass and the two average heights of vegetation and buildings across 11-12 February 2004. }
- \label{fig:featimpttcan}
+ \label{fig:featimptutci}
 \end{figure*}
 
 %\begin{figure*}
@@ -334,22 +365,48 @@ These resulting heatmaps show a city-wide assessment of thermal performance due 
 %\end{figure*}
 
 
-
-
-
 \begin{figure*}
 \centering
-\includegraphics[page=12,trim={68 255 67 255},clip,scale=0.95]{Figures/Figures3.pdf}
-\caption{\bf Differences in temperatures of a) \gls{tcan}, b) \gls{tsfc}, c) \gls{tmrt}, and d) \gls{utci} as surface fractions increase by 10\% (top panes) or average heights increase by 0.8m (bottom panes) at 2pm on 12 February 2004. Positive values indicate that temperatures increase as the surface fraction or average height increases.}
- \label{fig:diff2pm}
+\includegraphics[page=15,trim={92 245 92 245},clip,scale=0.95]{Figures/Figures4.pdf}
+\caption{\bf \gls{tcan} as surface fractions of a) grass, b) streets, c) trees, and d) buildings increase by 10\% and e) average vegetation and f) average building heights increase by 0.8m over a diurnal cycle of 14 February 2004. Positive values indicate that temperatures increase as the surface fraction or average height increases. }
+ \label{fig:tcanday}
 \end{figure*}
 
 \begin{figure*}
 \centering
-\includegraphics[page=13,trim={68 255 67 255},clip,scale=0.95]{Figures/Figures3.pdf}
-\caption{\bf Differences in temperatures of a) \gls{tcan}, b) \gls{tsfc}, c) \gls{tmrt}, and d) \gls{utci} as surface fractions increase by 10\% (top panes) or average heights increase by 0.8m (bottom panes) at 4am on 12 February 2004. Positive values indicate that temperatures increase as the surface fraction or average height increases.}
- \label{fig:diff4am}
+\includegraphics[page=16,trim={92 245 92 245},clip,scale=0.95]{Figures/Figures4.pdf}
+\caption{\bf \gls{tmrt} as surface fractions of a) grass, b) streets, c) trees, and d) buildings increase by 10\% and e) average vegetation and f) average building heights increase by 0.8m over a diurnal cycle of 14 February 2004. Positive values indicate that temperatures increase as the surface fraction or average height increases. }
+ \label{fig:tmrtday}
 \end{figure*}
+
+\begin{figure*}
+\centering
+\includegraphics[page=17,trim={92 245 92 245},clip,scale=0.95]{Figures/Figures4.pdf}
+\caption{\bf \gls{tsfc} as surface fractions of a) grass, b) streets, c) trees, and d) buildings increase by 10\% and e) average vegetation and f) average building heights increase by 0.8m over a diurnal cycle of 14 February 2004. Positive values indicate that temperatures increase as the surface fraction or average height increases. }
+ \label{fig:tsfcday}
+\end{figure*}
+
+\begin{figure*}
+\centering
+\includegraphics[page=18,trim={92 245 92 245},clip,scale=0.95]{Figures/Figures4.pdf}
+\caption{\bf \gls{utci} as surface fractions of a) grass, b) streets, c) trees, and d) buildings increase by 10\% and e) average vegetation and f) average building heights increase by 0.8m over a diurnal cycle of 14 February 2004. Positive values indicate that temperatures increase as the surface fraction or average height increases. }
+ \label{fig:utciday}
+\end{figure*}
+
+
+%\begin{figure*}
+%\centering
+%\includegraphics[page=12,trim={68 255 67 255},clip,scale=0.95]{Figures/Figures3.pdf}
+%\caption{\bf Differences in temperatures of a) \gls{tcan}, b) \gls{tsfc}, c) \gls{tmrt}, and d) \gls{utci} as surface fractions increase by 10\% (top panes) or average heights increase by 0.8m (bottom panes) at 2pm on 12 February 2004. Positive values indicate that temperatures increase as the surface fraction or average height increases.}
+% \label{fig:diff2pm}
+%\end{figure*}
+%
+%\begin{figure*}
+%\centering
+%\includegraphics[page=13,trim={68 255 67 255},clip,scale=0.95]{Figures/Figures3.pdf}
+%\caption{\bf Differences in temperatures of a) \gls{tcan}, b) \gls{tsfc}, c) \gls{tmrt}, and d) \gls{utci} as surface fractions increase by 10\% (top panes) or average heights increase by 0.8m (bottom panes) at 4am on 12 February 2004. Positive values indicate that temperatures increase as the surface fraction or average height increases.}
+% \label{fig:diff4am}
+%\end{figure*}
 
 
 \begin{figure*}
@@ -439,6 +496,13 @@ These resulting heatmaps show a city-wide assessment of thermal performance due 
 
 \begin{figure*}
 \centering
+\includegraphics[page=19,trim={92 245 92 245},clip,scale=0.95]{Figures/Figures4.pdf}
+\caption{\bf Surface fractions of a) grass, b) trees, c) buildings, and d) streets across Melbourne.}
+ \label{fig:melfracs}
+\end{figure*}
+
+\begin{figure*}
+\centering
 a)\includegraphics[page=14,trim={155 270 147 328},clip,scale=0.75]{Figures/Figures2.pdf}
 b)\includegraphics[page=15,trim={155 270 141 328},clip,scale=0.75]{Figures/Figures2.pdf}
 \caption{\bf a) Air temperature and b) surface temperature heatmaps on February 12, 2004 at 2pm generated by matching the closest matching parameters of surface fractions and average heights for each 100$\times$100m location in Melbourne from 9814 modelled scenario results.  }
@@ -477,15 +541,36 @@ b)\includegraphics[page=15,trim={155 270 141 328},clip,scale=0.75]{Figures/Figur
 %\end{figure*}
 
 
+
 \begin{figure*}
 \centering
 %a)\includegraphics[page=15,trim={155 270 141 328},clip,scale=0.75]{Figures/Figures2.pdf}
 a)\includegraphics[page=14,trim={220 255 75 315},clip,scale=0.70]{Figures/Figures3.pdf}
 b)\includegraphics[page=20,trim={180 255 95 315},clip,scale=0.70]{Figures/Figures3.pdf}\\
-c)\includegraphics[page=26,trim={94 328 100 338},clip,scale=0.60]{Figures/Figures3.pdf}
-\caption{\bf a) Landsat8 land surface temperature in degrees kelvin captured 10am 11 December 2018. Local conditions of air temperature on this day were minimum and maximum of 22 and 26\SI{}{\degreeCelsius}. b) Differences in surface temperatures (modelled \gls{tsfc} minus observed LANDSAT8 LST) on February 12, 2004 at 10am generated by matching the closest matching parameters of surface fractions and average heights for each 100$\times$100m location in Melbourne from 9814 modelled scenario results. c) Histograms of temperature distributions of (left) modelled \gls{tsfc} and (right) observed LANDSAT8 LST on February 12, 2004 at 10am. }
- \label{fig:TsfcDiffMelb}
+%c)\includegraphics[page=26,trim={94 328 100 338},clip,scale=0.60]{Figures/Figures3.pdf}
+c)\includegraphics[page=26,trim={94 328 295 338},clip,scale=0.60]{Figures/Figures3.pdf}
+d)\includegraphics[page=26,trim={59 353 380 345},clip,scale=0.70]{Figures/Figures4.pdf}
+e)\includegraphics[page=22,trim={43 325 470 325},clip,scale=0.60]{Figures/Figures4.pdf}
+\caption{\bf a) Landsat 8 land surface temperature in degrees kelvin captured 10am December 11, 2018. Local conditions of air temperature on this day were minimum and maximum of 22 and 26\SI{}{\degreeCelsius}. b) Differences in surface temperatures (modelled \gls{tsfc} minus observed Landsat 8 LST) on February 12, 2004 at 10am generated by matching the closest matching parameters of surface fractions and average heights for each 100$\times$100m location in Melbourne from 9814 modelled scenario results. Histograms of temperature distributions of c) modelled \gls{tsfc} (February 12, 2004 at 10am) and d) observed Landsat 8 LST (December 11, 2018 at 10am). e) Correlations between surface fraction amounts and differences in temperatures (as shown in b).}
+ \label{fig:Melb_TSFC12_85}
 \end{figure*}
+
+
+\begin{figure*}
+\centering
+%a)\includegraphics[page=15,trim={155 270 141 328},clip,scale=0.75]{Figures/Figures2.pdf}
+a)\includegraphics[page=15,trim={220 255 75 315},clip,scale=0.70]{Figures/Figures3.pdf}
+b)\includegraphics[page=21,trim={180 255 95 315},clip,scale=0.70]{Figures/Figures3.pdf}\\
+%c)\includegraphics[page=26,trim={94 328 100 338},clip,scale=0.60]{Figures/Figures3.pdf}
+c)\includegraphics[page=27,trim={94 328 295 338},clip,scale=0.60]{Figures/Figures3.pdf}
+d)\includegraphics[page=25,trim={59 353 380 345},clip,scale=0.70]{Figures/Figures4.pdf}
+e)\includegraphics[page=31,trim={43 325 470 325},clip,scale=0.60]{Figures/Figures4.pdf}
+\caption{\bf a) Landsat 8 land surface temperature in degrees kelvin captured 10am December 27, 2018. Local conditions of air temperature on this day were minimum and maximum of 15 and 39\SI{}{\degreeCelsius}. b) Differences in surface temperatures (modelled \gls{tsfc} minus observed Landsat 8 LST) on February 14, 2004 at 10am generated by matching the closest matching parameters of surface fractions and average heights for each 100$\times$100m location in Melbourne from 9814 modelled scenario results. Histograms of temperature distributions of c) modelled \gls{tsfc} (February 12, 2004 at 10am) and d) observed Landsat 8 LST (December 27, 2018 at 10am). e) Correlations between surface fraction amounts and differences in temperatures (as shown in b).}
+ \label{fig:Melb_TSFC14_85}
+\end{figure*}
+
+
+
 
 %%15 Melbourne-Landsat-LST-27-12-2018  % //  27/12/2018	15	39
 %\begin{figure*}  
@@ -543,7 +628,12 @@ b)\includegraphics[page=18,trim={155 255 147 328},clip,scale=0.75]{Figures/Figur
 \end{figure*}
 
 
-
+\begin{figure*}
+\centering
+\includegraphics[page=20,trim={92 245 92 245},clip,scale=0.95]{Figures/Figures4.pdf}
+\caption{\bf Surface fractions of a) grass, b) trees, c) buildings, and d) streets across Sydney.}
+ \label{fig:sydfracs}
+\end{figure*}
 
 \begin{figure*}
 \centering
@@ -574,14 +664,18 @@ b)\includegraphics[page=20,trim={200 300 170 350},clip,scale=1.0]{Figures/Figure
 %\end{figure*}
 
 
+
 %16 Sydney-Landsat-LST-11-03-2019  %//  11/03/2019	22	26
 \begin{figure*} 
 \centering
 %a)\includegraphics[page=20,trim={200 300 170 350},clip,scale=0.75]{Figures/Figures2.pdf}
 a)\includegraphics[page=16,trim={210 265 115 315},clip,scale=0.75]{Figures/Figures3.pdf}
 b)\includegraphics[page=22,trim={210 265 110 315},clip,scale=0.75]{Figures/Figures3.pdf}\\
-c)\includegraphics[page=28,trim={94 328 100 338},clip,scale=0.60]{Figures/Figures3.pdf}
-\caption{\bf b) Landsat8 land surface temperature in degrees kelvin captured 10am 11 December 2018. Local conditions of air temperature on this day were minimum and maximum of 22 and 26\SI{}{\degreeCelsius}. c) Differences in surface temperatures (modelled \gls{tsfc} minus observed LANDSAT8 LST) on February 12, 2004 at 10am generated by matching the closest matching parameters of surface fractions and average heights for each 100$\times$100m location in Sydney from 9814 modelled scenario results. d) Histograms of temperature distributions of (left) modelled \gls{tsfc} and (right) observed LANDSAT8 LST on February 12, 2004 at 10am. }
+%c)\includegraphics[page=28,trim={94 328 100 338},clip,scale=0.60]{Figures/Figures3.pdf}
+c)\includegraphics[page=28,trim={94 328 295 338},clip,scale=0.60]{Figures/Figures3.pdf}
+d)\includegraphics[page=28,trim={59 353 380 345},clip,scale=0.70]{Figures/Figures4.pdf}
+e)\includegraphics[page=23,trim={43 325 470 325},clip,scale=0.60]{Figures/Figures4.pdf}
+\caption{\bf b) Landsat 8 land surface temperature in degrees kelvin captured 10am March 11, 2019. Local conditions of air temperature on this day were minimum and maximum of 22 and 26\SI{}{\degreeCelsius}. c) Differences in surface temperatures (modelled \gls{tsfc} minus observed Landsat 8 LST) on February 12, 2004 at 10am generated by matching the closest matching parameters of surface fractions and average heights for each 100$\times$100m location in Sydney from 9814 modelled scenario results. Histograms of temperature distributions of c) modelled \gls{tsfc} (February 12, 2004 at 10am) and d) observed Landsat 8 LST (March 11, 2019 at 10am). e) Correlations between surface fraction amounts and differences in temperatures (as shown in b). }
 %\caption{\bf  Sydney-Landsat-LST-11-03-2019    11/03/2019	22	26}
  \label{fig:Sydney-Landsat-LST-11-03-2019}
 %\end{figure*}
@@ -620,10 +714,13 @@ c)\includegraphics[page=28,trim={94 328 100 338},clip,scale=0.60]{Figures/Figure
 %17 Sydney-Landsat-LST-19-01-2018  %//  19/01/2018	18	31
 \begin{figure*}  
 \centering
-\includegraphics[page=17,trim={200 265 115 315},clip,scale=0.75]{Figures/Figures3.pdf}
-\includegraphics[page=23,trim={200 265 115 315},clip,scale=0.75]{Figures/Figures3.pdf}
-\includegraphics[page=29,trim={94 328 100 338},clip,scale=0.60]{Figures/Figures3.pdf}
-\caption{\bf a) Landsat8 land surface temperature in degrees kelvin captured 10am 19 January 2018. Local conditions of air temperature on this day were minimum and maximum of 18 and 31\SI{}{\degreeCelsius}. b) Differences in surface temperatures (modelled \gls{tsfc} minus observed LANDSAT8 LST) on February 12, 2004 at 10am generated by matching the closest matching parameters of surface fractions and average heights for each 100$\times$100m location in Sydney from 9814 modelled scenario results. c) Histograms of temperature distributions of (left) modelled \gls{tsfc} and (right) observed LANDSAT8 LST on February 12, 2004 at 10am. }
+a)\includegraphics[page=17,trim={200 265 115 315},clip,scale=0.75]{Figures/Figures3.pdf}
+b)\includegraphics[page=23,trim={200 265 115 315},clip,scale=0.75]{Figures/Figures3.pdf}\\
+%c)\includegraphics[page=29,trim={94 328 100 338},clip,scale=0.60]{Figures/Figures3.pdf}
+c)\includegraphics[page=29,trim={94 328 295 338},clip,scale=0.60]{Figures/Figures3.pdf}
+d)\includegraphics[page=27,trim={59 353 380 345},clip,scale=0.70]{Figures/Figures4.pdf}
+e)\includegraphics[page=23,trim={43 325 470 325},clip,scale=0.60]{Figures/Figures4.pdf}
+\caption{\bf a) Landsat 8 land surface temperature in degrees kelvin captured 10am 19 January 2018. Local conditions of air temperature on this day were minimum and maximum of 18 and 31\SI{}{\degreeCelsius}. b) Differences in surface temperatures (modelled \gls{tsfc} minus observed Landsat 8 LST) on February 12, 2004 at 10am generated by matching the closest matching parameters of surface fractions and average heights for each 100$\times$100m location in Sydney from 9814 modelled scenario results. Histograms of temperature distributions of c) modelled \gls{tsfc} (February 14, 2004 at 10am) and d) observed Landsat 8 LST (January 19, 2018 at 10am). e) Correlations between surface fraction amounts and differences in temperatures (as shown in b).}
 %\caption{\bf  Sydney-Landsat-LST-19-01-2018    19/01/2018	18	31}
  \label{fig:Sydney-Landsat-LST-19-01-2018}
 %\end{figure*}
@@ -652,7 +749,12 @@ b)\includegraphics[page=23,trim={200 300 170 350},clip,scale=0.95]{Figures/Figur
 \end{figure*}
 
 
-
+\begin{figure*}
+\centering
+\includegraphics[page=21,trim={92 245 92 245},clip,scale=0.95]{Figures/Figures4.pdf}
+\caption{\bf Surface fractions of a) grass, b) trees, c) buildings, and d) streets across Perth.}
+ \label{fig:pertfracs}
+\end{figure*}
 
 
 \begin{figure*}
@@ -689,11 +791,14 @@ b)\includegraphics[page=25,trim={200 300 180 350},clip,scale=1.0]{Figures/Figure
 %18 Perth-Landsat-LST-29-03-2019  % //  29/03/2019	13	27
 \begin{figure*}  
 \centering
-\includegraphics[page=18,trim={220 260 137 321},clip,scale=0.75]{Figures/Figures3.pdf}
-\includegraphics[page=24,trim={170 260 137 321},clip,scale=0.75]{Figures/Figures3.pdf}
-\includegraphics[page=30,trim={94 328 100 338},clip,scale=0.60]{Figures/Figures3.pdf}
+a)\includegraphics[page=18,trim={220 260 137 321},clip,scale=0.75]{Figures/Figures3.pdf}
+b)\includegraphics[page=24,trim={170 260 137 321},clip,scale=0.75]{Figures/Figures3.pdf}
+%c)\includegraphics[page=30,trim={94 328 100 338},clip,scale=0.60]{Figures/Figures3.pdf}
+c)\includegraphics[page=30,trim={94 328 295 338},clip,scale=0.60]{Figures/Figures3.pdf}
+d)\includegraphics[page=29,trim={59 353 380 345},clip,scale=0.70]{Figures/Figures4.pdf}
+e)\includegraphics[page=24,trim={43 325 470 325},clip,scale=0.60]{Figures/Figures4.pdf}
 %\caption{\bf Perth-Landsat-LST-29-03-2019  29/03/2019	13	27}
-\caption{\bf a) Landsat8 land surface temperature in degrees kelvin captured 10am 29 March 2019. Local conditions of air temperature on this day were minimum and maximum of 13 and 27\SI{}{\degreeCelsius}. b) Differences in surface temperatures (modelled \gls{tsfc} minus observed LANDSAT8 LST) on February 12, 2004 at 10am generated by matching the closest matching parameters of surface fractions and average heights for each 100$\times$100m location in Perth from 9814 modelled scenario results. c) Histograms of temperature distributions of (left) modelled \gls{tsfc} and (right) observed LANDSAT8 LST on February 12, 2004 at 10am. }
+\caption{\bf a) Landsat 8 land surface temperature in degrees kelvin captured 10am March 29, 2019. Local conditions of air temperature on this day were minimum and maximum of 13 and 27\SI{}{\degreeCelsius}. b) Differences in surface temperatures (modelled \gls{tsfc} minus observed Landsat 8 LST) on February 12, 2004 at 10am generated by matching the closest matching parameters of surface fractions and average heights for each 100$\times$100m location in Perth from 9814 modelled scenario results. Histograms of temperature distributions of c) modelled \gls{tsfc} (February 14, 2004 at 10am) and d) observed Landsat 8 LST (March 29, 2019 at 10am). e) Correlations between surface fraction amounts and differences in temperatures (as shown in b). }
  \label{fig:Perth-Landsat-LST-29-03-2019}
 %\end{figure*}
 %24 Perth-Landsat-TSFC-LST-29-03-2019  % //  29/03/2019	13	27
@@ -711,14 +816,19 @@ b)\includegraphics[page=25,trim={200 300 180 350},clip,scale=1.0]{Figures/Figure
 
 
 
+
+
 %19 Perth-Landsat-LST-25-02-2019   %  //  25/02/2019	19	37
 \begin{figure*} 
 \centering
 a)\includegraphics[page=19,trim={220 260 137 321},clip,scale=0.75]{Figures/Figures3.pdf}
 b)\includegraphics[page=25,trim={160 260 137 321},clip,scale=0.75]{Figures/Figures3.pdf}\\
-c)\includegraphics[page=31,trim={94 328 100 338},clip,scale=0.60]{Figures/Figures3.pdf}
+%c)\includegraphics[page=31,trim={94 328 100 338},clip,scale=0.60]{Figures/Figures3.pdf}
+c)\includegraphics[page=31,trim={94 328 295 338},clip,scale=0.60]{Figures/Figures3.pdf}
+d)\includegraphics[page=30,trim={59 353 380 345},clip,scale=0.70]{Figures/Figures4.pdf}
+e)\includegraphics[page=33,trim={43 325 470 325},clip,scale=0.60]{Figures/Figures4.pdf}
 %\caption{\bf Perth-Landsat-LST-25-02-2019  25/02/2019	19	37}
-\caption{\bf a) Landsat8 land surface temperature in degrees kelvin captured 10am 25 February 2019. Local conditions of air temperature on this day were minimum and maximum of 19 and 37\SI{}{\degreeCelsius}. b) Differences in surface temperatures (modelled \gls{tsfc} minus observed LANDSAT8 LST) on February 12, 2004 at 10am generated by matching the closest matching parameters of surface fractions and average heights for each 100$\times$100m location in Perth from 9814 modelled scenario results. c) Histograms of temperature distributions of (left) modelled \gls{tsfc} and (right) observed LANDSAT8 LST on February 12, 2004 at 10am. }
+\caption{\bf a) Landsat 8 land surface temperature in degrees kelvin captured 10am 25 February 2019. Local conditions of air temperature on this day were minimum and maximum of 19 and 37\SI{}{\degreeCelsius}. b) Differences in surface temperatures (modelled \gls{tsfc} minus observed Landsat 8DSAT8 LST) on February 12, 2004 at 10am generated by matching the closest matching parameters of surface fractions and average heights for each 100$\times$100m location in Perth from 9814 modelled scenario results. Histograms of temperature distributions of c) modelled \gls{tsfc} (February 14, 2004 at 10am) and d) observed Landsat 8 LST (February 25, 2019 at 10am). e) Correlations between surface fraction amounts and differences in temperatures (as shown in b). }
  \label{fig:Perth-Landsat-LST-25-02-2019}
 %\end{figure*}
 %25 Perth-Landsat-TSFC-LST-25-02-2019  %  //  25/02/2019	19	37
