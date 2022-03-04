@@ -485,15 +485,6 @@ Analysis of feature importance shows that building fractions and building height
 
 Figure \ref{fig:dist1} shows the \gls{utci} distributions for a number of selected scenarios across the 24 hours of February 12, 2004. The preceding results (Section \ref{sec:resulttrends}) are based on mean values, averaged across the ground level results across each domain. However, different mixes of surface fractions and average heights result in widely varying distributions of temperatures (all in $^{\circ}$C). 
 
-Panel A presents a scenario with very low fractions of roads and buildings and as a result shows \gls{utci} temperatures mostly clustered in the lower ranges across day and night and very few locations that exceed the mid 20s during the day. Panel B shows a scenario with a moderate amount of streets and buildings (20\% and 30\%) and moderate building heights, but yields similar results to Panel A. Panel D, with higher amounts of buildings and roads, shows a strong shift towards predominately hotter \gls{utci} temperatures (30$^{\circ}$C) across the entire domain during the daytime (also reflected in the median), while Panel C, with slightly higher fractions of vegetation, shows a similar distribution but the median is much lower (in the lower 20s$^{\circ}$C).
-
-%\todo[inline]{say a bit more about the distributions and the different fractions.}
-
-%Figures \ref{fig:dist1}, \ref{fig:dist3}, and \ref{fig:dist5} present scenarios As the fractions of road and buildings increase, especially in Figure \ref{fig:dist4}, where road and building fractions are 30 and 40\% respectively, the distributions shift strongly during the day away from locations with surface temperatures in the mid 20s to many more locations with surface temperatures in the 40s and even 50s and above.
-
-%\todo[inline]{Change the above discussion since order of the panels in the figure has changed. And a red line for median has been added, so the medians in c and d are quite different even though the distributions look kind of similar. }
- 
- 
 \begin{figure*}
 \centering
 \fbox{
@@ -512,6 +503,17 @@ d)\includegraphics[page=10,trim={150 225 40 251},clip,scale=0.47]{Figures/Figure
 \caption{\bf Distribution of \gls{utci} across February 12, 2004 for scenarios a) 50\% grass, 49.99\% trees, 0.01\% road, 0\% building, average vegetation height of 4m, and average building height of 0m, b) 29\% grass, 69\% trees, 1\% road, 1\% building, average vegetation height of 0.5m, and average building height of 5m, c) 40\% grass, 10\% trees, 20\% road, 30\% building, average vegetation height of 2m, and average building height of 14m, and d) 19\% grass, 20\% trees, 21\% road, 40\% building, average vegetation height of 1m, and average building height of 9m. Red line indicates hourly median temperature. Insert shows percent fractions of surface types.}
  \label{fig:dist1}
 \end{figure*}
+
+Panel A presents a scenario with very low fractions of roads and buildings and as a result shows \gls{utci} temperatures mostly clustered in the lower ranges across day and night and very few locations that exceed the mid 20s during the day. Panel B shows a scenario with a moderate amount of streets and buildings (20\% and 30\%) and moderate building heights, but yields similar results to Panel A. Panel D, with higher amounts of buildings and roads, shows a strong shift towards predominately hotter \gls{utci} temperatures (30$^{\circ}$C) across the entire domain during the daytime (also reflected in the median), while Panel C, with slightly higher fractions of vegetation, shows a similar distribution but the median is much lower (in the lower 20s$^{\circ}$C).
+
+%\todo[inline]{say a bit more about the distributions and the different fractions.}
+
+%Figures \ref{fig:dist1}, \ref{fig:dist3}, and \ref{fig:dist5} present scenarios As the fractions of road and buildings increase, especially in Figure \ref{fig:dist4}, where road and building fractions are 30 and 40\% respectively, the distributions shift strongly during the day away from locations with surface temperatures in the mid 20s to many more locations with surface temperatures in the 40s and even 50s and above.
+
+%\todo[inline]{Change the above discussion since order of the panels in the figure has changed. And a red line for median has been added, so the medians in c and d are quite different even though the distributions look kind of similar. }
+ 
+ 
+
 
 
 \todo[inline]{Needs concluding paragraph for what these distributions show.}
@@ -532,9 +534,11 @@ d)\includegraphics[page=10,trim={150 225 40 251},clip,scale=0.47]{Figures/Figure
 
 \todo[inline]{TODO, double check that is 4pm not 2pm}
 
-Figure \ref{fig:TaMelb} shows city-wide heat maps of \gls{tcan} and \gls{utci} in Melbourne at 2pm on February 12, 2004 constructed by matching the closest matching parameters for each locations from the 9814 modelled scenario results. A narrow range of air temperatures are seen across most of the city, closely aligned to the modelling forcing temperature of 25.9\SI{}{\degreeCelsius}. Higher temperatures can be seen in areas corresponding to higher fractions of roads and to a lesser degree of buildings. No particular reductions of air temperatures are seen in areas corresponding to higher levels of trees or grass surface fractions. Fractional breakdowns of surfaces types across Melbourne are shown in Figure \ref{fig:melfracs}. 
+TODO, start with something like applying the results from the sensitivity study, heat maps were generated ... 
 
-\begin{figure*}[ht]
+Figure \ref{fig:TaMelb} shows city-wide heat maps of \gls{tcan} and \gls{utci} in Melbourne at 2pm on February 12, 2004 constructed by matching the closest matching parameters for each locations from the 9814 modelled scenario results. A narrow range of air temperatures are seen across most of the city, closely aligned to the modelling forcing temperature of 25.9\SI{}{\degreeCelsius}. Higher temperatures can be seen in areas corresponding to higher fractions of roads and to a lesser degree of buildings. No particular reductions of air temperatures are seen in areas corresponding to higher levels of trees or grass surface fractions. Fractional breakdowns of surfaces types across Melbourne are shown in Supplementary Figure \ref{fig:melfracs}. 
+
+\begin{figure*}
 \centering
 a)\includegraphics[page=18,trim={63 421.25 370 215},clip,scale=1.3]{Figures/Figures6.pdf}
 b)\includegraphics[page=18,trim={234 220 195 420},clip,scale=1.3]{Figures/Figures6.pdf}
@@ -542,14 +546,8 @@ b)\includegraphics[page=18,trim={234 220 195 420},clip,scale=1.3]{Figures/Figure
  \label{fig:TaMelb}  \label{fig:utciMelb}
 \end{figure*}
 
-\begin{figure*}[ht]
-\centering
-\includegraphics[page=19,trim={55 215 200 215},clip,scale=1.0]{Figures/Figures6.pdf}
-\caption{\bf Surface fractions of a) grass, b) trees, c) buildings, and d) streets across Melbourne. TODO:Are these needed for the discussion or are they supplementary?}
- \label{fig:melfracs}
-\end{figure*}
 
-\todo[inline]{Prob suppl, although they look cool. But would be helpful if different cmap is used from the temperature plots... at first glance I thought these were temps.}
+
 
 Wider ranges of surface temperatures are seen across Melbourne. Some slight reductions of surface temperatures (below the forcing air temperature) are seen in areas that correspond to higher fractions of grass and of trees. However, strong increases in surface temperatures in areas with higher fractions of street surfaces, even starting at lower street fraction levels of 30\% and above.  In addition, very strong increases in surface temperatures can be seen in areas with very high street surface fractions, for example Melbourne Airport in the north west, the central business district (CBD) in the city centre, and Moorabbin Airport in the city south east.
 
@@ -566,7 +564,7 @@ b)\includegraphics[page=11,trim={63 230 220 250},clip,scale=0.56]{Figures/Figure
 \end{figure*}
 
 
-Using the 9814 modelled scenario results, heat maps of \gls{tcan} and \gls{utci} (Figure \ref{fig:TaSyd}) were created for Sydney for February 12, 2004 at 2pm by matching the closest matching parameters, as calculated from Figure \ref{fig:sydfracs}, for each location. In Figure \ref{fig:Sydney-Landsat-LST-11-03-2019}, panel a shows cloudless Landsat 8 observations from 10am March 11, 2019 (local conditions of air temperature on this day were minimum and maximum of 22 and 26\SI{}{\degreeCelsius}) while panel b shows \gls{tsfc} heatmaps created from modelled results at 10am on February 12, 2004. 
+Using the 9814 modelled scenario results, heat maps of \gls{tcan} and \gls{utci} (Figure \ref{fig:TaSyd}) were created for Sydney for February 12, 2004 at 2pm by matching the closest matching parameters, as calculated from Supplementary Figure \ref{fig:sydfracs}, for each location. In Figure \ref{fig:Sydney-Landsat-LST-11-03-2019}, panel a shows cloudless Landsat 8 observations from 10am March 11, 2019 (local conditions of air temperature on this day were minimum and maximum of 22 and 26\SI{}{\degreeCelsius}) while panel b shows \gls{tsfc} heatmaps created from modelled results at 10am on February 12, 2004. 
 
 The results are similar to those from Melbourne. Ranges of \gls{tcan} are generally very narrow with small localised hot spots. The LST observations reflect a different topography than Melbourne with a larger influence of coastal features and a smaller range of elevations. Much of the central city is under 100m and only approaching 200m in the north east areas. The areas with higher ranges of LST are concentrated in the agricultural western regions of the city (with very high percentages of grass/low vegetation land cover fractions). Similar to Melbourne, correlations between differences between LST and \gls{tsfc} are strongly negatively correlated with grass fractions but somewhat less correlated with building and street fractions.
 
@@ -584,12 +582,7 @@ b)\includegraphics[page=2,trim={234 220 195 420},clip,scale=1.3]{Figures/Figures
 \end{figure*}
 
 
-\begin{figure*}
-\centering
-\includegraphics[page=1,trim={55 215 200 215},clip,scale=1.0]{Figures/Figures7.pdf}
-\caption{\bf Surface fractions of a) grass, b) trees, c) buildings, and d) streets across Sydney. TODO:Are these needed for the discussion or are they supplementary?}
- \label{fig:sydfracs}
-\end{figure*}
+
 
 %16 Sydney-Landsat-LST-11-03-2019  %//  11/03/2019	22	26
 \begin{figure*} 
@@ -605,7 +598,7 @@ Through systematic micro-climate modelling of the full range of surface fraction
 
 During the daytime, the most important feature was the fraction of streets. Street fractions of 80 and 90\% can drive \gls{tcan} increases of up to 10 and 15\SI{}{\degreeCelsius} while reductions are seen of about 5\SI{}{\degreeCelsius} when increasing grass and tree fractions from 0 to 100\%. These results help further explain findings of \cite{Emery2021} in their observations of the influence of different LCZ classes on air temperature. They found that the LCZ classes with the warmest air temperatures were those dominated by artificial, mineral, and impervious surfaces, while LCZ classes with vegetation were the coolest. However, they were not able to quantify the ranges of temperatures in more detail resulting from the different classes.
 
-In another study, using Landsat derived LST of different LCZ classes across four African cities \citep{Li2022}, the highest LST temperatures were found in the urban mid-rise and low-rise typologies LCZ2, 3, and 8,\todo{I think better not to refer to LCZ numbers, but be explicit each time ("open low-rise" etc) because only briefly discussed and many readers (incl. me!) won't know LCZs by heart. } and lowest in LCZA (dense trees) and G (water). They found statistically significant differences between the LCZs, but not always when comparing cities across different climate zones \todo{unclear. Is it that LCZs within a city show significant differences, but then what doesn't hold across cities?}, where often LCZ2 and 5 were coolest (due to higher building heights). However, in this study, we found some slight decreases in \gls{tcan} with greater building fractions and with \gls{utci} and building heights but lower \gls{utci} with greater building fractions. \todo{This section is unclear to me, particularly because of the different terminology in the different studies (LCZs vs building fraction etc). Should be clearer what is different and why.}
+In another study, using Landsat derived LST of different LCZ classes across four African cities \citep{Li2022}, the highest LST temperatures were found in the urban typologies of compact mid-rise, compact low-rise, and large low-rise (LCZ2, 3, and 8) and lowest in dense trees and water (LCZA and G). They found statistically significant differences between the LCZs, but not always when comparing cities across different climate zones \todo{unclear. Is it that LCZs within a city show significant differences, but then what doesn't hold across cities?}, where often LCZ2 and 5 were coolest (due to higher building heights). However, in this study, we found some slight decreases in \gls{tcan} with greater building fractions and with \gls{utci} and building heights but lower \gls{utci} with greater building fractions. \todo{This section is unclear to me, particularly because of the different terminology in the different studies (LCZs vs building fraction etc). Should be clearer what is different and why.}
 \todo[inline]{TODO, is Li et al useful to show LCZs are useful but sometimes difficult to compare across different places as well as LST based is also difficult to make thermal comfort assessments? And can't quite figure out where it fits in the discussion.}
 
 
@@ -652,5 +645,20 @@ In conclusion, some concluding things...
 \clearpage
 %\input{MCZArticle_figures_V2.tex}
 
+
+\section{Supplementary Figures}\label{sec:suppfig}
+\begin{figure*}
+\centering
+\includegraphics[page=19,trim={55 215 200 215},clip,scale=1.0]{Figures/Figures6.pdf}
+\caption{\bf Surface fractions of a) grass, b) trees, c) buildings, and d) streets across Melbourne. TODO:Are these needed for the discussion or are they supplementary? / Mat: Prob suppl, although they look cool. But would be helpful if different cmap is used from the temperature plots... at first glance I thought these were temps.}
+ \label{fig:melfracs}
+\end{figure*}
+
+\begin{figure*}
+\centering
+\includegraphics[page=1,trim={55 215 200 215},clip,scale=1.0]{Figures/Figures7.pdf}
+\caption{\bf Surface fractions of a) grass, b) trees, c) buildings, and d) streets across Sydney. TODO:Are these needed for the discussion or are they supplementary?}
+ \label{fig:sydfracs}
+\end{figure*}
 
 \end{document}
