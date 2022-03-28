@@ -52,6 +52,7 @@
 %\usepackage[colorinlistoftodos]{todonotes}
 
 \usepackage{glossaries}
+\usepackage{subfig}
 
 \usepackage{xargs}
 \usepackage[pdftex,dvipsnames]{xcolor}
@@ -131,19 +132,27 @@ urban heat
 
 \section{Introduction}
 
+\subsection{Need for urban heat mitigation measures}
+
 Measures of cumulative heat show significant increases in recent decades with trends of increased heatwave frequency and duration seen in almost all regions in the world \citep{Perkins-Kirkpatrick2020}. Exposure to dangerous levels of heat stress are expected to increase globally by a factor of 5-10 by 2080 \citep{Coffel2018}, driven by more frequent, severe, and long-lasting heatwaves \citep{IPCC2013a}. Heat in urban areas is the most dangerous natural hazard in Australia \citep{Coates2014}, with disproportionate risks falling on vulnerable populations such as elderly and the very young \citep{Nicholls2008}. The design of cities has enhanced these risks by replacing natural pervious land covers with hard heat absorbent surfaces, resulting in increased heat stress for those who live in cities \citep{Coutts2012,Martilli2020}. This urbanisation of land-use has altered the urban energy balance \citep{Oke1982}. Anthropogenic waste heat from buildings and transport and reduced shading through diminishing tree canopy cover result in larger amounts of net energy at street level. Meanwhile, the conversion of vegetated to impervious surfaces and the reduction of available water in cities shifts the urban energy balance away from latent heat (water evaporation) towards increased sensible heat (heat that can be felt) and increased heat storage in urban surfaces. 
 
 Mitigation strategies that incorporate findings from urban climate research into planning of future development can ensure that new built areas are climate sensitive and better able to address the adverse effects of urban design on the thermal environment. These strategies, which rely on modifications to built form, fabric, and natural land cover in cities, require both an understanding of the processes driving excess heat, and the methods required to identify the existing areas of high risk that will benefit most from interventions. \cite{Krayenhoff2021}, in a systematic review, identified commonly used urban heat mitigation strategies, including cooling through albedo changes, vegetation cover, irrigation and water, and photovoltaic panels. Albedo changes, increasing the reflectivity of urban surfaces, can reduce road and sidewalk surface temperatures but may cause increased radiant loads for pedestrians \citep{Middel2020}. If applied at roof levels, albedo changes can provide urban heat reductions \citep{Jacobs2018Roof}. Urban vegetation provides cooling benefits through shading of urban surfaces and evapotranspiration \citep{Bowler2010,Coutts2012,Coutts2015}, as well as reducing hard impervious surfaces in favour of pervious vegetated surfaces \citep{Middel2019a}. Additional cooling can also be realised through irrigation of both vegetated \citep{Broadbent2017a,Cheung2021} and impervious surfaces \citep{Hendel2016,Solcerova2018}.
 
-Assessing the effectiveness of cooling strategies requires metrics to measure urban heat. These metrics need to account for different scales and carefully chosen for the intended purpose. Common scales used to assess urban climates are the mesoscale (several to hundreds of kms), a micro-scale (under 2km), \todo[inline]{Any reference for micro-scale up to 2km? I would say micro scale is "in-street" climate, so 1-100 metres, then local would be ~100-2000m.} and a local scale in between the two. Air temperatures will show the least variability across a neighbourhood or precinct, differing by 1-2$^{\circ}$C  \todo[inline]{Is this max 1-2° difference valid in all situations? perhaps amend "at most" to "typically"} at most in nearby locations \citep{Coutts2015} and can be measured using simple equipment. More extensive observations of variability across a local area requires a dense network of instruments \citep{Potgieter2021}, as well as additional information required to untangle the local weather conditions or topography from the influence of the urban form. 
+
+In a review of the influence of cities on local meteorology, \cite{Masson2020a} find that urban climates and heat stress in cities are influenced by four main factors, 1) the built form, 2) the natural and vegetated form (i.e. soil, water, vegetation and their phenology), 3) urban functions (heat released by human activities), and 4) regional geographic settings. As noted above, (1) and (2) are often the focus of mitigation strategies. However, the interaction of the different elements of urban form as well as the compounding effect on canopy temperatures and heat stress are often non-linear. The complexity of these interactions makes quantifying the impact of each mitigation measure difficult across different cities and their individual mixes of urban form. Additionally, each city's regional geography (including topography and distance from and orientation to an ocean) adds additional complexity in separating the impact of mitigation measures from the geography influence. 
+
+\subsection{Metrics to assess urban heat mitigation measures}
+
+Assessing the effectiveness of cooling strategies requires metrics to measure urban heat. These metrics need to account for different scales and carefully chosen for the intended purpose. Scales used to assess urban climates are commonly defined \citep{Oke2017} as a mesoscale (10km and greater), a micro-scale which provides an `in-street' climate (under 1km), and an overlapping local scale between the two (100m to tens of kms). Air temperatures will show the least variability across a neighbourhood or precinct in nearby locations, for example \cite{Coutts2015} finds air temperature differences of approximately 1.5$^{\circ}$C between two adjoining identical street canyons varying only by the level of canopy cover (an open canopy vs. much more extensive tree cover). Air temperatures can be measured using simple equipment, however more extensive observations of variability across a local area requires a dense network of instruments \citep{Potgieter2021}, as well as additional information required to untangle the local weather conditions or topography from the influence of the urban form. 
 
 Surface temperatures, on the other hand, can show wide ranges in variability across a micro-scale depending on the surface types and whether the surfaces are shaded or not. Surface temperatures of shaded surfaces will be similar to the surrounding air temperatures while nearby unshaded surfaces can be 20-30$^{\circ}$C hotter. Remotely sensed land surface temperatures (LST) can be observed using satellite or aircraft, quickly mapping wide areas, but are limited to the flight-over time. LST has often been used to identify hotspots \citep{Aniello1995} or to evaluate cooling strategies \citep{Zhu2012a,Duncan2018,Manoli2019,Ossola2021}, however the validity of these results and the ability to link LST, which is measured at the top of the urban canopy, to thermal comfort at ground level can be limited and misleading \citep{Coutts2016d}. As the shading provided by the urban canopy (both vegetation and urban structures) is a significant cooling mechanism \citep{Coutts2015,Lee2018,Krayenhoff2021}, these effects will not be captured in an above canopy assessment. Obtaining under canopy surface temperature observations of these heterogeneous environments is challenging, time consuming and limited in scale and resolution and to the observation time period \citep{Middel2019a}. To capture all the influences of urban geometry and materials on human thermal comfort, especially the influences on mean radiant temperature \citep{Kantor2011} (a temperature that accounts for the thermal stresses on a person from both solar exposure and energy/heat radiating from nearby surfaces), requires micro-scale observations and specialised equipment. Finally, human thermal comfort (HTC) indexes such as the Universal Thermal Climate Index (UTCI) \citep{Brode2012a}, giving equivalent temperatures of heat stress, incorporate all of these types of temperatures (and requiring observations of each).
 
 
 
+
 %\todo[inline]{Negin Nazarian: hmmm this felt a bit out of the blue. my suggestion is to briefly note different metrics used for characterizing heat as well as heat mitigation impact. I'd start by canopy temperature, then note that spatial variability of it is low. Then note LST, but noting that it's not quite relevant, and lastly, detail MRT and UTCI which in many cases more important than temperature alone. \\ -- After noting this, you can create a hook between this paragraph and next, noting that canopy models are currently the best way to assess Ta and UTCI at the pedestrian/canopy level, while also providing an efficient way of obtaining spatial variabilities.}
 
-
+\subsection{Modelling urban heat mitigation measures}
 
 Modelling can be of use in assessing the thermal impacts across different urban arrangements and compositions and provide the full range of temperature metrics (including air temperature and UTCI) at different temporal and spatial resolutions. \cite{Masson2020} identifies the two main requirements for useful urban climate modelling, appropriate modelling scale and availability of descriptive data of urban areas. Urban areas, to be resolved, require at least mesoscale (resolution of 2 to 200km) modelling, with the urban features often represented as simplified idealised (2-dimensional) versions of the urban 3D geometry \citep{Masson2005}. This scale is more appropriate to assess strategies with large scale impacts and on parameters with low variability such as above roof air temperature. At this scale, the necessary urban morphology and land cover data can be supplied through a database such as the World Urban Database and Access Portal Tools (WUDAPT) project \citep{Ching2018a}. This project has been building an open access database of all the world's urban areas. Their initial efforts focused on building maps of local climate zones (LCZ) \citep{Stewart2012b}, a standardised classification system to describe urban morphology typologies, and provides local-scaled resolution coverage of wide areas of the world \citep{Demuzere2019}.
 
@@ -167,14 +176,9 @@ While WUDAPT datasets are currently not of sufficient resolution to support micr
 %\todo[inline]{Negin Nazarian: similarly, we certainly can benefit from detailing different scales in previous paragraphs.} 
 %\todo[inline]{Negin Nazarian: for both of these, need to articulate "why". Particularly the use of geoscape data vs LCZ, we should emphasize on the strength of this and more importantly, how you used such high-res dataset.}
 
+\subsection{Comprehensive urban form analysis to inform urban heat mitigation strategies}
 
-\todo[inline]{Next paragraph:  melissa.hart: yep like this inclusion too. I think this bit could even be moved up further in the intro.}
-In a review of the influence of cities on local meteorology, \cite{Masson2020a} find that urban climates and heat stress in cities are influenced by four main factors, 1) the built form, 2) the natural and vegetated form (i.e. soil, water, vegetation and their phenology), 3) urban functions (heat released by human activities), and 4) regional geographic settings. As noted above, (1) and (2) are often the focus of mitigation strategies. However, the interaction of the different elements of urban form as well as the compounding effect on canopy temperatures and heat stress are often non-linear. The complexity of these interactions makes quantifying the impact of each mitigation measure difficult across different cities and their individual mixes of urban form. Additionally, each city's regional geography (including topography and distance from and orientation to an ocean) adds additional complexity in separating the impact of mitigation measures from the geography influence. 
-
-A comprehensive set of sensitivity analysis covering the full range of realistic built and natural forms in cities, combined with a combination of mitigation strategies
-can tease apart the city from the geography.
-\todo[inline]{Melissa added but didn't like}
-Up to now, analyses such as these have been limited to a class based assessment to provide the urban form input for climate modelling of specific areas \citep{stewart2014eval,Verdonck2018,Hammerberg2018,Masson2020,Emery2021} or using remote sensed LST or low resolution air temperatures observations. However, urban morphology parameter ranges for classes can be quite broad. For example, for the LCZ6 class (the open low-rise typology), impervious surface fractions can range from 20-50\% and pervious of 30-60\%, but as the results of this study will show, significant differences in thermal outcomes are seen across those ranges. In addition, the difficulty in linking remote sensed LST to ground level thermal comfort has been noted above.
+A comprehensive set of sensitivity analysis covering the full range of realistic built and natural forms in cities, combined with a combination of mitigation strategies can be used to isolate the influence of the city form from the geography. Up to now, analyses such as these have been limited to a class based assessment to provide the urban form input for climate modelling of specific areas \citep{stewart2014eval,Verdonck2018,Hammerberg2018,Masson2020,Emery2021} or using remote sensed LST or low resolution air temperatures observations. However, urban morphology parameter ranges for classes can be quite broad. For example, for the LCZ6 class (the open low-rise typology), impervious surface fractions can range from 20-50\% and pervious of 30-60\%, but as the results of this study will show, significant differences in thermal outcomes are seen across those ranges. In addition, the difficulty in linking remote sensed LST to ground level thermal comfort has been noted above.
 
 VTUF-3D is a surface energy balance micro-climate model that accounts for the distribution of radiative fluxes between surfaces in an explicit 3-dimensional urban canyon representation and that can also account for the impacts of vegetation shading and evapotranspiration. It also produces high-resolution predictions of surface temperatures, mean radiant temperature, and UTCI. This study will generate a comprehensive set (thousands) of possible urban form combinations and individually model each of those using VTUF-3D. This will qualify the relative influence of each surface type in the urban mix and sensitivity of canopy temperatures and UTCI to a combination of design parameters. Then, as an application, the results of the appropriate combination will be matched back to individual locations, as determined by high resolution Geoscape data, to provide a micro-scaled thermal comfort map of a large urban area. This approach isolates the effects of local urban form from influences present in larger-scale modelling, such as regional climate, topography and coastal breezes.
 
@@ -253,14 +257,12 @@ February 12, 2004 was chosen as a comparison day for the analysis. The forcing d
  \label{fig:forcing}
 \end{figure} 
 
-\subsection{Sensitivity analysis}\label{sec:methodsparam}
+\subsection{Comprehensive urban form analysis}\label{sec:methodsparam}
 
-\todo[inline]{
-This is a "sensitivity analysis", but it's a big one... i.e. one that tests all possible combinations of land surface types (which is a rare sensitivity analysis).
-
-I wonder if this term could be sexed-up. "Universal land cover scenario analysis" or something.
-
-Then you have two big sections in the paper... a universal analysis and then a mapping onto real world cities.}
+%\todo[inline]{
+%This is a "sensitivity analysis", but it's a big one... i.e. one that tests all possible combinations of land surface types (which is a rare sensitivity analysis).
+%I wonder if this term could be sexed-up. "Universal land cover scenario analysis" or something.
+%Then you have two big sections in the paper... a universal analysis and then a mapping onto real world cities.}
 
 
 %\todo[inline]{Negin Nazarian: perhaps sensitivity analyses? overall, need a bit of intro in the beginning of some sections (what you wish to achieve and why)}
@@ -364,9 +366,38 @@ In addition, the same modelled results were matched to locations across Sydney, 
 
 \subsection{Temperature trends across fractions and feature importance}\label{sec:resulttrends}
 
-%The range of ground level mean results from 9814 scenarios for four temperature types (\gls{tcan}, \gls{tsfc}, \gls{tmrt}, and \gls{utci}) at varying surface fractions of grass, trees, buildings, and roads and average heights of vegetation and buildings are presented in Figures \ref{fig:box0}, \ref{fig:box5}, \ref{fig:box14} on February 12, 2004 at 12am, 5am, and 2pm respectively.
+In Figure \ref{fig:tcanday}, \gls{tcan} temperatures from 9814 scenarios are shown for ranges of fractions and heights across the diurnal cycle of 14 February 2004. These have been clustered into 10\% surface fraction ranges or 0.8m height ranges (i.e. 20\% includes the range 10 to 20\%  while 1.6m includes 0.8 to 1.6m). Small differences (1$^{\circ}$C) are seen at night-time, with larger ranges seen with street fractions and to a lesser degree with building fractions and building heights (temperature reductions with grass, increases with all other types). After dawn, the differences begin to increase and reaching a peak at mid-day with maximum differences of approximately 5$^{\circ}$C with grass, tree, building fractions and building and vegetation heights. Differences at mid-day reach maximum divergences of 10 and 15$^{\circ}$C as street surface fractions reach 80 and 90\% respectively. Building and street fractions and building heights drive temperature increases while other types drive reductions.
 
-The range of average results from 9814 scenarios for two temperature types (\gls{tcan} and \gls{utci}) at varying surface fractions of grass, trees, buildings, and roads and average heights of vegetation and buildings are presented in Figures \ref{fig:box5a}(a,c), \ref{fig:box14a}(b,d) on February 12, 2004 at 5am and 2pm respectively. Note, the number of possible surface type combinations decreases as a single surface type approaches 100\%. For example, 90\% grass leaves only a small number of combinations for the remaining 10\% surface cover. Although, for each of these surface fraction combinations, there are a range of scenarios with varying vegetation and building heights.
+% run with plot_10percent_absolute_cycle_final.R
+\begin{figure*}
+\centering
+\includegraphics[page=2,trim={90 238 90 238},clip,scale=0.95]{Figures/Figures6.pdf}
+\caption{\bf Mean \gls{tcan} outcomes clustered by 10\% surface fraction ranges of a) grass, b) streets, c) trees, and d) buildings and e) average vegetation and f) average building heights clustered by 0.8m increases over a diurnal cycle of February 12, 2004. The clusters contain fractions up to the fractional or height breakpoint (i.e. 20\% includes the range 10 to 20\%  while 1.6m includes 0.8 to 1.6m). Annotated maximum difference values for each panel shows the maximum difference between 90\% and 10\% fractions or 4.8m and 0.8m heights for daytime(6am-10pm)/nighttime (10pm-6am). }
+ \label{fig:tcanday}
+\end{figure*}
+
+For surface fraction and height clusters across 14 February 2004 of \gls{utci} (Figure \ref{fig:utciday}), which includes the influence of \gls{tsfc} and \gls{tmrt}, the night-time ranges show wider differences. Increasing building heights, building fractions, and street fractions drive temperature increases both day and night while other types drive reductions. All fractions and heights show a difference of 3$^{\circ}$C and greater between the lowest and highest amounts of fractions and heights. These difference remain roughly similar through dawn and until about 8am. Street fractions are the exception and show even wider divergences (5$^{\circ}$C and more) starting at 6am. After 6am, differences widen to 5$^{\circ}$C for building fractions and building heights and 10$^{\circ}$C for tree and grass fractions and vegetation heights. Meanwhile, differences for street fractions grow to nearly 15$^{\circ}$C for 80\% and over 20$^{\circ}$C for 90\%.
+
+
+% run with plot_10percent_absolute_cycle_final.R
+\begin{figure*}
+\centering
+\includegraphics[page=3,trim={90 238 90 238},clip,scale=0.95]{Figures/Figures6.pdf}
+\caption{\bf Mean \gls{utci} outcomes clustered by 10\% surface fraction ranges of a) grass, b) streets, c) trees, and d) buildings and e) average vegetation and f) average building heights clustered by 0.8m increases over a diurnal cycle of February 12, 2004. The clusters contain fractions up to the fractional or height breakpoint (i.e. 20\% includes the range 10 to 20\%  while 1.6m includes 0.8 to 1.6m). Annotated maximum difference values for each panel shows the maximum difference between 90\% and 10\% fractions or 4.8m and 0.8m heights for daytime(6am-10pm)/nighttime (10pm-6am).}
+ \label{fig:utciday}
+\end{figure*}
+
+
+The range of average results from 9814 scenarios for two temperature types (\gls{tcan} and \gls{utci}) at varying surface fractions of grass, trees, buildings, and roads and average heights of vegetation and buildings are shown in Figures \ref{fig:box5a}(a,c), \ref{fig:box14a}(b,d) on February 12, 2004 at 5am and 2pm respectively. Note, the number of possible surface type combinations decreases as a single surface type approaches 100\%. For example, 90\% grass leaves only a small number of combinations for the remaining 10\% surface cover. Although, for each of these surface fraction combinations, there are a range of scenarios with varying vegetation and building heights.
+
+During the nighttime (represented by 5am), there is a narrow range of \gls{tcan}, from approximately 15.3-16.3$^{\circ}$C. Increasing fractions of trees has a slight warming impact with an increase of approximately 0.2$^{\circ}$C when increasing trees from 0 to 100\%. Increasing vegetation height has a similar impact at nighttime. Increasing building heights has an almost identical effect. Increasing building and street fractions has a mostly neutral effect but at dawn (5am), the increasing street fractions start to have a very slight warming impact (0.3$^{\circ}$C). Increasing grass fractions has a slight cooling impact of about 0.3$^{\circ}$C.
+
+At 2pm, at the warmest time of the day, increasing tree and building fractions and increasing vegetation height continue to provide \gls{tcan} temperature reductions of 1-2$^{\circ}$C. Grass fractions and building heights increases show an initial reduction towards the middle fraction ranges then an increase at the higher ranges, with a reduction in the middle ranges of approximately 1$^{\circ}$C. Increases in street fractions however show a rapid increase in \gls{tcan} temperatures of approximately 3$^{\circ}$C as street fractions approach 80\% and another 3$^{\circ}$C at 90\%.
+
+At 2pm, trends of \gls{utci} amplify the trends seen with \gls{tcan}. Increases in street fractions show increases of approximately 6$^{\circ}$C as street fractions approach 80\% and another 6$^{\circ}$C at 90\%. Increasing grass and building heights shows increases of 5$^{\circ}$C as fractions increase. Increasing tree and building fractions and tree heights show reductions in temperatures of approximately 5$^{\circ}$C.
+
+At nighttime, trends of \gls{utci}, which include the influences of \gls{tsfc} and \gls{tmrt}, show decreases of approximately 2.5$^{\circ}$C as fractions of trees and buildings and vegetation heights increase. \gls{utci} increases approximately 3.0$^{\circ}$C as grass fractions and building heights increase and 1.5$^{\circ}$C as street fractions increase.
+
 
 
 % used 
@@ -380,77 +411,57 @@ The range of average results from 9814 scenarios for two temperature types (\gls
  \label{fig:box5a} \label{fig:box14a}
 \end{figure*} 
 
-
-
-%\todo[inline]{Some of below should change, now that I've taken out 12am and just have 5am and 2pm. Also, only using TCAN and UTCI now, remove TSFC and TMRT.}
-
-\todo[inline]{I think I'm confused because you're talking about diurnal impacts... but that is Figure 6. Either bring Figure 6 before 5 and discuss that first, or discuss results of Figure 5 first. I think discussing diurnal first is the right call, just need to swap the figure order.}
-
-During the nighttime (represented by 5am), there is a narrow range of \gls{tcan}, from approximately 15.3-16.3$^{\circ}$C. Increasing fractions of trees have very little effect at 12am and slight reductions of approximately 0.1$^{\circ}$C when increasing trees from 0 to 100\%. Increasing vegetation height has similarly little impact at nighttime. Increasing grass fractions has a slight warming impact of about 0.3$^{\circ}$C. Increasing building heights has an almost identical effect. Increasing building and street fractions has a mostly neutral effect but at dawn (5am), the increasing street fractions start to have a very slight warming impact (0.3$^{\circ}$C). 
-
-\todo[inline]{It's confusing to be jumping around the different figures. I'd discuss the results of each figure in order. So first Tcan, all results, then T\_UTCI all results.}
-
-At nighttime, trends of \gls{utci}, which include the influences of \gls{tsfc} and \gls{tmrt}, show decreases of approximately 2.5$^{\circ}$C as fractions of trees and buildings and vegetation heights increase. \gls{utci} increases approximately 3.0$^{\circ}$C as grass fractions and building heights increase and 1.5$^{\circ}$C as street fractions increase.
-
-At 2pm, at the warmest time of the day, increasing tree and building fractions and increasing vegetation height continue to provide some \gls{tcan} temperature reductions of 1-2$^{\circ}$C. Grass fractions and building heights increases show an initial reduction towards the middle fraction ranges then an increase at the higher ranges, with a reduction in the middle ranges of approximately 1$^{\circ}$C. Increases in street fractions however show a rapid increase in \gls{tcan} temperatures of approximately 3$^{\circ}$C as street fractions approach 80\% and another 3$^{\circ}$C at 90\%.
-
-At 2pm, trends of \gls{utci} amplify the trends seen with \gls{tcan}. Increases in street fractions show increases of approximately 6$^{\circ}$C as street fractions approach 80\% and another 6$^{\circ}$C at 90\%. Increasing grass and building heights shows increases of 5$^{\circ}$C as fractions increase. Increasing tree and building fractions and tree heights show reductions in temperatures of approximately 5$^{\circ}$C.
-
-In Figure \ref{fig:tcanday}, \gls{tcan} temperatures are shown for ranges of fractions and heights across the diurnal cycle of 14 February 2004. In these, small differences (1$^{\circ}$C) are seen at night-time, with larger ranges seen with street fractions and to a lesser degree with building fractions and building heights. After dawn, the differences begin to increase and reaching a peak at mid-day with maximum differences of approximately 5$^{\circ}$C with grass, tree, building fractions and building and vegetation heights. Differences at mid-day reach maximum divergences of 10 and 15$^{\circ}$C as street surface fractions reach 80 and 90\% respectively.
-
-% run with plot_10percent_absolute_cycle_final.R
-\begin{figure*}
-\centering
-\includegraphics[page=2,trim={90 238 90 238},clip,scale=0.95]{Figures/Figures6.pdf}
-\caption{\bf Mean \gls{tcan} outcomes clustered by 10\% surface fraction ranges of a) grass, b) streets, c) trees, and d) buildings and e) average vegetation and f) average building heights clustered by 0.8m increases over a diurnal cycle of February 12, 2004. The clusters contain fractions up to the fractional or height breakpoint (i.e. 20\% includes the range 10 to 20\%  while 1.6m includes 0.8 to 1.6m). }
- \label{fig:tcanday}
-\end{figure*}
-
-For \gls{utci} (Figure \ref{fig:utciday}) which include the influence of \gls{tsfc} and \gls{tmrt}, the night-time ranges show wider differences, with all fractions and heights showing a difference of 2-3$^{\circ}$C between the lowest and highest amounts of fractions and heights. These difference remain roughly similar through dawn and until about 8am. Street fractions are the exception and show even wider divergences (5$^{\circ}$C and more) starting at 6am. After 6am, differences widen to 5$^{\circ}$C for building fractions and building heights and 10$^{\circ}$C for tree and grass fractions and vegetation heights. Meanwhile, differences for street fractions grow to nearly 15$^{\circ}$C for 80\% and over 20$^{\circ}$C for 90\%.
-
-Highlighted results are summarised in Table \ref{tab:tempDiffs}.
+Highlighted results are summarised in Table \ref{tab:tempDiffs}, taken from maximum difference annotations in Figures \ref{fig:tcanday} and \ref{fig:utciday}.
 
 %\todo[inline]{TODO, this all seems a bit dense. Would a table help?}
 
 \begin{table}
 \begin{tabular}{l l l l l l l l }
 \hline
-Temperature & Time & $\uparrow$ Vegetation & $\uparrow$ Veg Ht & $\uparrow$ Grass & $\uparrow$ Bld Ht & $\uparrow$ Bld & $\uparrow$ Street \\
+Temperature & Time & 
+	$\uparrow$ Trees & 
+	$\uparrow$ Grass & 
+	$\uparrow$ Bld &
+	$\uparrow$ Street &
+	$\uparrow$ Veg Ht & 				
+	$\uparrow$ Bld Ht 						
+	\\
 \hline
-\gls{tcan} & Nighttime &   
-\textbf{0.2}&         %veg
-\textbf{0.2}&         %veght
--0.3& %grass
-\textbf{0.5}& %bldht
-\textbf{0.6}&            %bld
-\textbf{1.2}\\           %street
-\gls{utci} & Nighttime &   
--5.8&         %veg
--5.6&         %veght
--5.7&   %grass
-\textbf{4.0}&   %bldht   \textbf{3}
-\textbf{3.8}&         %bld
-\textbf{3.3}\\%street
-\gls{tcan} & day time &
--6.6&     %veg
--6.8&     %veght
+\gls{tcan} & Night &   
+\textbf{0.2}&       %tree
+-0.3& 				%grass
+\textbf{0.6}&       %bld
+\textbf{1.2} &       %street
+\textbf{0.2}&       %veght
+\textbf{0.5}		%bldht
+\\
+\gls{tcan} & Day &
+-6.6&    	    %tree
 -4.8&           %grass
-\textbf{2.3}&           %bldht
-\textbf{2.1}&     %bld
-\textbf{14.5}\\%street
-\gls{utci} & day time &	
--7.9&           %veg
+\textbf{2.1}&   %bld
+\textbf{14.5}&	%street
+-6.8&    	 	%veght
+\textbf{2.3}   %bldht
+\\
+\gls{utci} & Night &   
+-5.8&         %tree
+-5.7&         %grass
+\textbf{3.8}& %bld
+\textbf{3.3}&  %street
+-5.6&         %veght
+\textbf{4.0}   %bldht 
+\\
+\gls{utci} & Day &	
+-7.9&           %tree
+-9.6&           %grass
+\textbf{5.5}&   %bld
+\textbf{19.3}&   %street
 -8.5&           %veght
--9.6&   %grass
-\textbf{5.5}&  %bldht
-\textbf{5.5}&           %bld
-\textbf{19.3}\\%street
+\textbf{5.5}  %bldht
+\\
 \end{tabular}
-\caption{\label{tab:tempDiffs}Maximum differences ($^{\circ}$C) in \gls{tcan} and \gls{utci} when increasing fractions from 0\% to 90\% and average vegetation and building heights to 4.4m. Bold indicates temperature increases.}
+\caption{\label{tab:tempDiffs}Maximum differences ($^{\circ}$C) in \gls{tcan} and \gls{utci} when increasing fractions from 10\% to 90\% and average vegetation and building heights to 4.4m. Bold indicates temperatures increase as fractions or heights increase. From maximum difference annotations in Figures \ref{fig:tcanday} and \ref{fig:utciday}}
 \end{table}
-
-
-
 
 
 %Tcan, nighttime, 
@@ -482,19 +493,7 @@ Temperature & Time & $\uparrow$ Vegetation & $\uparrow$ Veg Ht & $\uparrow$ Gras
 %		increase bld  -5$^{\circ}$C
 %		increase street +6-12$^{\circ}$C
 
-
-
-% run with plot_10percent_absolute_cycle_final.R
-\begin{figure*}
-\centering
-\includegraphics[page=3,trim={90 238 90 238},clip,scale=0.95]{Figures/Figures6.pdf}
-\caption{\bf Mean \gls{utci} outcomes clustered by 10\% surface fraction ranges of a) grass, b) streets, c) trees, and d) buildings and e) average vegetation and f) average building heights clustered by 0.8m increases over a diurnal cycle of February 12, 2004. The clusters contain fractions up to the fractional or height breakpoint (i.e. 20\% includes the range 10 to 20\%  while 1.6m includes 0.8 to 1.6m).}
- \label{fig:utciday}
-\end{figure*}
-
-
 Analysis of feature importance shows that building fractions and building heights are most significant for \gls{tcan} (Figure \ref{fig:featimpttcan}a) at night while building fractions and building heights are slightly more important than grass and streets and trees and vegetation heights are of the lowest importance for \gls{utci} (Figure  \ref{fig:featimptutci}b). During the daytime, street fractions are of the highest importance for both \gls{tcan} and \gls{utci}.
-
 
 \begin{figure*}
 \centering
@@ -505,32 +504,40 @@ Analysis of feature importance shows that building fractions and building height
 \label{fig:featimptutci}
 \end{figure*}
 
-
-
-
 \subsection{Distributions of temperatures across a diurnal cycle}\label{sec:resultsdist}
-
 
 Figure \ref{fig:dist1} shows the \gls{utci} distributions for a number of selected scenarios across the 24 hours of February 12, 2004. The preceding results (Section \ref{sec:resulttrends}) are based on mean values, averaged across the ground level results across each domain. However, different mixes of surface fractions and average heights result in widely varying distributions of temperatures (all in $^{\circ}$C). 
 
-\begin{figure*}
-\centering
-\fbox{
-a)\includegraphics[page=4,trim={60 225 40 251},clip,scale=0.47]{Figures/Figures6.pdf}
-}
-\fbox{
-b)\includegraphics[page=6,trim={150 225 40 251},clip,scale=0.47]{Figures/Figures6.pdf}
-}
+%\begin{figure*}
+%\centering
+%%\fbox{
+%a)\includegraphics[page=4,trim={60 225 40 251},clip,scale=0.47]{Figures/Figures6.pdf}
+%%}
+%%\fbox{
+%b)\includegraphics[page=6,trim={150 225 40 251},clip,scale=0.47]{Figures/Figures6.pdf}
+%%}
+%\\
+%%\fbox{
+%c)\includegraphics[page=9,trim={60 225 40 251},clip,scale=0.47]{Figures/Figures6.pdf}
+%%}
+%%\fbox{
+%d)\includegraphics[page=10,trim={150 225 40 251},clip,scale=0.47]{Figures/Figures6.pdf}
+%%}
+%\caption{\bf Distribution of \gls{utci} across February 12, 2004 for scenarios a) 50\% grass, 49.99\% trees, 0.01\% road, 0\% building, average vegetation height of 4m, and average building height of 0m, b) 29\% grass, 69\% trees, 1\% road, 1\% building, average vegetation height of 0.5m, and average building height of 5m, c) 40\% grass, 10\% trees, 20\% road, 30\% building, average vegetation height of 2m, and average building height of 14m, and d) 19\% grass, 20\% trees, 21\% road, 40\% building, average vegetation height of 1m, and average building height of 9m. Insert shows percent fractions of surface types. Hourly medians are annotated in blue and hourly means in black. }
+% \label{fig:dist1}
+%\end{figure*}
+
+
+\begin{figure}          
+\centering    
+\subfloat[]{\includegraphics[page=4,trim={60 225 40 251},clip,scale=0.55]{Figures/Figures6.pdf} }
+\subfloat[]{\includegraphics[page=6,trim={150 225 40 251},clip,scale=0.55]{Figures/Figures6.pdf} }
 \\
-\fbox{
-c)\includegraphics[page=9,trim={60 225 40 251},clip,scale=0.47]{Figures/Figures6.pdf}
-}
-\fbox{
-d)\includegraphics[page=10,trim={150 225 40 251},clip,scale=0.47]{Figures/Figures6.pdf}
-}
-\caption{\bf Distribution of \gls{utci} across February 12, 2004 for scenarios a) 50\% grass, 49.99\% trees, 0.01\% road, 0\% building, average vegetation height of 4m, and average building height of 0m, b) 29\% grass, 69\% trees, 1\% road, 1\% building, average vegetation height of 0.5m, and average building height of 5m, c) 40\% grass, 10\% trees, 20\% road, 30\% building, average vegetation height of 2m, and average building height of 14m, and d) 19\% grass, 20\% trees, 21\% road, 40\% building, average vegetation height of 1m, and average building height of 9m. Insert shows percent fractions of surface types. Hourly medians are annotated in blue and hourly means in black. }
- \label{fig:dist1}
-\end{figure*}
+\subfloat[]{\includegraphics[page=9,trim={60 225 40 251},clip,scale=0.55]{Figures/Figures6.pdf} }
+\subfloat[]{\includegraphics[page=10,trim={150 225 40 251},clip,scale=0.55]{Figures/Figures6.pdf}  }
+\caption{\bf Distribution of \gls{utci} across February 12, 2004 for scenarios a) 50\% grass, 49.99\% trees, 0.01\% road, 0\% building, average vegetation height of 4m, and average building height of 0m, b) 29\% grass, 69\% trees, 1\% road, 1\% building, average vegetation height of 0.5m, and average building height of 5m, c) 40\% grass, 10\% trees, 20\% road, 30\% building, average vegetation height of 2m, and average building height of 14m, and d) 19\% grass, 20\% trees, 21\% road, 40\% building, average vegetation height of 1m, and average building height of 9m. Insert shows percent fractions of surface types. Hourly medians are annotated in blue and hourly means in black. } \label{fig:dist1}
+\end{figure} 
+
 
 Panel A presents a scenario with very low fractions of roads and buildings and as a result shows \gls{utci} temperatures mostly clustered in the lower ranges across day and night and very few locations that exceed the mid 20s during the day. Panel B shows a scenario with a moderate amount of streets and buildings (20\% and 30\%) and moderate building heights, but yields similar results to Panel A. Panel D, with higher amounts of buildings and roads, shows a strong shift towards predominately hotter \gls{utci} temperatures (30$^{\circ}$C) across the entire domain during the daytime (also reflected in the median), while Panel C, with slightly higher fractions of vegetation, shows a similar distribution but the median is much lower (in the lower 20s$^{\circ}$C).
 
@@ -541,30 +548,43 @@ Panel A presents a scenario with very low fractions of roads and buildings and a
 %\todo[inline]{Change the above discussion since order of the panels in the figure has changed. And a red line for median has been added, so the medians in c and d are quite different even though the distributions look kind of similar. }
  
  
-
-
-
-\todo[inline]{Needs concluding paragraph for what these distributions show.}
+These four example distributions show that urban heat has high variability at a micro-scale, even between scenarios with similar urban form and surface fractions. Mean temperature values (such as Table \ref{tab:tempDiffs}) can illuminate general trends but each of these four distributions will contribute to four very different spatial experiences of urban heat and human thermal stress in each area.
 
 
 \section{Discussion}\label{sec:discussion}
 
+\subsection{The influence of urban surfaces on urban heat}\label{sec:discinfluence}
+
+Studies providing a systematic examination of the influence of varying surface fractions and urban heights are rare and generally based on remote sensing data. In this study, through systematic micro-climate modelling of a comprehensive range of surface fractions and average heights, the importance and relative influence of each feature type on the temperature types of \gls{tcan} and \gls{utci} was examined. For \gls{tcan}, at night time, a narrow range of temperature variations were found, of approximately 1.0\SI{}{\degreeCelsius}. Increasing fractions of trees had a limited impact at midnight and contributed to a very slight increase (+0.2\SI{}{\degreeCelsius}) at dawn. Increasing building heights had a warming impact (+1.2\SI{}{\degreeCelsius}) while grass drove a slight cooling (-0.3\SI{}{\degreeCelsius}). Increasing street fractions contributed to a warming effect (+0.3\SI{}{\degreeCelsius}) at dawn. Building fractions and building heights were found to be the most significant features at night time. During the daytime, the most important feature was the fraction of streets. Street fractions of 80 and 90\% can drive \gls{tcan} increases of up to 10 and 15\SI{}{\degreeCelsius} respectively while reductions are seen of about -5\SI{}{\degreeCelsius} when increasing grass and tree fractions from 0 to 100\%. 
+
+While other studies show similar findings, often they were only able to demonstrate temperature trends rather than more detailed relationships. \cite{Emery2021}, in their observations of the influence of different LCZ classes on air temperature, found that the LCZ classes with the warmest air temperatures were those dominated by artificial, mineral, and impervious surfaces, while LCZ classes with vegetation were the coolest. However, they were not able to quantify the ranges of temperatures in more detail resulting from the different classes. Using remotely sensed LST, \cite{Alexander2021} classified areas in a number of Danish cities into two classes of buildings and vegetation (essentially impervious vs. pervious) and into ranges of vegetation and building heights and examined their influence on LST. He found LST reduced by approximately 4\SI{}{\degreeCelsius} when vegetation fractions increased from 0-5 to 95-100\% and increased by 4\SI{}{\degreeCelsius} when building fractions increased by the same. Also, vegetation height had negative correlation with LST but vegetation cover was found to be a stronger predictor. Building height had a positive correlation with LST, but only up to 9m, and was not always found to have a strong influence on LST in some of the studied cities. 
+
+\cite{Peng2022} found, using a Random Forest regression of MODIS LST observations of a highly urbanised city in Japan, the feature importance to predict urban heat island intensity in the daytime was highest for building density followed by distance to green space while at night time distance to green space was the most important followed by distance to water and road density. In another study, using Landsat derived LST of different LCZ classes across four African cities \citep{Li2022}, the highest LST temperatures were found in the urban typologies of compact mid-rise, compact low-rise, and large low-rise (LCZ2, 3, and 8) and lowest in dense trees and water (LCZA and G). They found statistically significant differences between the LCZs, but not always when comparing LCZ classes in different cities of different K\"{o}ppen climate classifications, where often compact midrise (LCZ2) and open midrise (LCZ5) typologies were coolest (due to higher building heights). The LCZ typologies were found to be useful across single cities but could not always reliably be used to compare LCZ classes across different cities, especially those with differing climates.
+
+While these results are able to show broad trends due to differing amounts of surface fractions, they cannot entirely predict the influences on thermal comfort at the ground level, underneath the urban canopy where surface temperatures are moderated by shading from vegetation and buildings. This is a limitation of remotely sensed LST observations, that can only provide the temperatures at the top of the urban canopy. Some studies are able to provide some additional data on the under canopy impacts through observations. For example, micro-climate observations from \cite{Broadbent2017a} showed that in a residential suburb, \gls{tsfc} temperatures of concrete, buildings, and bare ground were 2.4, 3.1, and 1.1\SI{}{\degreeCelsius} hotter than the area averages during the day and areas with trees, irrigated grass, and low vegetation were 3.0, 7.7, and 6.8\SI{}{\degreeCelsius} cooler. While high resolution spatial air temperature are difficult to observe, they also found increases over the suburb average in air temperature of 1\SI{}{\degreeCelsius} in the cluster type of urban mid-rise and 0.5\SI{}{\degreeCelsius} with the type urban residential. They also found an irrigated grass daytime cooling effect of -0.1\SI{}{\degreeCelsius} per 5\% fraction increase.
+
+\cite{Middel2019a} found trees could provide large reductions in \gls{tmrt} on extreme heat days, with reductions up to 33.4\SI{}{\degreeCelsius} and with sky view factor (SVF) highly influential in determining the reductions, 4\SI{}{\degreeCelsius} \gls{tmrt} reductions per 0.1 SVF decreases. However, the trade-offs are a warming effect at night of up to 5\SI{}{\degreeCelsius}. In addition, they found replacing impervious with pervious surfaces can decrease \gls{tmrt} by 1.0-1.5\SI{}{\degreeCelsius} per tenth of land converted and unshaded irrigated grass could reduce \gls{tmrt} by more than 10\SI{}{\degreeCelsius} compared to impervious surfaces with unirrigated grass providing still about half as much in reductions. Additionally, \cite{Krayenhoff2021} finds that trees provide additional 0.3\SI{}{\degreeCelsius} reductions per 0.10 canopy cover increase.
+
+
+
+
+%\todo{This section is unclear to me, particularly because of the different terminology in the different studies (LCZs vs building fraction etc). Should be clearer what is different and why.}
+%\todo[inline]{TODO, is Li et al useful to show LCZs are useful but sometimes difficult to compare across different places as well as LST based is also difficult to make thermal comfort assessments? And can't quite figure out where it fits in the discussion.}
+
+
+%\todo[inline]{It seems like the discussion should start here, with those studies in previous two paragraphs tied in below these paragraphs.}
 
 
 
 
 
-\todo[inline]{Are the city-scale maps discussion or results? }
+
+
+
 
 \subsection{City scale heat maps from micro-climate modelled results}\label{sec:resultsheatmaps}
 
-
-
-\todo[inline]{TODO, double check that is 4pm not 2pm}
-
-TODO, start with something like applying the results from the sensitivity study, heat maps were generated ... 
-
-Figure \ref{fig:TaMelb} shows city-wide heat maps of \gls{tcan} and \gls{utci} in Melbourne at 2pm on February 12, 2004 constructed by matching the closest matching parameters for each locations from the 9814 modelled scenario results. A narrow range of air temperatures are seen across most of the city, closely aligned to the modelling forcing temperature of 25.9\SI{}{\degreeCelsius}. Higher temperatures can be seen in areas corresponding to higher fractions of roads and to a lesser degree of buildings. No particular reductions of air temperatures are seen in areas corresponding to higher levels of trees or grass surface fractions. Fractional breakdowns of surfaces types across Melbourne are shown in Supplementary Figure \ref{fig:melfracs}. 
+Following on from the results of the comprehensive urban form analysis and reflecting many of the specific findings of other studies of the impact of differing types of urban form on urban heat, the modelled results underlying this analysis were applied to demonstrate their application to a city-wide heat mapping exercise. These heat maps show the impact of present day urban form across a number of Australian cities, isolated from geography, topography, and local weather conditions. Figure \ref{fig:TaMelb} shows city-wide heat maps of \gls{tcan} and \gls{utci} in Melbourne at 2pm on February 12, 2004 constructed by matching the closest matching parameters for each locations from the 9814 modelled scenario results. A narrow range of air temperatures are seen across most of the city, closely aligned to the modelling forcing temperature at 2pm of 25.9\SI{}{\degreeCelsius}. Higher temperatures can be seen in areas corresponding to higher fractions of roads and to a lesser degree of buildings. No particular reductions of air temperatures are seen in areas corresponding to higher levels of trees or grass surface fractions. Fractional breakdowns of surfaces types across Melbourne are shown in Supplementary Figure \ref{fig:melfracs}. 
 
 
 \begin{figure*}
@@ -578,9 +598,9 @@ b)\includegraphics[page=18,trim={234 220 195 420},clip,scale=1.3]{Figures/Figure
 
 
 
-Wider ranges of surface temperatures are seen across Melbourne. Some slight reductions of surface temperatures (below the forcing air temperature) are seen in areas that correspond to higher fractions of grass and of trees. However, strong increases in surface temperatures in areas with higher fractions of street surfaces, even starting at lower street fraction levels of 30\% and above.  In addition, very strong increases in surface temperatures can be seen in areas with very high street surface fractions, for example Melbourne Airport in the north west, the central business district (CBD) in the city centre, and Moorabbin Airport in the city south east.
+Wider ranges of surface temperatures are seen across Melbourne. Some slight reductions of surface temperatures (below the forcing air temperature) are seen in areas that correspond to higher fractions of grass and of trees. However, strong increases in surface temperatures in areas with higher fractions of street surfaces, even in areas with street fractions as low as 30\%.  Very strong increases in surface temperatures can be seen in areas with high street surface fractions, for example Melbourne Airport in the north west, the central business district (CBD) in the city centre, and Moorabbin Airport in the city south east.
 
-Figure \ref{fig:Melb_TSFC12_85} presents a comparison of modelled \gls{tsfc} to Landsat 8 LST data. Panel a for the figure shows Landsat 8 imagery captured on cloudless days that mostly closely correspond to the modelled conditions, 10am December 11, 2018 when local conditions of air temperature on this day were minimum and maximum of 22 and 26\SI{}{\degreeCelsius}. Panel b for shows \gls{tsfc} created from modelled results at 10am on February 12, 2004 and February 14, 2004. 
+Figure \ref{fig:Melb_TSFC12_85} presents a comparison of modelled \gls{tsfc} to Landsat 8 LST data. Figure \ref{fig:Melb_TSFC12_85}a shows Landsat 8 imagery captured on a cloudless day that mostly closely corresponds to the modelled conditions, 10am December 11, 2018 when local conditions of air temperature on this day were minimum and maximum of 22 and 26\SI{}{\degreeCelsius}. Figure \ref{fig:Melb_TSFC12_85}b shows \gls{tsfc} created from modelled results at 10am on February 12, 2004 and February 14, 2004. 
 
 In comparing the constructed \gls{tsfc} heat maps with the LST imagery, some observations can be made. However note, the two datasets measure different things and might not be entirely comparable. LST observations are captured by satellite and correspond to temperatures at the top of the urban canopy (i.e. the tops of trees and buildings) while the modelled \gls{tsfc} corresponds to ground surface temperatures and will generally be cooler as they include areas that are shaded by tree canopies and buildings. In addition, LST observations are influenced by additional factors than just the urban form including topography and localised weather conditions. In Figure \ref{fig:Melb_TSFC12_85}a, the cooler locations in the LST observations mostly include locations immediately off the coast and in the eastern fringes of Melbourne, the Dandenong Ranges which range from 500m to over 1000m in elevation, while the majority of central and inner Melbourne is under 100m in elevation. The main differences between the LST observations and the modelled results are strongly related to the surface fraction types, which a strong correlation between the differences and building and street fractions and a strong negative correlation with grass surface fractions. 
 
@@ -593,65 +613,32 @@ b)\includegraphics[page=11,trim={63 230 220 250},clip,scale=0.56]{Figures/Figure
 \end{figure*}
 
 
-Using the 9814 modelled scenario results, heat maps of \gls{tcan} and \gls{utci} (Figure \ref{fig:TaSyd}) were created for Sydney for February 12, 2004 at 2pm by matching the closest matching parameters, as calculated from Supplementary Figure \ref{fig:sydfracs}, for each location. In Figure \ref{fig:Sydney-Landsat-LST-11-03-2019}, panel a shows cloudless Landsat 8 observations from 10am March 11, 2019 (local conditions of air temperature on this day were minimum and maximum of 22 and 26\SI{}{\degreeCelsius}) while panel b shows \gls{tsfc} heatmaps created from modelled results at 10am on February 12, 2004. 
+Additionally, heat maps were generated for other cities. Using the 9814 modelled scenario results, heat maps of \gls{tcan} and \gls{utci} (Supplementary Figure \ref{fig:TaSyd}) were created for Sydney for February 12, 2004 at 2pm by matching the closest matching parameters, as calculated from Supplementary Figure \ref{fig:sydfracs}, for each location. Supplementary Figure \ref{fig:Sydney-Landsat-LST-11-03-2019}a shows cloudless Landsat 8 observations from 10am March 11, 2019 (local conditions of air temperature on this day were minimum and maximum of 22 and 26\SI{}{\degreeCelsius}) while Supplementary Figure \ref{fig:TaSyd}b shows \gls{tsfc} heatmaps created from modelled results at 10am on February 12, 2004. 
 
 The results are similar to those from Melbourne. Ranges of \gls{tcan} are generally very narrow with small localised hot spots. The LST observations reflect a different topography than Melbourne with a larger influence of coastal features and a smaller range of elevations. Much of the central city is under 100m and only approaching 200m in the north east areas. The areas with higher ranges of LST are concentrated in the agricultural western regions of the city (with very high percentages of grass/low vegetation land cover fractions). Similar to Melbourne, correlations between differences between LST and \gls{tsfc} are strongly negatively correlated with grass fractions but somewhat less correlated with building and street fractions.
 
-%Using the 9814 modelled scenario results, heat maps of \gls{tcan} and \gls{tsfc} (Figure \ref{fig:TaPerth}) were created for Sydney for February 12, 2004 at 2pm by matching the closest matching parameters, as calculated from Figure \ref{fig:perthfracs}, for each location. In Figures \ref{fig:Perth_TSFC12_85} and \ref{fig:Perth_TSFC14_85}, cloudless Landsat 8 observations from 10am March 29, 2019 (local conditions of air temperature on this day were minimum and maximum of 13 and 27\SI{}{\degreeCelsius}) and 10am February 25, 2019 (local conditions of air temperature on this day were minimum and maximum of 19 and 37\SI{}{\degreeCelsius}) are presented and compared to \gls{tsfc} heatmaps created from modelled results at 10am on February 12, 2004 and February 14, 2004. 
-
-
-%Ranges of \gls{tcan} are generally narrow with small localised hot spots (including the Perth Airport in the center east of the city). The topography of Perth is much less varied than Melbourne and Sydney, with the majority of the city under 50m in elevation and only rising above 100m in the eastern fringes. Much of the city is influences by coastal features. Much of the city is low density residential only becoming mixed with low vegetation/grassland reserves in the southern sections of the city. Similar to Melbourne, correlations between differences between LST and \gls{tsfc} are strongly negatively correlated with grass fractions and strongly correlated with building and street fractions.
-
-\begin{figure*}
-\centering
-a)\includegraphics[page=2,trim={63 421.25 370 215},clip,scale=1.3]{Figures/Figures7.pdf}
-b)\includegraphics[page=2,trim={234 220 195 420},clip,scale=1.3]{Figures/Figures7.pdf}
-\caption{\bf a) \gls{tcan} and b) \gls{utci} heatmaps on February 12, 2004 at 2pm generated by matching the closest matching parameters of surface fractions and average heights for each 100$\times$100m location in Sydney from 9814 modelled scenario results (in \SI{}{\degreeCelsius}).  }
- \label{fig:TaSyd} \label{fig:utciSyd}
-\end{figure*}
-
-
-
-
-%16 Sydney-Landsat-LST-11-03-2019  %//  11/03/2019	22	26
-\begin{figure*} 
-\centering
-a)\includegraphics[page=14,trim={65 245 245 240},clip,scale=0.53]{Figures/Figures6.pdf}
-b)\includegraphics[page=12,trim={60 220 210 225},clip,scale=0.48]{Figures/Figures6.pdf}
-\caption{\bf a) Landsat 8 land surface temperature (\SI{}{\degreeCelsius}) captured 10am March 11, 2019. Local conditions of air temperature on this day were minimum and maximum of 22 and 26\SI{}{\degreeCelsius}. b) Modelled \gls{tsfc} (\SI{}{\degreeCelsius}) on February 12, 2004 at 10am generated by matching the closest matching parameters of surface fractions and average heights for each 100$\times$100m location in Sydney from 9814 modelled scenario results.}
- \label{fig:Sydney-Landsat-LST-11-03-2019}
- \label{fig:Sydney_TSFC12_85}
-\end{figure*}
-
-Through systematic micro-climate modelling of the full range of surface fractions and average heights across Melbourne, the importance and relative influence of each feature type on the temperature types of \gls{tcan} and \gls{utci} was examined. For \gls{tcan}, at night time, there was a narrow range of temperatures, of approximately 1.0\SI{}{\degreeCelsius}. Increasing fractions of trees had a limited impact at midnight and contributed to a very slight reduction (0.1\SI{}{\degreeCelsius}) at dawn. Increasing grass and building heights had a small warming impact (0.3\SI{}{\degreeCelsius}). Increasing street fractions contributed to a warming effect (0.3\SI{}{\degreeCelsius}) at dawn. Building fractions and building heights were found to be the most significant features at night time.
-
-During the daytime, the most important feature was the fraction of streets. Street fractions of 80 and 90\% can drive \gls{tcan} increases of up to 10 and 15\SI{}{\degreeCelsius} while reductions are seen of about 5\SI{}{\degreeCelsius} when increasing grass and tree fractions from 0 to 100\%. These results help further explain findings of \cite{Emery2021} in their observations of the influence of different LCZ classes on air temperature. They found that the LCZ classes with the warmest air temperatures were those dominated by artificial, mineral, and impervious surfaces, while LCZ classes with vegetation were the coolest. However, they were not able to quantify the ranges of temperatures in more detail resulting from the different classes.
-
-In another study, using Landsat derived LST of different LCZ classes across four African cities \citep{Li2022}, the highest LST temperatures were found in the urban typologies of compact mid-rise, compact low-rise, and large low-rise (LCZ2, 3, and 8) and lowest in dense trees and water (LCZA and G). They found statistically significant differences between the LCZs, but not always when comparing cities across different climate zones \todo{unclear. Is it that LCZs within a city show significant differences, but then what doesn't hold across cities?}, where often LCZ2 and 5 were coolest (due to higher building heights). However, in this study, we found some slight decreases in \gls{tcan} with greater building fractions and with \gls{utci} and building heights but lower \gls{utci} with greater building fractions. \todo{This section is unclear to me, particularly because of the different terminology in the different studies (LCZs vs building fraction etc). Should be clearer what is different and why.}
-\todo[inline]{TODO, is Li et al useful to show LCZs are useful but sometimes difficult to compare across different places as well as LST based is also difficult to make thermal comfort assessments? And can't quite figure out where it fits in the discussion.}
-
-
-\todo[inline]{It seems like the discussion should start here, with those studies in previous two paragraphs tied in below these paragraphs.}
-
-Studies providing a systematic examination of the influence of varying surface fractions and urban heights are rare and generally based on remote sensing data. \cite{Alexander2021} classified a number of Danish cities into two classes of buildings and vegetation (essentially impervious vs. pervious) and into ranges of vegetation and building heights and examined their influence on LST. He found LST reduced by approximately 4\SI{}{\degreeCelsius} when vegetation fractions increased from 0-5 to 95-100\% and increased by 4\SI{}{\degreeCelsius} when building fractions increased by the same. Also, vegetation height had negative correlation with LST but vegetation cover was found to be a stronger predictor. Building height had a positive correlation with LST, but only up to 9m, and was not always found to have a strong influence on LST in some of the studied cities. \cite{Peng2022} found, using a Random Forest regression of MODIS LST observations of a highly urbanised city in Japan, the 
-feature importance to predict urban heat island intensity in the daytime was highest for building density followed by distance to green space while at night time distance to green space was the most important followed by distance to water and road density.
-
-While these results are able to show broad trends due to differing amounts of surface fractions, they cannot entirely predict the influences on thermal comfort at the ground level, underneath the urban canopy where surface temperatures are moderated by shading from vegetation and buildings. Some observations studies are able to provide some additional data on these influences. For example, micro-climate observations from \cite{Broadbent2017a} showed that in a residential suburb, \gls{tsfc} temperatures of concrete, buildings, and bare ground were 2.4, 3.1, and 1.1\SI{}{\degreeCelsius} hotter than the area averages during the day and areas with trees, irrigated grass, and low vegetation were 3.0, 7.7, and 6.8\SI{}{\degreeCelsius} cooler. While high resolution spatial air temperature are difficult to observe, they also found increases over the suburb average in air temperature of 1\SI{}{\degreeCelsius} in the cluster type of urban mid-rise and 0.5\SI{}{\degreeCelsius} with the type urban residential. They also found an irrigated grass daytime cooling effect of -0.1\SI{}{\degreeCelsius} per 5\% fraction increase.
-
-\cite{Middel2019a} found trees could provide large reductions in \gls{tmrt} on extreme heat days, with reductions up to 33.4\SI{}{\degreeCelsius} and with sky view factor (SVF) highly influential in determining the reductions, 4\SI{}{\degreeCelsius} \gls{tmrt} reductions per 0.1 SVF decreases. However, the trade-offs are a warming effect at night of up to 5\SI{}{\degreeCelsius}. In addition, they found replacing impervious with pervious surfaces can decrease \gls{tmrt} by 1.0-1.5\SI{}{\degreeCelsius} per tenth of land converted and unshaded irrigated grass could reduce \gls{tmrt} by more than 10\SI{}{\degreeCelsius} compared to impervious surfaces with unirrigated grass providing still about half as much in reductions. Additionally, \cite{Krayenhoff2021} finds that trees provide additional 0.3\SI{}{\degreeCelsius} reductions per 0.10 canopy cover increase.
-
-The observations from these studies demonstrate the usefulness of the results and the application of the systematic modelling in this study. The observations show many of the trends found in this study, the large increases in both \gls{tcan} and \gls{utci} with increasing road fractions as well as decreases of both temperature types during the daytime with increasing vegetation fractions and heights. However, some counter-intuitive interactions are seen with \gls{utci} during the daytime with increasing grass fractions driving higher temperatures while increased building fractions drive reductions. \todo{Where? Fig 7b shows increased building fractions lead to UTCI increase.} The method also overcomes the difficulties encountered with the LCZ based observations and modelling assessments. The highly urbanised classes were found to be hotter while the natural classes were cooler, however due to the broad ranges each LCZ can represent and due to the (often non-linear) interactions between the parameters, detailed quantifications were not possible.\todo{in this study or the studies that rely on LCZ?} 
-
-Additionally, once these relationships have been quantified, it becomes possible to apply the results across a broad area, a city-wide assessment of thermal comfort. This is an area of broad interest as evidenced by the numerous studies attempting this through satellite observed LST. But the modelled approach eliminates the difficulty using top of the canopy observations to derive ground level temperatures, temperatures that also include the shading impacts of the urban canopy. More importantly, it removes geographic influences (such as topography, ocean effects, and local weather) from the results and allows an assessment based solely on the urban and natural forms of the urban areas. This allows mitigation strategies to be tested based on elements that are possible to be changed (the urban form) removed from influences that cannot be redesigned. In addition, the ability to capture at high temporal and spatial scales the high variability of elements of urban heat (i.e. Figure \ref{fig:dist1}) point to new directions for future research. Urban areas can be characterised by the quality of their connectedness of cooling, how well does each area support pedestrians navigating urban arrangements to minimise their thermal stress.
-
-In addition, future work can address one potential limitation of this study. VTUF-3D has been extensively evaluated using the forcing data used in this study, but like all models has biases. Is is possible that VTUF-3D is underestimating temperatures of grass. The correlations between the surface fractions and differences between observed LST and modelled \gls{tsfc} suggest that the temperature trends for streets (0.69 and 0.72 in Melbourne) and buildings (0.78 and 0.72 in Melbourne) are reasonable but the magnitude is too high while grass (-0.80 and -0.85) trends are also reasonable but too low. Meanwhile the correlations for trees are very low suggesting the variations are not regular. As the percent fractions for trees just suggests that tree cover exists, it does not fully characterise that tree cover (such as the level of canopy cover, i.e. a leaf area index). VTUF-3D is undergoing continuous improvement, especially its vegetation scheme. The overall method in this study can be repeated using this or other improved micro-climate models in future work. 
 
 \section{Conclusion}\label{sec:conclusion}
 
-In conclusion, some concluding things...
-\todo[inline]{TODO}
+Observational studies examining the influence of urban form on urban heat have attempted to quantify the influence largely using two different type of observations, remotely sensed LST and micro-scaled observations under the urban canopy at ground level. Micro-scaled ground based observations can provide detailed assessments under the canopy but require a high levels of time and effort to collect and are difficult to scale up to a city-wide scale. The observations from these other studies demonstrate the usefulness of the results and the application of the systematic modelling in this study. The observations show many of the trends found in this study, the large increases in both \gls{tcan} and \gls{utci} with increasing road fractions as well as decreases of both temperature types during the daytime with increasing vegetation fractions and heights. The method also overcomes the difficulties encountered with the LCZ based observations and modelling assessments. The highly urbanised classes were found to be hotter while the natural classes were cooler, however due to the broad ranges each LCZ can represent and due to the (often non-linear) interactions between the parameters, detailed quantifications have not always been possible in other studies utilising LCZs (i.e. \cite{Emery2021}). 
 
-\printglossaries
+%The other commonly used method, using LST observations to examine how different types of urban typologies (often LCZs) influence urban heat, presents limitations in scaling the results downward to a micro-scale and of quantifying the actual temperatures underneath the urban canopy. 
+
+Using the methods in this study, a comprehensive urban form analysis, allows a determination of the importance and relative influence of each surface type and feature height on thermal performance. Additionally, once these relationships have been quantified, it becomes possible to apply the results across a broad area, a city-wide assessment of thermal comfort. This is an area of broad interest as evidenced by the numerous studies attempting this through satellite observed LST. But the modelled approach eliminates the difficulty using top of the canopy LST observations to derive ground level temperatures, temperatures that also include the shading impacts of the urban canopy. More importantly, it removes geographic influences (such as topography, ocean effects, and local weather) from the results and allows an assessment based solely on the urban and natural forms of the urban areas. This allows mitigation strategies to be tested based on elements that are possible to be changed (the urban form) removed from influences that cannot be redesigned. In addition, the ability to capture at high temporal and spatial scales the high variability of elements of urban heat (i.e. the distributions of \gls{utci} in different scenarios in Figure \ref{fig:dist1}) point to new directions for future research. Urban areas can be characterised by the quality of their connectedness of cooling, how well does each area support pedestrians navigating urban arrangements to minimise their thermal stress.
+
+In addition, future work can address one potential limitation of this study. VTUF-3D has been extensively evaluated using the forcing data used in this study, but like all models has biases. Is is possible that VTUF-3D is underestimating temperatures of grass. The correlations between the surface fractions and differences between observed LST and modelled \gls{tsfc} suggest that the temperature trends for streets (0.69 and 0.72 in Melbourne) and buildings (0.78 and 0.72 in Melbourne) are reasonable but the magnitude is too high while grass (-0.80 and -0.85) trends are also reasonable but too low. Meanwhile the correlations for trees are very low suggesting the variations are not regular. As the percent fractions for trees just suggests that tree cover exists, it does not fully characterise that tree cover (such as the level of canopy cover, i.e. a leaf area index). VTUF-3D is undergoing continuous improvement, especially its vegetation scheme. The overall method in this study can be repeated using this or other improved micro-climate models in future work. 
+
+
+
+
+
+
+
+
+
+
+
+%\printglossaries
 
 \section*{References}\label{sec:ref}
 \bibliographystyle{elsarticle-harv} 
@@ -679,15 +666,33 @@ In conclusion, some concluding things...
 \begin{figure*}
 \centering
 \includegraphics[page=19,trim={55 215 200 215},clip,scale=1.0]{Figures/Figures6.pdf}
-\caption{\bf Surface fractions of a) grass, b) trees, c) buildings, and d) streets across Melbourne. TODO:Are these needed for the discussion or are they supplementary? / Mat: Prob suppl, although they look cool. But would be helpful if different cmap is used from the temperature plots... at first glance I thought these were temps.}
+\caption{\bf Surface fractions of a) grass, b) trees, c) buildings, and d) streets across Melbourne.}
  \label{fig:melfracs}
 \end{figure*}
 
 \begin{figure*}
 \centering
 \includegraphics[page=1,trim={55 215 200 215},clip,scale=1.0]{Figures/Figures7.pdf}
-\caption{\bf Surface fractions of a) grass, b) trees, c) buildings, and d) streets across Sydney. TODO:Are these needed for the discussion or are they supplementary?}
+\caption{\bf Surface fractions of a) grass, b) trees, c) buildings, and d) streets across Sydney.}
  \label{fig:sydfracs}
+\end{figure*}
+
+\begin{figure*}
+\centering
+a)\includegraphics[page=2,trim={63 421.25 370 215},clip,scale=1.3]{Figures/Figures7.pdf}
+b)\includegraphics[page=2,trim={234 220 195 420},clip,scale=1.3]{Figures/Figures7.pdf}
+\caption{\bf a) \gls{tcan} and b) \gls{utci} heatmaps on February 12, 2004 at 2pm generated by matching the closest matching parameters of surface fractions and average heights for each 100$\times$100m location in Sydney from 9814 modelled scenario results (in \SI{}{\degreeCelsius}).  }
+ \label{fig:TaSyd} \label{fig:utciSyd}
+\end{figure*}
+
+%16 Sydney-Landsat-LST-11-03-2019  %//  11/03/2019	22	26
+\begin{figure*} 
+\centering
+a)\includegraphics[page=14,trim={65 245 245 240},clip,scale=0.53]{Figures/Figures6.pdf}
+b)\includegraphics[page=12,trim={60 220 210 225},clip,scale=0.48]{Figures/Figures6.pdf}
+\caption{\bf a) Landsat 8 land surface temperature (\SI{}{\degreeCelsius}) captured 10am March 11, 2019. Local conditions of air temperature on this day were minimum and maximum of 22 and 26\SI{}{\degreeCelsius}. b) Modelled \gls{tsfc} (\SI{}{\degreeCelsius}) on February 12, 2004 at 10am generated by matching the closest matching parameters of surface fractions and average heights for each 100$\times$100m location in Sydney from 9814 modelled scenario results.}
+ \label{fig:Sydney-Landsat-LST-11-03-2019}
+ \label{fig:Sydney_TSFC12_85}
 \end{figure*}
 
 
