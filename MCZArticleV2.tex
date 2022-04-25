@@ -68,10 +68,17 @@
 \usepackage{framed} % Framing content
 \usepackage{multicol} % Multiple columns environment
 
+\newcommand{\beginsupplement}{%
+        \setcounter{table}{0}
+        \renewcommand{\thetable}{S\arabic{table}}%
+        \setcounter{figure}{0}
+        \renewcommand{\thefigure}{S\arabic{figure}}%
+     }
+
 
 \DeclareRobustCommand{\hlgreen}[1]{{\sethlcolor{green}\hl{#1}}}
 
-\journal{TBD}
+\journal{Building and Environment}
 \makeglossaries
 
 
@@ -109,8 +116,9 @@ As public health risks resulting from urban heat in cities increase due to urban
 \end{abstract}
 
 \begin{keyword}
-micro-climate\sep 
+micro-climate modelling\sep 
 urban morphology\sep
+heat mitigation\sep
 urban heat
 \end{keyword}
 
@@ -476,9 +484,25 @@ In addition, future work can address one potential limitation of this study. VTU
 \clearpage
 
 \section{Acknowledgements}\label{sec:ack}
-K.A.N. is supported by NHMRC/UKRI grant (1194959).
+KAN is supported by NHMRC/UKRI grant (1194959).
+
+%\section{Credit Author Statement}\label{sec:credit}
+%
+%\textbf{KAN}: Conceptualization, Methodology, Software, Formal Analysis, Writing - Original Draft, Writing - Review \& Editing, Visualization.
+%\textbf{NN}: Methodology, Writing - Original Draft, Writing - Review \& Editing.
+%\textbf{MJL}: Methodology, Writing - Review \& Editing.
+%\textbf{MAH}: Methodology, Writing - Original Draft, Writing - Review \& Editing.
+%\textbf{SS}: Methodology, Writing - Review \& Editing.
+%\textbf{JT}: Writing - Review \& Editing.
+%\textbf{MN}: Data Curation.
+%\textbf{BG}: Writing - Review \& Editing.
+%\textbf{MS}: Writing - Review \& Editing.
+
+
+
 
 \section{Supplementary Figures}\label{sec:suppfig}
+\beginsupplement
 
 
 \begin{figure*}
@@ -520,5 +544,7 @@ b)\includegraphics[page=12,trim={60 220 210 225},clip,scale=0.48]{Figures/Figure
 \caption{\bf Distribution of surface types across all modelled scenarios.}
  \label{fig:surfdist}
 \end{figure*}
+
+
 
 \end{document}
